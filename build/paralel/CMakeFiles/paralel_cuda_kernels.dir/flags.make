@@ -6,5 +6,5 @@ CUDA_DEFINES =
 
 CUDA_INCLUDES = --options-file CMakeFiles/paralel_cuda_kernels.dir/includes_CUDA.rsp
 
-CUDA_FLAGS = -std=c++17 "--generate-code=arch=compute_75,code=[compute_75,sm_75]" -Xcompiler=-fPIC -Wall -Wextra -Wpedantic
+CUDA_FLAGS = -O3 -DNDEBUG -std=c++17 "--generate-code=arch=compute_75,code=[compute_75,sm_75]" -Xcompiler=-fPIC -Wall -Wextra -Wpedantic
 

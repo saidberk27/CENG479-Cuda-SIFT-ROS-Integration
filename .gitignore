@@ -1,0 +1,74 @@
+# === Build & Install Artifacts ===
+build/
+install/
+log/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+*.egg
+
+# === Compiled Binaries & Libraries ===
+*.o
+*.obj
+*.a
+*.so
+*.lib
+*.dll
+*.dylib
+*.exe
+
+# === CMake ===
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeUserPresets.json
+CTestConfiguration.ini
+CTestCustom.cmake
+CTestTestfile.cmake
+Makefile
+*.cmake
+!**/CMakeLists.txt
+
+# === ROS 2 Generated ===
+rosidl_adapter__*.json
+rosidl_generator_*__*.json
+rosidl_typesupport_*__*.json
+*__rosidl_*
+*.built_by
+COLCON_IGNORE
+AMENT_IGNORE
+colcon_*
+symlink_install_manifest.txt
+install_manifest.txt
+
+# === Output / Data Files ===
+**/output/*.png
+**/output/*.jpg
+**/output/*.jpeg
+**/output/*.json
+*.bag
+*.bag.active
+
+# === Benchmark Results ===
+benchmark_results.json
+
+# === IDE / Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === Docker ===
+.docker/
+
+# === Environment / Virtual Env ===
+.env
+venv/
+.venv/

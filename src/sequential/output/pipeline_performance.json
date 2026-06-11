@@ -1,20 +1,20 @@
 {
   "node": "sequential_pipeline",
-  "timestamp": "2026-06-11T16:38:43.984762",
+  "timestamp": "2026-06-11T17:16:23.962949",
   "host": "sberk",
   "language": "Python 3 / OpenCV",
-  "pid_publisher": 34157,
-  "pid_subscriber": 34158,
-  "publisher_total_wall_ms": 5203.488320999895,
-  "publisher_total_cpu_ms": 10539.001939,
-  "subscriber_total_wall_ms": 12845.478670000375,
-  "subscriber_total_cpu_ms": 7516.185685000001,
+  "pid_publisher": 43275,
+  "pid_subscriber": 43276,
+  "publisher_total_wall_ms": 4266.7637310005375,
+  "publisher_total_cpu_ms": 9639.230285,
+  "subscriber_total_wall_ms": 10817.34823700026,
+  "subscriber_total_cpu_ms": 6515.851725,
   "info": {
     "large_image_path": "ankara.jpg",
     "query_image_path": "test.jpg",
-    "query_transport_latency_ms": "25.670",
+    "query_transport_latency_ms": "42.416",
     "query_payload_mb": "3.87",
-    "large_transport_latency_ms": "261.937",
+    "large_transport_latency_ms": "242.740",
     "large_payload_mb": "62.31",
     "detected_region_corners": "(1155.7, 864.8); (1102.4, 819.1); (1056.8, 872.3); (1109.9, 917.9)",
     "raw_matches": 7695,
@@ -24,166 +24,166 @@
   },
   "stages": {
     "pub_1_image_loading": {
-      "wall_ms": 68.88172199978726,
-      "cpu_ms": 70.35149699999998,
-      "started_at_ms": 2.2289820008154493,
+      "wall_ms": 64.52137400083302,
+      "cpu_ms": 66.11468300000001,
+      "started_at_ms": 1.6190759997698478,
       "meta": {
         "large_image": "3228x2300 (21.24 MB in memory)",
         "query_image": "775x775 (1.72 MB in memory)"
       }
     },
     "pub_2_grayscale_conversion": {
-      "wall_ms": 5.57432799905655,
-      "cpu_ms": 17.39943799999999,
-      "started_at_ms": 83.90502000111155,
+      "wall_ms": 5.249977999483235,
+      "cpu_ms": 19.401011999999994,
+      "started_at_ms": 79.00809700004174,
       "meta": {}
     },
     "pub_2b_save_grayscale_images": {
-      "wall_ms": 124.30599499930395,
-      "cpu_ms": 124.26915900000002,
-      "started_at_ms": 90.63598700049624,
+      "wall_ms": 112.60591199970804,
+      "cpu_ms": 112.59497299999998,
+      "started_at_ms": 84.85677200042119,
       "meta": {
         "files": "/home/sberk/Desktop/paralel/src/sequential/output/publisher_1_large_grayscale.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_2_query_grayscale.png"
       }
     },
     "pub_3_sift_large_image": {
-      "wall_ms": 2340.6368349988043,
-      "cpu_ms": 7856.726150999999,
-      "started_at_ms": 215.52921800139302,
+      "wall_ms": 1846.8343719996483,
+      "cpu_ms": 7400.107813999999,
+      "started_at_ms": 198.05505499971332,
       "meta": {
         "keypoints": 123741,
-        "throughput": "3.17 Mpx/s"
+        "throughput": "4.02 Mpx/s"
       }
     },
     "pub_4_sift_query_image": {
-      "wall_ms": 177.05451199981326,
-      "cpu_ms": 544.7001329999991,
-      "started_at_ms": 2557.2430320007697,
+      "wall_ms": 130.19035499928577,
+      "cpu_ms": 475.9437759999994,
+      "started_at_ms": 2045.5093510008737,
       "meta": {
         "keypoints": 7695,
-        "throughput": "3.39 Mpx/s"
+        "throughput": "4.61 Mpx/s"
       }
     },
     "pub_4b_save_keypoint_images": {
-      "wall_ms": 731.3070130003325,
-      "cpu_ms": 668.9764720000006,
-      "started_at_ms": 2735.063390000505,
+      "wall_ms": 566.2771580009576,
+      "cpu_ms": 518.3701719999991,
+      "started_at_ms": 2176.392388999375,
       "meta": {
         "files": "/home/sberk/Desktop/paralel/src/sequential/output/publisher_3_large_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_4_query_keypoints.png"
       }
     },
     "pub_5_message_serialization": {
-      "wall_ms": 1135.8928450008534,
-      "cpu_ms": 1131.0978939999998,
-      "started_at_ms": 3467.4849650000397,
+      "wall_ms": 907.144562999747,
+      "cpu_ms": 906.7581639999993,
+      "started_at_ms": 2743.3875360002276,
       "meta": {
         "large_payload": "~62.31 MB (123741 kp)",
         "query_payload": "~3.87 MB (7695 kp)"
       }
     },
     "pub_6_publish_messages": {
-      "wall_ms": 96.09042999909434,
-      "cpu_ms": 97.09413100000042,
-      "started_at_ms": 5105.150676001358,
+      "wall_ms": 113.29895299968484,
+      "cpu_ms": 116.72692600000012,
+      "started_at_ms": 4152.1294840003975,
       "meta": {
         "topics": "/sift/large_features, /sift/query_features"
       }
     },
     "sub_1_data_reconstruction": {
-      "wall_ms": 117.3904789993685,
-      "cpu_ms": 117.22882000000001,
-      "started_at_ms": 5486.235441001554,
+      "wall_ms": 132.43754600080138,
+      "cpu_ms": 132.032236,
+      "started_at_ms": 4479.956958999537,
       "meta": {
         "large_keypoints": 123741,
         "query_keypoints": 7695
       }
     },
     "sub_1b_save_received_keypoints_image": {
-      "wall_ms": 695.6526640005904,
-      "cpu_ms": 638.020445,
-      "started_at_ms": 5604.107395000028,
+      "wall_ms": 653.6264990008931,
+      "cpu_ms": 596.961775,
+      "started_at_ms": 4612.87080799957,
       "meta": {
         "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_1_large_received_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_2_query_received_keypoints.png"
       }
     },
     "sub_2_flann_index_build": {
-      "wall_ms": 0.05178900028113276,
-      "cpu_ms": 0.05116199999988247,
-      "started_at_ms": 6300.4416990006575,
+      "wall_ms": 0.06105399916123133,
+      "cpu_ms": 0.06064699999996925,
+      "started_at_ms": 5267.229282000699,
       "meta": {
         "algorithm": "KD-Tree (trees=5, checks=50)"
       }
     },
     "sub_3_flann_knn_matching": {
-      "wall_ms": 2061.676504999923,
-      "cpu_ms": 2031.0088009999995,
-      "started_at_ms": 6300.498677001087,
+      "wall_ms": 1645.7463810002082,
+      "cpu_ms": 1644.89623,
+      "started_at_ms": 5267.298161999861,
       "meta": {
         "raw_matches": 7695,
-        "throughput": "3732 matches/s"
+        "throughput": "4676 matches/s"
       }
     },
     "sub_4_lowes_ratio_test": {
-      "wall_ms": 0.5307179999363143,
-      "cpu_ms": 0.530892000000005,
-      "started_at_ms": 8362.762135000594,
+      "wall_ms": 0.45585800035041757,
+      "cpu_ms": 0.4557470000001729,
+      "started_at_ms": 6913.548406999325,
       "meta": {
         "good_matches": 79,
         "rejection_rate": "99.0%"
       }
     },
     "sub_4b_save_ratio_test_image": {
-      "wall_ms": 522.2136640004464,
-      "cpu_ms": 476.7788960000003,
-      "started_at_ms": 8363.852237000174,
+      "wall_ms": 437.1972469998582,
+      "cpu_ms": 387.0876929999998,
+      "started_at_ms": 6914.435578000848,
       "meta": {
         "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_3_ratio_test_matches.png"
       }
     },
     "sub_5_point_extraction": {
-      "wall_ms": 0.11637200077529997,
-      "cpu_ms": 0.11623800000037932,
-      "started_at_ms": 8886.699848000717,
+      "wall_ms": 0.4587319999700412,
+      "cpu_ms": 0.45799699999982124,
+      "started_at_ms": 7354.409479999958,
       "meta": {
         "point_pairs": 79
       }
     },
     "sub_6_homography_ransac": {
-      "wall_ms": 0.4722970006696414,
-      "cpu_ms": 0.4724220000005275,
-      "started_at_ms": 8887.413467000442,
+      "wall_ms": 2.2333430006256094,
+      "cpu_ms": 2.2344919999999213,
+      "started_at_ms": 7358.1917569990765,
       "meta": {
         "inliers": "50/79 (63.3%)"
       }
     },
     "sub_7_perspective_transform": {
-      "wall_ms": 0.03626000034273602,
-      "cpu_ms": 0.035981999999989966,
-      "started_at_ms": 8889.038913001059,
+      "wall_ms": 0.12764100029016845,
+      "cpu_ms": 0.1253970000001381,
+      "started_at_ms": 7367.903389000276,
       "meta": {}
     },
     "sub_7b_save_ransac_stage_images": {
-      "wall_ms": 756.6842450014519,
-      "cpu_ms": 736.5911260000005,
-      "started_at_ms": 8895.360806000099,
+      "wall_ms": 785.3493550010171,
+      "cpu_ms": 717.2194400000005,
+      "started_at_ms": 7387.626813999304,
       "meta": {
         "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_4_ransac_inlier_matches.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_5_detected_region.png"
       }
     },
     "sub_8_final_composite_figure": {
-      "wall_ms": 3184.9900920005894,
-      "cpu_ms": 3242.9941939999994,
-      "started_at_ms": 9653.085977000956,
+      "wall_ms": 2637.4908550005784,
+      "cpu_ms": 2726.853116,
+      "started_at_ms": 8173.767234999104,
       "meta": {
         "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_6_matching_result.png"
       }
     }
   },
   "events_ms": {
-    "pub_messages_published": 5201.262676000624,
-    "sub_received_query_features": 5182.25824900037,
-    "sub_received_large_features": 5422.944683001333,
-    "sub_matching_pipeline_started": 5423.592310000458,
-    "sub_matching_pipeline_finished": 12842.935548000241
+    "pub_messages_published": 4265.456028000699,
+    "sub_received_query_features": 4198.025630999837,
+    "sub_received_large_features": 4404.974691999087,
+    "sub_matching_pipeline_started": 4405.632105999757,
+    "sub_matching_pipeline_finished": 10815.423246000137
   }
 }

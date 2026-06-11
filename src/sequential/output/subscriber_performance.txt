@@ -1,16 +1,16 @@
 ==============================================================================
   PERFORMANCE REPORT  --  flann_subscriber
 ==============================================================================
-  Date/time        : 2026-06-11 16:38:43
+  Date/time        : 2026-06-11 17:16:23
   Host             : sberk  (x86_64)
   Python           : 3.12.3
-  PID              : 34158
+  PID              : 43276
 ------------------------------------------------------------------------------
   GENERAL INFO
 ------------------------------------------------------------------------------
-  query_transport_latency_ms      : 25.670
+  query_transport_latency_ms      : 42.416
   query_payload_mb                : 3.87
-  large_transport_latency_ms      : 261.937
+  large_transport_latency_ms      : 242.740
   large_payload_mb                : 62.31
   detected_region_corners         : (1155.7, 864.8); (1102.4, 819.1); (1056.8, 872.3); (1109.9, 917.9)
   raw_matches                     : 7695
@@ -22,50 +22,50 @@
 ------------------------------------------------------------------------------
   Stage                               Wall (ms)   CPU (ms)   % wall
 ------------------------------------------------------------------------------
-  1_data_reconstruction                 117.390    117.229    0.91%
+  1_data_reconstruction                 132.438    132.032    1.22%
       - large_keypoints: 123741
       - query_keypoints: 7695
-  1b_save_received_keypoints_image      695.653    638.020    5.42%
+  1b_save_received_keypoints_image      653.626    596.962    6.04%
       - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_1_large_received_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_2_query_received_keypoints.png
-  2_flann_index_build                     0.052      0.051    0.00%
+  2_flann_index_build                     0.061      0.061    0.00%
       - algorithm: KD-Tree (trees=5, checks=50)
-  3_flann_knn_matching                 2061.677   2031.009   16.05%
+  3_flann_knn_matching                 1645.746   1644.896   15.22%
       - raw_matches: 7695
-      - throughput: 3732 matches/s
-  4_lowes_ratio_test                      0.531      0.531    0.00%
+      - throughput: 4676 matches/s
+  4_lowes_ratio_test                      0.456      0.456    0.00%
       - good_matches: 79
       - rejection_rate: 99.0%
-  4b_save_ratio_test_image              522.214    476.779    4.07%
+  4b_save_ratio_test_image              437.197    387.088    4.04%
       - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_3_ratio_test_matches.png
-  5_point_extraction                      0.116      0.116    0.00%
+  5_point_extraction                      0.459      0.458    0.00%
       - point_pairs: 79
-  6_homography_ransac                     0.472      0.472    0.00%
+  6_homography_ransac                     2.233      2.234    0.02%
       - inliers: 50/79 (63.3%)
-  7_perspective_transform                 0.036      0.036    0.00%
-  7b_save_ransac_stage_images           756.684    736.591    5.89%
+  7_perspective_transform                 0.128      0.125    0.00%
+  7b_save_ransac_stage_images           785.349    717.219    7.26%
       - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_4_ransac_inlier_matches.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_5_detected_region.png
-  8_final_composite_figure             3184.990   3242.994   24.80%
+  8_final_composite_figure             2637.491   2726.853   24.38%
       - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_6_matching_result.png
 ------------------------------------------------------------------------------
-  Sum of measured stages               7339.815              57.14%
-  TOTAL (since node start)            12844.282   7514.989  100.00%
+  Sum of measured stages               6295.185              58.20%
+  TOTAL (since node start)            10816.247   6514.750  100.00%
 ------------------------------------------------------------------------------
   TIMELINE EVENTS (ms since node start)
 ------------------------------------------------------------------------------
-  received_query_features                        5182.258 ms
-  received_large_features                        5422.945 ms
-  matching_pipeline_started                      5423.592 ms
-  matching_pipeline_finished                    12842.936 ms
+  received_query_features                        4198.026 ms
+  received_large_features                        4404.975 ms
+  matching_pipeline_started                      4405.632 ms
+  matching_pipeline_finished                    10815.423 ms
 ------------------------------------------------------------------------------
   PROCESS RESOURCE USAGE
 ------------------------------------------------------------------------------
-  Peak RSS memory                   : 699.59 MB
-  User CPU time                     : 7.538 s
-  System CPU time                   : 0.619 s
-  Context switches (vol/invol)      : 1451 / 393
-  Page faults (minor/major)         : 239428 / 12
-  VMRSS                             : 644988 kB
-  VMHWM                             : 716384 kB
-  VMSIZE                            : 2279672 kB
+  Peak RSS memory                   : 698.48 MB
+  User CPU time                     : 6.493 s
+  System CPU time                   : 0.531 s
+  Context switches (vol/invol)      : 1642 / 217
+  Page faults (minor/major)         : 241095 / 22
+  VMRSS                             : 643660 kB
+  VMHWM                             : 715248 kB
+  VMSIZE                            : 2280204 kB
   THREADS                           : 22
 ==============================================================================

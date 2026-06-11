@@ -1,10 +1,10 @@
 ==============================================================================
   PERFORMANCE REPORT  --  sift_publisher
 ==============================================================================
-  Date/time        : 2026-06-11 16:38:44
+  Date/time        : 2026-06-11 17:16:23
   Host             : sberk  (x86_64)
   Python           : 3.12.3
-  PID              : 34157
+  PID              : 43275
 ------------------------------------------------------------------------------
   GENERAL INFO
 ------------------------------------------------------------------------------
@@ -15,42 +15,42 @@
 ------------------------------------------------------------------------------
   Stage                               Wall (ms)   CPU (ms)   % wall
 ------------------------------------------------------------------------------
-  1_image_loading                        68.882     70.351    1.32%
+  1_image_loading                        64.521     66.115    1.51%
       - large_image: 3228x2300 (21.24 MB in memory)
       - query_image: 775x775 (1.72 MB in memory)
-  2_grayscale_conversion                  5.574     17.399    0.11%
-  2b_save_grayscale_images              124.306    124.269    2.39%
+  2_grayscale_conversion                  5.250     19.401    0.12%
+  2b_save_grayscale_images              112.606    112.595    2.64%
       - files: /home/sberk/Desktop/paralel/src/sequential/output/publisher_1_large_grayscale.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_2_query_grayscale.png
-  3_sift_large_image                   2340.637   7856.726   44.98%
+  3_sift_large_image                   1846.834   7400.108   43.28%
       - keypoints: 123741
-      - throughput: 3.17 Mpx/s
-  4_sift_query_image                    177.055    544.700    3.40%
+      - throughput: 4.02 Mpx/s
+  4_sift_query_image                    130.190    475.944    3.05%
       - keypoints: 7695
-      - throughput: 3.39 Mpx/s
-  4b_save_keypoint_images               731.307    668.976   14.05%
+      - throughput: 4.61 Mpx/s
+  4b_save_keypoint_images               566.277    518.370   13.27%
       - files: /home/sberk/Desktop/paralel/src/sequential/output/publisher_3_large_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_4_query_keypoints.png
-  5_message_serialization              1135.893   1131.098   21.83%
+  5_message_serialization               907.145    906.758   21.26%
       - large_payload: ~62.31 MB (123741 kp)
       - query_payload: ~3.87 MB (7695 kp)
-  6_publish_messages                     96.090     97.094    1.85%
+  6_publish_messages                    113.299    116.727    2.66%
       - topics: /sift/large_features, /sift/query_features
 ------------------------------------------------------------------------------
-  Sum of measured stages               4679.744              89.93%
-  TOTAL (since node start)             5203.488  10539.002  100.00%
+  Sum of measured stages               3746.123              87.80%
+  TOTAL (since node start)             4266.764   9639.230  100.00%
 ------------------------------------------------------------------------------
   TIMELINE EVENTS (ms since node start)
 ------------------------------------------------------------------------------
-  messages_published                             5201.263 ms
+  messages_published                             4265.456 ms
 ------------------------------------------------------------------------------
   PROCESS RESOURCE USAGE
 ------------------------------------------------------------------------------
-  Peak RSS memory                   : 1874.43 MB
-  User CPU time                     : 9.716 s
-  System CPU time                   : 1.515 s
-  Context switches (vol/invol)      : 836 / 6915
-  Page faults (minor/major)         : 728418 / 12
-  VMRSS                             : 605924 kB
-  VMHWM                             : 1919420 kB
-  VMSIZE                            : 1960316 kB
+  Peak RSS memory                   : 1872.77 MB
+  User CPU time                     : 8.801 s
+  System CPU time                   : 1.350 s
+  Context switches (vol/invol)      : 568 / 3946
+  Page faults (minor/major)         : 728499 / 14
+  VMRSS                             : 604496 kB
+  VMHWM                             : 1917712 kB
+  VMSIZE                            : 2025896 kB
   THREADS                           : 22
 ==============================================================================

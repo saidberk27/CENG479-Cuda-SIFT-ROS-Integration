@@ -1,11 +1,11 @@
 {
   "node": "sift_pipeline",
-  "timestamp": "2026-06-11 16:38:57",
+  "timestamp": "2026-06-11 17:16:35",
   "host": "sberk",
   "language": "C++17/CUDA",
-  "pid": 34318,
-  "total_wall_ms": 6945.535608,
-  "total_cpu_ms": 9771.190711,
+  "pid": 43423,
+  "total_wall_ms": 6313.214193,
+  "total_cpu_ms": 8594.619254,
   "info": {
     "large_image_path": "ankara.jpg",
     "query_image_path": "test.jpg",
@@ -15,8 +15,8 @@
     "query_size": "775x775",
     "large_keypoints": "123741",
     "large_size": "3228x2300",
-    "query_bus_latency_ms": "2810.44",
-    "large_bus_latency_ms": "578.160",
+    "query_bus_latency_ms": "2350.96",
+    "large_bus_latency_ms": "488.454",
     "detected_region_corners": "(1155.6, 864.74); (1102.3, 819.08); (1056.8, 872.29); (1109.9, 917.91)",
     "good_matches_after_ratio_test": "69",
     "ransac_inliers": "51",
@@ -24,51 +24,51 @@
   },
   "stages": {
     "A_parallel_sift_upload_publish": {
-      "wall_ms": 3038.990788,
-      "cpu_ms": 7268.952055,
-      "started_at_ms": 1656.353504,
+      "wall_ms": 2595.374423,
+      "cpu_ms": 6231.117450,
+      "started_at_ms": 1667.138720,
       "meta": {"note": "each set published to VRAM bus as soon as ready", "threads_per_sift": "4 of 8"}
     },
     "B_vram_bus_subscribe": {
-      "wall_ms": 0.007120,
-      "cpu_ms": 0.006781,
-      "started_at_ms": 4695.427811,
+      "wall_ms": 0.008352,
+      "cpu_ms": 0.007981,
+      "started_at_ms": 4262.600752,
       "meta": {"note": "device-pointer hand-off, zero payload copy", "query_kp": "7695", "train_kp": "123741"}
     },
     "C_gpu_knn_match_ratio": {
-      "wall_ms": 1302.838173,
-      "cpu_ms": 1286.283167,
-      "started_at_ms": 4695.455877,
+      "wall_ms": 1232.283517,
+      "cpu_ms": 1230.523112,
+      "started_at_ms": 4262.632653,
       "meta": {"good_matches": "69", "method": "GPU brute-force kNN (k=2, L2) + fused Lowe ratio (VRAM-resident)", "rejection_rate": "99%"}
     },
     "D_collect_matched_points": {
-      "wall_ms": 1.319337,
-      "cpu_ms": 1.319742,
-      "started_at_ms": 5998.353686,
+      "wall_ms": 1.216388,
+      "cpu_ms": 1.216557,
+      "started_at_ms": 5494.972483,
       "meta": {"point_pairs": "69"}
     },
     "E_homography_ransac": {
-      "wall_ms": 5.079936,
-      "cpu_ms": 0.609089,
-      "started_at_ms": 5999.679166,
+      "wall_ms": 0.278114,
+      "cpu_ms": 0.278500,
+      "started_at_ms": 5496.194030,
       "meta": {"inliers": "51/69 (73%)"}
     },
     "F_perspective_transform": {
-      "wall_ms": 0.006162,
-      "cpu_ms": 0.005712,
-      "started_at_ms": 6004.840533,
+      "wall_ms": 0.003563,
+      "cpu_ms": 0.003385,
+      "started_at_ms": 5496.494520,
       "meta": {}
     },
     "G_save_result_visualization": {
-      "wall_ms": 940.385102,
-      "cpu_ms": 850.036403,
-      "started_at_ms": 6004.866858,
+      "wall_ms": 816.460478,
+      "cpu_ms": 767.028335,
+      "started_at_ms": 5496.529594,
       "meta": {"file": "/home/sberk/Desktop/paralel/src/paralel/output/pipeline_detected_region.png"}
     }
   },
   "events_ms": {
-    "pipeline_started": 1656.041627,
-    "features_received_from_vram_bus": 4695.437995,
-    "pipeline_finished": 6945.278005
+    "pipeline_started": 1666.924691,
+    "features_received_from_vram_bus": 4262.612187,
+    "pipeline_finished": 6313.005930
   }
 }
