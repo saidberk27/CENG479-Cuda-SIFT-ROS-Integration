@@ -1,0 +1,30 @@
+[ 40%] Built target paralel_cuda_kernels
+[ 60%] [32mBuilding CXX object CMakeFiles/sift_pipeline.dir/src/sift_pipeline.cpp.o[0m
+[ 80%] [32m[1mLinking CUDA device code CMakeFiles/sift_pipeline.dir/cmake_device_link.o[0m
+[100%] [32m[1mLinking CXX executable sift_pipeline[0m
+[100%] Built target sift_pipeline
+-- Install configuration: ""
+-- Installing: /home/sberk/Desktop/paralel/install/paralel/lib/paralel/sift_pipeline
+-- Set non-toolchain portion of runtime path of "/home/sberk/Desktop/paralel/install/paralel/lib/paralel/sift_pipeline" to ""
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/launch
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/launch/sift_matching.launch.py
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel/cuda_kernels.hpp
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel/gpu_feature_bus.hpp
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel/perf_tracker.hpp
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/package_run_dependencies/paralel
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/parent_prefix_path/paralel
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/ament_prefix_path.sh
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/path.sh
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/path.dsv
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.bash
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.sh
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.zsh
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.dsv
+-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/package.dsv
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/packages/paralel
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/cmake/paralelConfig.cmake
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/cmake/paralelConfig-version.cmake
+-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/package.xml

@@ -1,0 +1,56 @@
+==============================================================================
+  PERFORMANCE REPORT  --  sift_publisher
+==============================================================================
+  Date/time        : 2026-06-11 16:38:44
+  Host             : sberk  (x86_64)
+  Python           : 3.12.3
+  PID              : 34157
+------------------------------------------------------------------------------
+  GENERAL INFO
+------------------------------------------------------------------------------
+  large_image_path                : ankara.jpg
+  query_image_path                : test.jpg
+------------------------------------------------------------------------------
+  STAGE TIMINGS
+------------------------------------------------------------------------------
+  Stage                               Wall (ms)   CPU (ms)   % wall
+------------------------------------------------------------------------------
+  1_image_loading                        68.882     70.351    1.32%
+      - large_image: 3228x2300 (21.24 MB in memory)
+      - query_image: 775x775 (1.72 MB in memory)
+  2_grayscale_conversion                  5.574     17.399    0.11%
+  2b_save_grayscale_images              124.306    124.269    2.39%
+      - files: /home/sberk/Desktop/paralel/src/sequential/output/publisher_1_large_grayscale.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_2_query_grayscale.png
+  3_sift_large_image                   2340.637   7856.726   44.98%
+      - keypoints: 123741
+      - throughput: 3.17 Mpx/s
+  4_sift_query_image                    177.055    544.700    3.40%
+      - keypoints: 7695
+      - throughput: 3.39 Mpx/s
+  4b_save_keypoint_images               731.307    668.976   14.05%
+      - files: /home/sberk/Desktop/paralel/src/sequential/output/publisher_3_large_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_4_query_keypoints.png
+  5_message_serialization              1135.893   1131.098   21.83%
+      - large_payload: ~62.31 MB (123741 kp)
+      - query_payload: ~3.87 MB (7695 kp)
+  6_publish_messages                     96.090     97.094    1.85%
+      - topics: /sift/large_features, /sift/query_features
+------------------------------------------------------------------------------
+  Sum of measured stages               4679.744              89.93%
+  TOTAL (since node start)             5203.488  10539.002  100.00%
+------------------------------------------------------------------------------
+  TIMELINE EVENTS (ms since node start)
+------------------------------------------------------------------------------
+  messages_published                             5201.263 ms
+------------------------------------------------------------------------------
+  PROCESS RESOURCE USAGE
+------------------------------------------------------------------------------
+  Peak RSS memory                   : 1874.43 MB
+  User CPU time                     : 9.716 s
+  System CPU time                   : 1.515 s
+  Context switches (vol/invol)      : 836 / 6915
+  Page faults (minor/major)         : 728418 / 12
+  VMRSS                             : 605924 kB
+  VMHWM                             : 1919420 kB
+  VMSIZE                            : 1960316 kB
+  THREADS                           : 22
+==============================================================================

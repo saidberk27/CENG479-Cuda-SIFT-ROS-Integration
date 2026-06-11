@@ -1,0 +1,865 @@
+[0.000000] (-) TimerEvent: {}
+[0.000128] (-) JobUnselected: {'identifier': 'parallel'}
+[0.000202] (-) JobUnselected: {'identifier': 'sequential'}
+[0.000344] (-) JobUnselected: {'identifier': 'sift_interfaces'}
+[0.000444] (paralel) JobQueued: {'identifier': 'paralel', 'dependencies': OrderedDict({'sift_interfaces': '/home/sberk/Desktop/paralel/install/sift_interfaces'})}
+[0.000573] (paralel) JobStarted: {'identifier': 'paralel'}
+[0.014310] (paralel) JobProgress: {'identifier': 'paralel', 'progress': 'cmake'}
+[0.016526] (paralel) JobProgress: {'identifier': 'paralel', 'progress': 'build'}
+[0.017368] (paralel) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sberk/Desktop/paralel/build/paralel', '--', '-j8', '-l8'], 'cwd': '/home/sberk/Desktop/paralel/build/paralel', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:', 'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'sberk', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib:/home/sberk/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sberk', 'CHROME_DESKTOP': 'code.desktop', 'TERM_PROGRAM_VERSION': '1.119.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2352', 'SYSTEMD_EXEC_PID': '2838', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '21165', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/sberk/Desktop/paralel/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'sberk', 'JOURNAL_STREAM': '9:22706', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ARDUPILOT_HOME': '/home/sberk/ardupilot', 'USERNAME': 'sberk', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/sberk/scripts:/home/sberk/Desktop/paralel/scripts', 'SESSION_MANAGER': 'local/sberk:@/tmp/.ICE-unix/2793,unix/sberk:/tmp/.ICE-unix/2793', 'INVOCATION_ID': '0dd894c469a6418886d948c881209e04', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'CLINE_ACTIVE': 'true', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d3d19fc3fc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/sequential:/home/sberk/Desktop/paralel/install/parallel:/home/sberk/Desktop/paralel/install/paralel:/home/sberk/Desktop/paralel/install/sift_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'GZ_VERSION': 'harmonic', 'VIRTUAL_ENV': '/home/sberk/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/sberk/Desktop/paralel/build/paralel', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/sequential/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/parallel/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces:/home/sberk/Desktop/paralel/install/paralel:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/sberk/Desktop/paralel/install/sequential:/home/sberk/Desktop/paralel/install/parallel:/opt/ros/jazzy'}), 'shell': False}
+[0.079578] (paralel) StdoutLine: {'line': b'[ 20%] Building CUDA object CMakeFiles/paralel_cuda_kernels.dir/src/cuda_kernels.cu.o\n'}
+[0.099799] (-) TimerEvent: {}
+[0.199964] (-) TimerEvent: {}
+[0.300112] (-) TimerEvent: {}
+[0.400294] (-) TimerEvent: {}
+[0.500490] (-) TimerEvent: {}
+[0.600658] (-) TimerEvent: {}
+[0.700818] (-) TimerEvent: {}
+[0.800982] (-) TimerEvent: {}
+[0.901147] (-) TimerEvent: {}
+[1.001312] (-) TimerEvent: {}
+[1.101499] (-) TimerEvent: {}
+[1.201666] (-) TimerEvent: {}
+[1.302254] (-) TimerEvent: {}
+[1.402496] (-) TimerEvent: {}
+[1.502674] (-) TimerEvent: {}
+[1.602860] (-) TimerEvent: {}
+[1.703236] (-) TimerEvent: {}
+[1.804019] (-) TimerEvent: {}
+[1.904449] (-) TimerEvent: {}
+[2.004683] (-) TimerEvent: {}
+[2.104850] (-) TimerEvent: {}
+[2.205035] (-) TimerEvent: {}
+[2.305231] (-) TimerEvent: {}
+[2.405419] (-) TimerEvent: {}
+[2.505632] (-) TimerEvent: {}
+[2.605861] (-) TimerEvent: {}
+[2.706074] (-) TimerEvent: {}
+[2.806285] (-) TimerEvent: {}
+[2.906493] (-) TimerEvent: {}
+[3.006710] (-) TimerEvent: {}
+[3.064655] (paralel) StderrLine: {'line': b'/tmp/tmpxft_00005b61_00000000-6_cuda_kernels.cudafe1.cpp:1:3: warning: style of line directive is a GCC extension\n'}
+[3.064929] (paralel) StderrLine: {'line': b'    1 | # 1 "/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu"\n'}
+[3.065017] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.065090] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:2:3: warning: style of line directive is a GCC extension\n'}
+[3.065162] (paralel) StderrLine: {'line': b'    2 |  * cuda_kernels.cu\n'}
+[3.065233] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.065305] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:2:3: warning: style of line directive is a GCC extension\n'}
+[3.065374] (paralel) StderrLine: {'line': b'    2 |  * cuda_kernels.cu\n'}
+[3.065444] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.065513] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:2:3: warning: style of line directive is a GCC extension\n'}
+[3.065589] (paralel) StderrLine: {'line': b'    2 |  * cuda_kernels.cu\n'}
+[3.065657] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.065725] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:2:3: warning: style of line directive is a GCC extension\n'}
+[3.065805] (paralel) StderrLine: {'line': b'    2 |  * cuda_kernels.cu\n'}
+[3.065878] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.065947] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:2:3: warning: style of line directive is a GCC extension\n'}
+[3.066031] (paralel) StderrLine: {'line': b'    2 |  * cuda_kernels.cu\n'}
+[3.066146] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.066218] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:2:3: warning: style of line directive is a GCC extension\n'}
+[3.066314] (paralel) StderrLine: {'line': b'    2 |  * cuda_kernels.cu\n'}
+[3.066384] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.066452] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:3:3: warning: style of line directive is a GCC extension\n'}
+[3.066521] (paralel) StderrLine: {'line': b'    3 |  * \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\n'}
+[3.066593] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.066661] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:6:3: warning: style of line directive is a GCC extension\n'}
+[3.066775] (paralel) StderrLine: {'line': b'    6 |  * Optimised CUDA-aware data path:\n'}
+[3.066892] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.067014] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:1:3: warning: style of line directive is a GCC extension\n'}
+[3.067123] (paralel) StderrLine: {'line': b'    1 | /**\n'}
+[3.067232] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.106817] (-) TimerEvent: {}
+[3.162613] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:27:3: warning: style of line directive is a GCC extension\n'}
+[3.163007] (paralel) StderrLine: {'line': b'   27 | \n'}
+[3.163128] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.163238] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:29:3: warning: style of line directive is a GCC extension\n'}
+[3.163344] (paralel) StderrLine: {'line': b'   29 | \n'}
+[3.163445] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.163546] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:45:3: warning: style of line directive is a GCC extension\n'}
+[3.163626] (paralel) StderrLine: {'line': b'   45 |     const cv::Mat & descriptors,\n'}
+[3.163703] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.163808] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:55:3: warning: style of line directive is a GCC extension\n'}
+[3.163893] (paralel) StderrLine: {'line': b'   55 |     // For each query keypoint that PASSED the ratio test:\n'}
+[3.163995] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.166905] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:57:3: warning: style of line directive is a GCC extension\n'}
+[3.168773] (paralel) StderrLine: {'line': b'   57 |     std::vector<int> train_idx;   // matched index into train/large feature set\n'}
+[3.169089] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.169377] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:58:3: warning: style of line directive is a GCC extension\n'}
+[3.169857] (paralel) StderrLine: {'line': b'   58 |     int   total_query   = 0;      // number of query descriptors examined\n'}
+[3.171130] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.171511] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:59:3: warning: style of line directive is a GCC extension\n'}
+[3.171862] (paralel) StderrLine: {'line': b'   59 |     int   good_matches  = 0;      // number that passed the ratio test\n'}
+[3.172003] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.172144] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:60:3: warning: style of line directive is a GCC extension\n'}
+[3.172241] (paralel) StderrLine: {'line': b'   60 | };\n'}
+[3.172323] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.172403] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:61:3: warning: style of line directive is a GCC extension\n'}
+[3.172483] (paralel) StderrLine: {'line': b'   61 | \n'}
+[3.172572] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.172653] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:75:3: warning: style of line directive is a GCC extension\n'}
+[3.172740] (paralel) StderrLine: {'line': b'   75 |     const GpuFeatures & query,\n'}
+[3.172913] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.173057] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:81:3: warning: style of line directive is a GCC extension\n'}
+[3.173179] (paralel) StderrLine: {'line': b'   81 | \n'}
+[3.173297] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.173440] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:83:3: warning: style of line directive is a GCC extension\n'}
+[3.173561] (paralel) StderrLine: {'line': b'   83 |     const std::vector<std::vector<cv::DMatch>> & knn_matches,\n'}
+[3.173698] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.173856] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:88:3: warning: style of line directive is a GCC extension\n'}
+[3.173990] (paralel) StderrLine: {'line': b'   88 | \n'}
+[3.174107] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.174211] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/cuda_kernels.hpp:90:3: warning: style of line directive is a GCC extension\n'}
+[3.174290] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:27:3: warning: style of line directive is a GCC extension\n'}
+[3.174366] (paralel) StderrLine: {'line': b'   27 | \n'}
+[3.174462] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.174553] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:36:3: warning: style of line directive is a GCC extension\n'}
+[3.174631] (paralel) StderrLine: {'line': b'   36 |     // Device buffers (VRAM-resident)\n'}
+[3.174706] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.174782] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:38:3: warning: style of line directive is a GCC extension\n'}
+[3.174899] (paralel) StderrLine: {'line': b'   38 |     float * d_kp_x        = nullptr;   // N, device memory\n'}
+[3.175038] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.175193] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:39:3: warning: style of line directive is a GCC extension\n'}
+[3.175320] (paralel) StderrLine: {'line': b'   39 |     float * d_kp_y        = nullptr;   // N, device memory\n'}
+[3.175432] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.175555] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:40:3: warning: style of line directive is a GCC extension\n'}
+[3.175675] (paralel) StderrLine: {'line': b'   40 |     float * d_kp_size     = nullptr;   // N, device memory\n'}
+[3.175803] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.175930] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:41:3: warning: style of line directive is a GCC extension\n'}
+[3.176049] (paralel) StderrLine: {'line': b'   41 |     float * d_kp_angle    = nullptr;   // N, device memory\n'}
+[3.176167] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.176285] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:42:3: warning: style of line directive is a GCC extension\n'}
+[3.176405] (paralel) StderrLine: {'line': b'   42 | \n'}
+[3.176524] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.176642] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:44:3: warning: style of line directive is a GCC extension\n'}
+[3.176760] (paralel) StderrLine: {'line': b'   44 |     int     descriptor_dim = 128;\n'}
+[3.176897] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.177015] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:45:3: warning: style of line directive is a GCC extension\n'}
+[3.177138] (paralel) StderrLine: {'line': b'   45 |     int     height = 0;\n'}
+[3.177486] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.177633] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:46:3: warning: style of line directive is a GCC extension\n'}
+[3.177755] (paralel) StderrLine: {'line': b'   46 |     int     width  = 0;\n'}
+[3.177886] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.178004] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:47:3: warning: style of line directive is a GCC extension\n'}
+[3.178123] (paralel) StderrLine: {'line': b'   47 | \n'}
+[3.178241] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.178358] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:49:3: warning: style of line directive is a GCC extension\n'}
+[3.178479] (paralel) StderrLine: {'line': b'   49 | \n'}
+[3.178600] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.178723] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:52:3: warning: style of line directive is a GCC extension\n'}
+[3.178851] (paralel) StderrLine: {'line': b'   52 | \n'}
+[3.178975] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.179117] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:54:3: warning: style of line directive is a GCC extension\n'}
+[3.179232] (paralel) StderrLine: {'line': b'   54 | };\n'}
+[3.179361] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.179476] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:55:3: warning: style of line directive is a GCC extension\n'}
+[3.179590] (paralel) StderrLine: {'line': b'   55 | \n'}
+[3.179704] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.179841] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:68:3: warning: style of line directive is a GCC extension\n'}
+[3.179978] (paralel) StderrLine: {'line': b'   68 | public:\n'}
+[3.180098] (paralel) StderrLine: {'line': b'      |   ^~\n'}
+[3.180232] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:70:3: warning: style of line directive is a GCC extension\n'}
+[3.180359] (paralel) StderrLine: {'line': b'   70 | \n'}
+[3.180486] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.180614] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:72:3: warning: style of line directive is a GCC extension\n'}
+[3.180740] (paralel) StderrLine: {'line': b'   72 |         {\n'}
+[3.180863] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.180976] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:73:3: warning: style of line directive is a GCC extension\n'}
+[3.181112] (paralel) StderrLine: {'line': b'   73 |             std::lock_guard<std::mutex> lk(mtx_);\n'}
+[3.181232] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.181340] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:74:3: warning: style of line directive is a GCC extension\n'}
+[3.181436] (paralel) StderrLine: {'line': b'   74 |             slots_[static_cast<int>(slot)] = std::move(features);\n'}
+[3.181533] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.181657] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:75:3: warning: style of line directive is a GCC extension\n'}
+[3.181777] (paralel) StderrLine: {'line': b'   75 |         }\n'}
+[3.181897] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.182017] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:76:3: warning: style of line directive is a GCC extension\n'}
+[3.182134] (paralel) StderrLine: {'line': b'   76 |         cv_.notify_all();\n'}
+[3.182255] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.182376] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:77:3: warning: style of line directive is a GCC extension\n'}
+[3.182502] (paralel) StderrLine: {'line': b'   77 |     }\n'}
+[3.182583] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.182659] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:78:3: warning: style of line directive is a GCC extension\n'}
+[3.182733] (paralel) StderrLine: {'line': b'   78 | \n'}
+[3.182822] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.182939] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:82:3: warning: style of line directive is a GCC extension\n'}
+[3.183052] (paralel) StderrLine: {'line': b'   82 |         std::unique_lock<std::mutex> lk(mtx_);\n'}
+[3.183165] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.183276] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:83:3: warning: style of line directive is a GCC extension\n'}
+[3.183390] (paralel) StderrLine: {'line': b'   83 |         cv_.wait(lk, [this] {\n'}
+[3.183539] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.183617] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:84:3: warning: style of line directive is a GCC extension\n'}
+[3.183693] (paralel) StderrLine: {'line': b'   84 |             return slots_[0] != nullptr && slots_[1] != nullptr;\n'}
+[3.183768] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.183851] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:85:3: warning: style of line directive is a GCC extension\n'}
+[3.183926] (paralel) StderrLine: {'line': b'   85 |         });\n'}
+[3.184000] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.184081] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:86:3: warning: style of line directive is a GCC extension\n'}
+[3.184161] (paralel) StderrLine: {'line': b'   86 |         return {slots_[0], slots_[1]};\n'}
+[3.184238] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.184313] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:87:3: warning: style of line directive is a GCC extension\n'}
+[3.184388] (paralel) StderrLine: {'line': b'   87 |     }\n'}
+[3.184489] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.184601] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:88:3: warning: style of line directive is a GCC extension\n'}
+[3.184716] (paralel) StderrLine: {'line': b'   88 | \n'}
+[3.184828] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.184939] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:91:3: warning: style of line directive is a GCC extension\n'}
+[3.185044] (paralel) StderrLine: {'line': b'   91 |     std::condition_variable cv_;\n'}
+[3.185144] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.185243] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:92:3: warning: style of line directive is a GCC extension\n'}
+[3.185339] (paralel) StderrLine: {'line': b'   92 |     std::shared_ptr<GpuFeatures> slots_[2];\n'}
+[3.185449] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.185577] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:93:3: warning: style of line directive is a GCC extension\n'}
+[3.185659] (paralel) StderrLine: {'line': b'   93 | };\n'}
+[3.185734] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.185832] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:94:3: warning: style of line directive is a GCC extension\n'}
+[3.185956] (paralel) StderrLine: {'line': b'   94 | \n'}
+[3.186114] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.186242] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/include/paralel/gpu_feature_bus.hpp:96:3: warning: style of line directive is a GCC extension\n'}
+[3.186379] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:43:3: warning: style of line directive is a GCC extension\n'}
+[3.186503] (paralel) StderrLine: {'line': b'   43 | \n'}
+[3.186593] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.186703] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:60:3: warning: style of line directive is a GCC extension\n'}
+[3.186876] (paralel) StderrLine: {'line': b'   60 |     const float * __restrict__ d_query,   // Nq x 128\n'}
+[3.187027] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.187170] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:61:3: warning: style of line directive is a GCC extension\n'}
+[3.187322] (paralel) StderrLine: {'line': b'   61 |     const float * __restrict__ d_train,   // Nt x 128\n'}
+[3.187496] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.187653] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:62:3: warning: style of line directive is a GCC extension\n'}
+[3.187783] (paralel) StderrLine: {'line': b'   62 |     int Nq, int Nt,\n'}
+[3.187913] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.188040] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:63:3: warning: style of line directive is a GCC extension\n'}
+[3.188149] (paralel) StderrLine: {'line': b'   63 |     float ratio_sq,\n'}
+[3.188256] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.188364] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:64:3: warning: style of line directive is a GCC extension\n'}
+[3.188476] (paralel) StderrLine: {'line': b'   64 |     int * __restrict__ d_train_idx,\n'}
+[3.188593] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.188710] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:65:3: warning: style of line directive is a GCC extension\n'}
+[3.188835] (paralel) StderrLine: {'line': b'   65 |     unsigned char * __restrict__ d_pass)\n'}
+[3.188970] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.189079] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:211:3: warning: style of line directive is a GCC extension\n'}
+[3.189193] (paralel) StderrLine: {'line': b'  211 |     const cv::Mat & descriptors,\n'}
+[3.189309] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.189420] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:160:3: warning: style of line directive is a GCC extension\n'}
+[3.189541] (paralel) StderrLine: {'line': b'  160 |     const unsigned char * __restrict__ d_bgr,\n'}
+[3.189653] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.189774] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:161:3: warning: style of line directive is a GCC extension\n'}
+[3.189898] (paralel) StderrLine: {'line': b'  161 |     unsigned char       * __restrict__ d_gray,\n'}
+[3.190014] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.190125] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:162:3: warning: style of line directive is a GCC extension\n'}
+[3.190238] (paralel) StderrLine: {'line': b'  162 |     int width, int height)\n'}
+[3.190349] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.190467] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:189:3: warning: style of line directive is a GCC extension\n'}
+[3.190578] (paralel) StderrLine: {'line': b'  189 |     int i = blockIdx.x * blockDim.x + threadIdx.x;\n'}
+[3.190699] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.190825] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:183:3: warning: style of line directive is a GCC extension\n'}
+[3.190946] (paralel) StderrLine: {'line': b'  183 |     const float * __restrict__ d_dist1,\n'}
+[3.191065] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.191188] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:184:3: warning: style of line directive is a GCC extension\n'}
+[3.191300] (paralel) StderrLine: {'line': b'  184 |     const float * __restrict__ d_dist2,\n'}
+[3.191409] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.191518] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:185:3: warning: style of line directive is a GCC extension\n'}
+[3.191627] (paralel) StderrLine: {'line': b'  185 |     unsigned char * __restrict__ d_mask,\n'}
+[3.191736] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.191854] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:186:3: warning: style of line directive is a GCC extension\n'}
+[3.191967] (paralel) StderrLine: {'line': b'  186 |     int N,\n'}
+[3.192090] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.192178] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:187:3: warning: style of line directive is a GCC extension\n'}
+[3.192252] (paralel) StderrLine: {'line': b'  187 |     float ratio)\n'}
+[3.192324] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.192418] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:200:3: warning: style of line directive is a GCC extension\n'}
+[3.192493] (paralel) StderrLine: {'line': b'  200 |     if (!f) return;\n'}
+[3.192565] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.192637] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:196:3: warning: style of line directive is a GCC extension\n'}
+[3.192720] (paralel) StderrLine: {'line': b'  196 | \n'}
+[3.192828] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.192941] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:199:3: warning: style of line directive is a GCC extension\n'}
+[3.193052] (paralel) StderrLine: {'line': b'  199 | {\n'}
+[3.193161] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.193271] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:200:3: warning: style of line directive is a GCC extension\n'}
+[3.193381] (paralel) StderrLine: {'line': b'  200 |     if (!f) return;\n'}
+[3.193489] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.193598] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:201:3: warning: style of line directive is a GCC extension\n'}
+[3.193707] (paralel) StderrLine: {'line': b'  201 |     if (f->d_descriptors) cudaFree(f->d_descriptors);\n'}
+[3.193823] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.193939] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:202:3: warning: style of line directive is a GCC extension\n'}
+[3.194068] (paralel) StderrLine: {'line': b'  202 |     if (f->d_kp_x)        cudaFree(f->d_kp_x);\n'}
+[3.194215] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.194348] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:203:3: warning: style of line directive is a GCC extension\n'}
+[3.194480] (paralel) StderrLine: {'line': b'  203 |     if (f->d_kp_y)        cudaFree(f->d_kp_y);\n'}
+[3.194602] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.194689] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:204:3: warning: style of line directive is a GCC extension\n'}
+[3.194814] (paralel) StderrLine: {'line': b'  204 |     if (f->d_kp_size)     cudaFree(f->d_kp_size);\n'}
+[3.194930] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.195026] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:205:3: warning: style of line directive is a GCC extension\n'}
+[3.195117] (paralel) StderrLine: {'line': b'  205 |     if (f->d_kp_angle)    cudaFree(f->d_kp_angle);\n'}
+[3.195224] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.195320] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:206:3: warning: style of line directive is a GCC extension\n'}
+[3.195412] (paralel) StderrLine: {'line': b'  206 |     delete f;\n'}
+[3.195503] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.195633] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:207:3: warning: style of line directive is a GCC extension\n'}
+[3.195760] (paralel) StderrLine: {'line': b'  207 | }\n'}
+[3.195878] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.196016] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:208:3: warning: style of line directive is a GCC extension\n'}
+[3.196124] (paralel) StderrLine: {'line': b'  208 | \n'}
+[3.196198] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.196278] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:211:3: warning: style of line directive is a GCC extension\n'}
+[3.196391] (paralel) StderrLine: {'line': b'  211 |     const cv::Mat & descriptors,\n'}
+[3.196570] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.196686] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:212:3: warning: style of line directive is a GCC extension\n'}
+[3.196804] (paralel) StderrLine: {'line': b'  212 |     const std::vector<cv::KeyPoint> & keypoints,\n'}
+[3.196928] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.197057] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:213:3: warning: style of line directive is a GCC extension\n'}
+[3.197182] (paralel) StderrLine: {'line': b'  213 |     const std::string & image_name,\n'}
+[3.197312] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.197425] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:214:3: warning: style of line directive is a GCC extension\n'}
+[3.197544] (paralel) StderrLine: {'line': b'  214 |     int height, int width)\n'}
+[3.197673] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.197800] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:215:3: warning: style of line directive is a GCC extension\n'}
+[3.197918] (paralel) StderrLine: {'line': b'  215 | {\n'}
+[3.198032] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.198162] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:216:3: warning: style of line directive is a GCC extension\n'}
+[3.198276] (paralel) StderrLine: {'line': b'  216 |     const int N = static_cast<int>(keypoints.size());\n'}
+[3.198390] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.198503] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:217:3: warning: style of line directive is a GCC extension\n'}
+[3.198614] (paralel) StderrLine: {'line': b'  217 | \n'}
+[3.198725] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.198843] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:219:3: warning: style of line directive is a GCC extension\n'}
+[3.198955] (paralel) StderrLine: {'line': b'  219 |     gf->num_keypoints  = N;\n'}
+[3.199067] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.199178] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:220:3: warning: style of line directive is a GCC extension\n'}
+[3.199292] (paralel) StderrLine: {'line': b'  220 |     gf->descriptor_dim = DESC_DIM;\n'}
+[3.199405] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.199517] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:221:3: warning: style of line directive is a GCC extension\n'}
+[3.199629] (paralel) StderrLine: {'line': b'  221 |     gf->height         = height;\n'}
+[3.199752] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.199910] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:222:3: warning: style of line directive is a GCC extension\n'}
+[3.200045] (paralel) StderrLine: {'line': b'  222 |     gf->width          = width;\n'}
+[3.200159] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.200272] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:223:3: warning: style of line directive is a GCC extension\n'}
+[3.200384] (paralel) StderrLine: {'line': b'  223 |     gf->image_name     = image_name;\n'}
+[3.200496] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.200608] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:224:3: warning: style of line directive is a GCC extension\n'}
+[3.200720] (paralel) StderrLine: {'line': b'  224 | \n'}
+[3.200839] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.200957] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:226:3: warning: style of line directive is a GCC extension\n'}
+[3.201070] (paralel) StderrLine: {'line': b'  226 | \n'}
+[3.201182] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.201303] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:228:3: warning: style of line directive is a GCC extension\n'}
+[3.201424] (paralel) StderrLine: {'line': b'  228 |     const size_t kp_bytes   = static_cast<size_t>(N) * sizeof(float);\n'}
+[3.201503] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.201578] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:229:3: warning: style of line directive is a GCC extension\n'}
+[3.201662] (paralel) StderrLine: {'line': b'  229 | \n'}
+[3.201735] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.201819] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:232:3: warning: style of line directive is a GCC extension\n'}
+[3.201894] (paralel) StderrLine: {'line': b'  232 |     CUDA_CHECK(cudaMalloc(&gf->d_kp_x,    kp_bytes));\n'}
+[3.201978] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.202074] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:233:3: warning: style of line directive is a GCC extension\n'}
+[3.202155] (paralel) StderrLine: {'line': b'  233 |     CUDA_CHECK(cudaMalloc(&gf->d_kp_y,    kp_bytes));\n'}
+[3.202256] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.202346] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:234:3: warning: style of line directive is a GCC extension\n'}
+[3.202437] (paralel) StderrLine: {'line': b'  234 |     CUDA_CHECK(cudaMalloc(&gf->d_kp_size, kp_bytes));\n'}
+[3.202548] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.202669] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:235:3: warning: style of line directive is a GCC extension\n'}
+[3.202779] (paralel) StderrLine: {'line': b'  235 |     CUDA_CHECK(cudaMalloc(&gf->d_kp_angle, kp_bytes));\n'}
+[3.202905] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.203039] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:236:3: warning: style of line directive is a GCC extension\n'}
+[3.203177] (paralel) StderrLine: {'line': b'  236 | \n'}
+[3.203309] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.203466] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:239:3: warning: style of line directive is a GCC extension\n'}
+[3.203600] (paralel) StderrLine: {'line': b'  239 |     for (int i = 0; i < N; ++i) {\n'}
+[3.203725] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.203895] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:240:3: warning: style of line directive is a GCC extension\n'}
+[3.204043] (paralel) StderrLine: {'line': b'  240 |         kx[i] = keypoints[i].pt.x;\n'}
+[3.204196] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.204348] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:241:3: warning: style of line directive is a GCC extension\n'}
+[3.204444] (paralel) StderrLine: {'line': b'  241 |         ky[i] = keypoints[i].pt.y;\n'}
+[3.204565] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.204691] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:242:3: warning: style of line directive is a GCC extension\n'}
+[3.204881] (paralel) StderrLine: {'line': b'  242 |         ks[i] = keypoints[i].size;\n'}
+[3.205014] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.205129] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:243:3: warning: style of line directive is a GCC extension\n'}
+[3.205270] (paralel) StderrLine: {'line': b'  243 |         ka[i] = keypoints[i].angle;\n'}
+[3.205394] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.205472] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:244:3: warning: style of line directive is a GCC extension\n'}
+[3.205546] (paralel) StderrLine: {'line': b'  244 |     }\n'}
+[3.205639] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.205730] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:245:3: warning: style of line directive is a GCC extension\n'}
+[3.205816] (paralel) StderrLine: {'line': b'  245 | \n'}
+[3.205926] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.206059] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:248:3: warning: style of line directive is a GCC extension\n'}
+[3.206194] (paralel) StderrLine: {'line': b'  248 |     if (desc.type() != CV_32F) desc.convertTo(desc, CV_32F);\n'}
+[3.206298] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.206426] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:249:3: warning: style of line directive is a GCC extension\n'}
+[3.206552] (paralel) StderrLine: {'line': b'  249 |     if (!desc.isContinuous())  desc = desc.clone();\n'}
+[3.206660] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.206784] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:249:3: warning: style of line directive is a GCC extension\n'}
+[3.206885] (-) TimerEvent: {}
+[3.206903] (paralel) StderrLine: {'line': b'  249 |     if (!desc.isContinuous())  desc = desc.clone();\n'}
+[3.206980] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.207055] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:250:3: warning: style of line directive is a GCC extension\n'}
+[3.207143] (paralel) StderrLine: {'line': b'  250 | \n'}
+[3.207226] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.207300] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:254:3: warning: style of line directive is a GCC extension\n'}
+[3.207373] (paralel) StderrLine: {'line': b'  254 |     CUDA_CHECK(cudaStreamCreate(&stream));\n'}
+[3.207448] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.207528] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:255:3: warning: style of line directive is a GCC extension\n'}
+[3.207605] (paralel) StderrLine: {'line': b'  255 |     CUDA_CHECK(cudaMemcpyAsync(gf->d_descriptors, desc.ptr<float>(0),\n'}
+[3.207683] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.207756] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:256:3: warning: style of line directive is a GCC extension\n'}
+[3.207840] (paralel) StderrLine: {'line': b'  256 |                                desc_bytes, cudaMemcpyHostToDevice, stream));\n'}
+[3.207986] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.208081] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:258:3: warning: style of line directive is a GCC extension\n'}
+[3.208177] (paralel) StderrLine: {'line': b'  258 |                                cudaMemcpyHostToDevice, stream));\n'}
+[3.208272] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.208366] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:260:3: warning: style of line directive is a GCC extension\n'}
+[3.208459] (paralel) StderrLine: {'line': b'  260 |                                cudaMemcpyHostToDevice, stream));\n'}
+[3.208558] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.208645] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:262:3: warning: style of line directive is a GCC extension\n'}
+[3.208735] (paralel) StderrLine: {'line': b'  262 |                                cudaMemcpyHostToDevice, stream));\n'}
+[3.208822] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.208913] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:264:3: warning: style of line directive is a GCC extension\n'}
+[3.208998] (paralel) StderrLine: {'line': b'  264 |                                cudaMemcpyHostToDevice, stream));\n'}
+[3.209083] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.209174] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:266:3: warning: style of line directive is a GCC extension\n'}
+[3.209264] (paralel) StderrLine: {'line': b'  266 |     CUDA_CHECK(cudaStreamDestroy(stream));\n'}
+[3.209350] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.209439] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:267:3: warning: style of line directive is a GCC extension\n'}
+[3.209537] (paralel) StderrLine: {'line': b'  267 | \n'}
+[3.209621] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.209710] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:269:3: warning: style of line directive is a GCC extension\n'}
+[3.209807] (paralel) StderrLine: {'line': b'  269 | }\n'}
+[3.209897] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.210002] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:270:3: warning: style of line directive is a GCC extension\n'}
+[3.210095] (paralel) StderrLine: {'line': b'  270 | \n'}
+[3.210189] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.210278] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:273:3: warning: style of line directive is a GCC extension\n'}
+[3.210374] (paralel) StderrLine: {'line': b'  273 |     const GpuFeatures & query,\n'}
+[3.210469] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.210564] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:274:3: warning: style of line directive is a GCC extension\n'}
+[3.210663] (paralel) StderrLine: {'line': b'  274 |     const GpuFeatures & train,\n'}
+[3.210778] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.210867] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:275:3: warning: style of line directive is a GCC extension\n'}
+[3.210947] (paralel) StderrLine: {'line': b'  275 |     float ratio)\n'}
+[3.211037] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.211124] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:276:3: warning: style of line directive is a GCC extension\n'}
+[3.211252] (paralel) StderrLine: {'line': b'  276 | {\n'}
+[3.211334] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.211422] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:277:3: warning: style of line directive is a GCC extension\n'}
+[3.211534] (paralel) StderrLine: {'line': b'  277 |     GpuMatchResult out;\n'}
+[3.211649] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.211741] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:278:3: warning: style of line directive is a GCC extension\n'}
+[3.211845] (paralel) StderrLine: {'line': b'  278 |     out.total_query = query.num_keypoints;\n'}
+[3.211947] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.212028] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:279:3: warning: style of line directive is a GCC extension\n'}
+[3.212102] (paralel) StderrLine: {'line': b'  279 | \n'}
+[3.212177] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.212250] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:281:3: warning: style of line directive is a GCC extension\n'}
+[3.212339] (paralel) StderrLine: {'line': b'  281 |     const int Nt = train.num_keypoints;\n'}
+[3.212450] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.212605] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:282:3: warning: style of line directive is a GCC extension\n'}
+[3.212735] (paralel) StderrLine: {'line': b'  282 |     if (Nq == 0 || Nt == 0) return out;\n'}
+[3.212877] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.213007] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:283:3: warning: style of line directive is a GCC extension\n'}
+[3.213157] (paralel) StderrLine: {'line': b'  283 | \n'}
+[3.213302] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.213435] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:285:3: warning: style of line directive is a GCC extension\n'}
+[3.213572] (paralel) StderrLine: {'line': b'  285 |     unsigned char *d_pass      = nullptr;\n'}
+[3.213712] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.213849] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:286:3: warning: style of line directive is a GCC extension\n'}
+[3.213946] (paralel) StderrLine: {'line': b'  286 |     CUDA_CHECK(cudaMalloc(&d_train_idx, Nq * sizeof(int)));\n'}
+[3.214040] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.214161] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:287:3: warning: style of line directive is a GCC extension\n'}
+[3.214279] (paralel) StderrLine: {'line': b'  287 |     CUDA_CHECK(cudaMalloc(&d_pass,      Nq * sizeof(unsigned char)));\n'}
+[3.214414] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.214529] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:288:3: warning: style of line directive is a GCC extension\n'}
+[3.214644] (paralel) StderrLine: {'line': b'  288 | \n'}
+[3.214767] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.214898] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:290:3: warning: style of line directive is a GCC extension\n'}
+[3.215012] (paralel) StderrLine: {'line': b'  290 |     const dim3 grid(Nq);\n'}
+[3.215127] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.215260] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:291:3: warning: style of line directive is a GCC extension\n'}
+[3.215377] (paralel) StderrLine: {'line': b'  291 | \n'}
+[3.215539] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.215674] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:295:3: warning: style of line directive is a GCC extension\n'}
+[3.215797] (paralel) StderrLine: {'line': b'  295 | \n'}
+[3.215889] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.216001] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:297:3: warning: style of line directive is a GCC extension\n'}
+[3.216079] (paralel) StderrLine: {'line': b'  297 | \n'}
+[3.216154] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.216228] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:299:3: warning: style of line directive is a GCC extension\n'}
+[3.216335] (paralel) StderrLine: {'line': b'  299 |         query.d_descriptors, train.d_descriptors,\n'}
+[3.216429] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.216505] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:302:3: warning: style of line directive is a GCC extension\n'}
+[3.216581] (paralel) StderrLine: {'line': b'  302 |     CUDA_CHECK(cudaDeviceSynchronize());\n'}
+[3.216654] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.216728] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:303:3: warning: style of line directive is a GCC extension\n'}
+[3.216811] (paralel) StderrLine: {'line': b'  303 | \n'}
+[3.216884] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.216965] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:306:3: warning: style of line directive is a GCC extension\n'}
+[3.217040] (paralel) StderrLine: {'line': b'  306 |     std::vector<unsigned char> h_pass(Nq);\n'}
+[3.217114] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.217187] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:307:3: warning: style of line directive is a GCC extension\n'}
+[3.217261] (paralel) StderrLine: {'line': b'  307 |     CUDA_CHECK(cudaMemcpy(h_train_idx.data(), d_train_idx,\n'}
+[3.217336] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.217440] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:308:3: warning: style of line directive is a GCC extension\n'}
+[3.217540] (paralel) StderrLine: {'line': b'  308 |                           Nq * sizeof(int), cudaMemcpyDeviceToHost));\n'}
+[3.217619] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.217691] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:310:3: warning: style of line directive is a GCC extension\n'}
+[3.217803] (paralel) StderrLine: {'line': b'  310 |                           Nq * sizeof(unsigned char), cudaMemcpyDeviceToHost));\n'}
+[3.217904] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.218034] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:313:3: warning: style of line directive is a GCC extension\n'}
+[3.218122] (paralel) StderrLine: {'line': b'  313 |     cudaFree(d_pass);\n'}
+[3.218245] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.218324] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:314:3: warning: style of line directive is a GCC extension\n'}
+[3.218398] (paralel) StderrLine: {'line': b'  314 | \n'}
+[3.218471] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.218545] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:316:3: warning: style of line directive is a GCC extension\n'}
+[3.218618] (paralel) StderrLine: {'line': b'  316 |     out.train_idx.reserve(Nq);\n'}
+[3.218692] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.218764] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:317:3: warning: style of line directive is a GCC extension\n'}
+[3.218858] (paralel) StderrLine: {'line': b'  317 |     for (int q = 0; q < Nq; ++q) {\n'}
+[3.218931] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.219004] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:318:3: warning: style of line directive is a GCC extension\n'}
+[3.219078] (paralel) StderrLine: {'line': b'  318 |         if (h_pass[q] && h_train_idx[q] >= 0) {\n'}
+[3.219151] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.219226] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:319:3: warning: style of line directive is a GCC extension\n'}
+[3.219299] (paralel) StderrLine: {'line': b'  319 |             out.query_idx.push_back(q);\n'}
+[3.219373] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.219446] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:320:3: warning: style of line directive is a GCC extension\n'}
+[3.219529] (paralel) StderrLine: {'line': b'  320 |             out.train_idx.push_back(h_train_idx[q]);\n'}
+[3.219602] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.219704] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:321:3: warning: style of line directive is a GCC extension\n'}
+[3.219825] (paralel) StderrLine: {'line': b'  321 |         }\n'}
+[3.219937] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.220049] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:322:3: warning: style of line directive is a GCC extension\n'}
+[3.220175] (paralel) StderrLine: {'line': b'  322 |     }\n'}
+[3.220297] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.220437] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:323:3: warning: style of line directive is a GCC extension\n'}
+[3.220577] (paralel) StderrLine: {'line': b'  323 |     out.good_matches = static_cast<int>(out.query_idx.size());\n'}
+[3.220700] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.220831] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:324:3: warning: style of line directive is a GCC extension\n'}
+[3.220956] (paralel) StderrLine: {'line': b'  324 |     return out;\n'}
+[3.221076] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.221204] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:325:3: warning: style of line directive is a GCC extension\n'}
+[3.221332] (paralel) StderrLine: {'line': b'  325 | }\n'}
+[3.221437] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.221556] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:326:3: warning: style of line directive is a GCC extension\n'}
+[3.221686] (paralel) StderrLine: {'line': b'  326 | \n'}
+[3.221822] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.221956] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:329:3: warning: style of line directive is a GCC extension\n'}
+[3.222085] (paralel) StderrLine: {'line': b'  329 | {\n'}
+[3.222213] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.222293] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:330:3: warning: style of line directive is a GCC extension\n'}
+[3.222370] (paralel) StderrLine: {'line': b'  330 |     if (bgr_img.empty() || bgr_img.channels() != 3) {\n'}
+[3.222444] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.222520] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:331:3: warning: style of line directive is a GCC extension\n'}
+[3.222593] (paralel) StderrLine: {'line': b'  331 |         throw std::invalid_argument("cuda_bgr_to_gray: expected non-empty 3-channel BGR image");\n'}
+[3.222667] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.222740] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:332:3: warning: style of line directive is a GCC extension\n'}
+[3.222828] (paralel) StderrLine: {'line': b'  332 |     }\n'}
+[3.222922] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.222999] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:333:3: warning: style of line directive is a GCC extension\n'}
+[3.223073] (paralel) StderrLine: {'line': b'  333 | \n'}
+[3.223148] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.223221] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:335:3: warning: style of line directive is a GCC extension\n'}
+[3.223299] (paralel) StderrLine: {'line': b'  335 |     const int H = bgr_img.rows;\n'}
+[3.223380] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.223454] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:336:3: warning: style of line directive is a GCC extension\n'}
+[3.223529] (paralel) StderrLine: {'line': b'  336 |     const size_t bgr_bytes  = static_cast<size_t>(W) * H * 3;\n'}
+[3.223603] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.223676] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:337:3: warning: style of line directive is a GCC extension\n'}
+[3.223760] (paralel) StderrLine: {'line': b'  337 |     const size_t gray_bytes = static_cast<size_t>(W) * H;\n'}
+[3.223849] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.223929] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:338:3: warning: style of line directive is a GCC extension\n'}
+[3.224003] (paralel) StderrLine: {'line': b'  338 | \n'}
+[3.224076] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.224151] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:340:3: warning: style of line directive is a GCC extension\n'}
+[3.224225] (paralel) StderrLine: {'line': b'  340 | \n'}
+[3.224298] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.224371] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:342:3: warning: style of line directive is a GCC extension\n'}
+[3.224444] (paralel) StderrLine: {'line': b'  342 |     unsigned char *d_gray = nullptr;\n'}
+[3.224517] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.224591] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:343:3: warning: style of line directive is a GCC extension\n'}
+[3.224669] (paralel) StderrLine: {'line': b'  343 |     CUDA_CHECK(cudaMalloc(&d_bgr,  bgr_bytes));\n'}
+[3.224751] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.224839] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:344:3: warning: style of line directive is a GCC extension\n'}
+[3.224914] (paralel) StderrLine: {'line': b'  344 |     CUDA_CHECK(cudaMalloc(&d_gray, gray_bytes));\n'}
+[3.225016] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.225091] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:345:3: warning: style of line directive is a GCC extension\n'}
+[3.225166] (paralel) StderrLine: {'line': b'  345 | \n'}
+[3.225245] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.225322] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:347:3: warning: style of line directive is a GCC extension\n'}
+[3.225415] (paralel) StderrLine: {'line': b'  347 | \n'}
+[3.225548] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.225675] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:349:3: warning: style of line directive is a GCC extension\n'}
+[3.225819] (paralel) StderrLine: {'line': b'  349 |     dim3 grid((W + block.x - 1) / block.x,\n'}
+[3.225945] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.226090] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:350:3: warning: style of line directive is a GCC extension\n'}
+[3.226245] (paralel) StderrLine: {'line': b'  350 |               (H + block.y - 1) / block.y);\n'}
+[3.226390] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.226565] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:352:3: warning: style of line directive is a GCC extension\n'}
+[3.226777] (paralel) StderrLine: {'line': b'  352 |     CUDA_CHECK(cudaGetLastError());\n'}
+[3.226967] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.227163] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:353:3: warning: style of line directive is a GCC extension\n'}
+[3.227315] (paralel) StderrLine: {'line': b'  353 |     CUDA_CHECK(cudaDeviceSynchronize());\n'}
+[3.227467] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.227586] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:354:3: warning: style of line directive is a GCC extension\n'}
+[3.227702] (paralel) StderrLine: {'line': b'  354 | \n'}
+[3.227825] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.227953] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:356:3: warning: style of line directive is a GCC extension\n'}
+[3.228066] (paralel) StderrLine: {'line': b'  356 |     CUDA_CHECK(cudaMemcpy(gray.data, d_gray, gray_bytes, cudaMemcpyDeviceToHost));\n'}
+[3.228196] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.228318] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:357:3: warning: style of line directive is a GCC extension\n'}
+[3.228436] (paralel) StderrLine: {'line': b'  357 | \n'}
+[3.228517] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.228602] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:359:3: warning: style of line directive is a GCC extension\n'}
+[3.228695] (paralel) StderrLine: {'line': b'  359 |     cudaFree(d_gray);\n'}
+[3.228829] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.228953] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:360:3: warning: style of line directive is a GCC extension\n'}
+[3.229090] (paralel) StderrLine: {'line': b'  360 | \n'}
+[3.229205] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.229321] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:362:3: warning: style of line directive is a GCC extension\n'}
+[3.229456] (paralel) StderrLine: {'line': b'  362 | }\n'}
+[3.229670] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.229749] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:363:3: warning: style of line directive is a GCC extension\n'}
+[3.229845] (paralel) StderrLine: {'line': b'  363 | \n'}
+[3.229927] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.230002] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:366:3: warning: style of line directive is a GCC extension\n'}
+[3.230077] (paralel) StderrLine: {'line': b'  366 |     const std::vector<std::vector<cv::DMatch>> & knn_matches,\n'}
+[3.230159] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.230250] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:367:3: warning: style of line directive is a GCC extension\n'}
+[3.230330] (paralel) StderrLine: {'line': b'  367 |     float ratio)\n'}
+[3.230406] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.230482] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:368:3: warning: style of line directive is a GCC extension\n'}
+[3.230557] (paralel) StderrLine: {'line': b'  368 | {\n'}
+[3.230631] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.230713] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:369:3: warning: style of line directive is a GCC extension\n'}
+[3.230790] (paralel) StderrLine: {'line': b'  369 |     const int N = static_cast<int>(knn_matches.size());\n'}
+[3.230913] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.230996] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:370:3: warning: style of line directive is a GCC extension\n'}
+[3.231088] (paralel) StderrLine: {'line': b'  370 |     std::vector<bool> result(N, false);\n'}
+[3.231183] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.231295] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:371:3: warning: style of line directive is a GCC extension\n'}
+[3.231414] (paralel) StderrLine: {'line': b'  371 |     if (N == 0) return result;\n'}
+[3.231540] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.231658] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:372:3: warning: style of line directive is a GCC extension\n'}
+[3.231784] (paralel) StderrLine: {'line': b'  372 | \n'}
+[3.231899] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.231987] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:374:3: warning: style of line directive is a GCC extension\n'}
+[3.232067] (paralel) StderrLine: {'line': b'  374 |     for (int i = 0; i < N; ++i) {\n'}
+[3.232146] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.232225] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:375:3: warning: style of line directive is a GCC extension\n'}
+[3.232322] (paralel) StderrLine: {'line': b'  375 |         if (knn_matches[i].size() >= 2) {\n'}
+[3.232452] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.232574] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:376:3: warning: style of line directive is a GCC extension\n'}
+[3.232719] (paralel) StderrLine: {'line': b'  376 |             h_dist1[i] = knn_matches[i][0].distance;\n'}
+[3.232840] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.232931] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:377:3: warning: style of line directive is a GCC extension\n'}
+[3.233016] (paralel) StderrLine: {'line': b'  377 |             h_dist2[i] = knn_matches[i][1].distance;\n'}
+[3.233098] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.233182] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:378:3: warning: style of line directive is a GCC extension\n'}
+[3.233255] (paralel) StderrLine: {'line': b'  378 |         } else {\n'}
+[3.233343] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.233457] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:379:3: warning: style of line directive is a GCC extension\n'}
+[3.233573] (paralel) StderrLine: {'line': b'  379 |             h_dist1[i] = 1.0f;\n'}
+[3.233686] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.233803] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:380:3: warning: style of line directive is a GCC extension\n'}
+[3.233917] (paralel) StderrLine: {'line': b'  380 |             h_dist2[i] = 0.0f;\n'}
+[3.234029] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.234140] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:381:3: warning: style of line directive is a GCC extension\n'}
+[3.234252] (paralel) StderrLine: {'line': b'  381 |         }\n'}
+[3.234366] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.234477] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:382:3: warning: style of line directive is a GCC extension\n'}
+[3.234593] (paralel) StderrLine: {'line': b'  382 |     }\n'}
+[3.234704] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.234823] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:383:3: warning: style of line directive is a GCC extension\n'}
+[3.234939] (paralel) StderrLine: {'line': b'  383 | \n'}
+[3.235068] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.235182] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:385:3: warning: style of line directive is a GCC extension\n'}
+[3.235296] (paralel) StderrLine: {'line': b'  385 |     float         *d_dist2 = nullptr;\n'}
+[3.235411] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.235527] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:386:3: warning: style of line directive is a GCC extension\n'}
+[3.235622] (paralel) StderrLine: {'line': b'  386 |     unsigned char *d_mask  = nullptr;\n'}
+[3.235699] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.235817] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:387:3: warning: style of line directive is a GCC extension\n'}
+[3.235912] (paralel) StderrLine: {'line': b'  387 |     CUDA_CHECK(cudaMalloc(&d_dist1, N * sizeof(float)));\n'}
+[3.236030] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.236150] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:388:3: warning: style of line directive is a GCC extension\n'}
+[3.236282] (paralel) StderrLine: {'line': b'  388 |     CUDA_CHECK(cudaMalloc(&d_dist2, N * sizeof(float)));\n'}
+[3.236419] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.236546] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:389:3: warning: style of line directive is a GCC extension\n'}
+[3.236778] (paralel) StderrLine: {'line': b'  389 |     CUDA_CHECK(cudaMalloc(&d_mask,  N * sizeof(unsigned char)));\n'}
+[3.236961] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.237202] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:390:3: warning: style of line directive is a GCC extension\n'}
+[3.237390] (paralel) StderrLine: {'line': b'  390 | \n'}
+[3.237564] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.237679] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:392:3: warning: style of line directive is a GCC extension\n'}
+[3.237783] (paralel) StderrLine: {'line': b'  392 |     CUDA_CHECK(cudaMemcpy(d_dist2, h_dist2.data(), N * sizeof(float), cudaMemcpyHostToDevice));\n'}
+[3.237907] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.238019] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:393:3: warning: style of line directive is a GCC extension\n'}
+[3.238142] (paralel) StderrLine: {'line': b'  393 | \n'}
+[3.238262] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.238387] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:395:3: warning: style of line directive is a GCC extension\n'}
+[3.238505] (paralel) StderrLine: {'line': b'  395 |     const int GRID  = (N + BLOCK - 1) / BLOCK;\n'}
+[3.238634] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.238718] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:396:3: warning: style of line directive is a GCC extension\n'}
+[3.238814] (paralel) StderrLine: {'line': b'  396 |     kernel_lowe_ratio<<<GRID, BLOCK>>>(d_dist1, d_dist2, d_mask, N, ratio);\n'}
+[3.238939] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.239062] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:397:3: warning: style of line directive is a GCC extension\n'}
+[3.239163] (paralel) StderrLine: {'line': b'  397 |     CUDA_CHECK(cudaGetLastError());\n'}
+[3.239244] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.239337] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:398:3: warning: style of line directive is a GCC extension\n'}
+[3.239430] (paralel) StderrLine: {'line': b'  398 |     CUDA_CHECK(cudaDeviceSynchronize());\n'}
+[3.239505] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.239603] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:399:3: warning: style of line directive is a GCC extension\n'}
+[3.239734] (paralel) StderrLine: {'line': b'  399 | \n'}
+[3.239882] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.240048] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:401:3: warning: style of line directive is a GCC extension\n'}
+[3.240136] (paralel) StderrLine: {'line': b'  401 |     CUDA_CHECK(cudaMemcpy(h_mask.data(), d_mask, N * sizeof(unsigned char), cudaMemcpyDeviceToHost));\n'}
+[3.240218] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.240318] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:402:3: warning: style of line directive is a GCC extension\n'}
+[3.240440] (paralel) StderrLine: {'line': b'  402 | \n'}
+[3.240553] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.240669] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:404:3: warning: style of line directive is a GCC extension\n'}
+[3.240782] (paralel) StderrLine: {'line': b'  404 |     cudaFree(d_dist2);\n'}
+[3.240916] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.241030] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:405:3: warning: style of line directive is a GCC extension\n'}
+[3.241143] (paralel) StderrLine: {'line': b'  405 |     cudaFree(d_mask);\n'}
+[3.241261] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.241373] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:406:3: warning: style of line directive is a GCC extension\n'}
+[3.241487] (paralel) StderrLine: {'line': b'  406 | \n'}
+[3.241599] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.241720] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:408:3: warning: style of line directive is a GCC extension\n'}
+[3.241839] (paralel) StderrLine: {'line': b'  408 |     return result;\n'}
+[3.241964] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.242097] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:409:3: warning: style of line directive is a GCC extension\n'}
+[3.242203] (paralel) StderrLine: {'line': b'  409 | }\n'}
+[3.242330] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.242456] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:410:3: warning: style of line directive is a GCC extension\n'}
+[3.242585] (paralel) StderrLine: {'line': b'  410 | \n'}
+[3.242704] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.242832] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:413:3: warning: style of line directive is a GCC extension\n'}
+[3.242952] (paralel) StderrLine: {'line': b'  413 | {\n'}
+[3.243088] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.243209] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:414:3: warning: style of line directive is a GCC extension\n'}
+[3.243336] (paralel) StderrLine: {'line': b'  414 |     int dev = 0;\n'}
+[3.243462] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.243591] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:415:3: warning: style of line directive is a GCC extension\n'}
+[3.243715] (paralel) StderrLine: {'line': b'  415 |     cudaDeviceProp prop{};\n'}
+[3.243844] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.243965] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:416:3: warning: style of line directive is a GCC extension\n'}
+[3.244087] (paralel) StderrLine: {'line': b'  416 |     cudaError_t e = cudaGetDeviceProperties(&prop, dev);\n'}
+[3.244212] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.244335] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:417:3: warning: style of line directive is a GCC extension\n'}
+[3.244456] (paralel) StderrLine: {'line': b'  417 |     if (e != cudaSuccess) return "CUDA device query failed";\n'}
+[3.244578] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.244700] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:418:3: warning: style of line directive is a GCC extension\n'}
+[3.244829] (paralel) StderrLine: {'line': b'  418 | \n'}
+[3.244939] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.245037] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:420:3: warning: style of line directive is a GCC extension\n'}
+[3.245160] (paralel) StderrLine: {'line': b'  420 |     snprintf(buf, sizeof(buf),\n'}
+[3.245286] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.245408] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:421:3: warning: style of line directive is a GCC extension\n'}
+[3.245531] (paralel) StderrLine: {'line': b'  421 |              "%s  (sm_%d%d, %.0f MB, %d SMs, CUDA %d.%d)",\n'}
+[3.245659] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.245781] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:428:3: warning: style of line directive is a GCC extension\n'}
+[3.245912] (paralel) StderrLine: {'line': b'  428 | }\n'}
+[3.246040] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.246167] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:429:3: warning: style of line directive is a GCC extension\n'}
+[3.246290] (paralel) StderrLine: {'line': b'  429 | \n'}
+[3.246413] (paralel) StderrLine: {'line': b'      |   ^  \n'}
+[3.246540] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:432:3: warning: style of line directive is a GCC extension\n'}
+[3.246662] (paralel) StderrLine: {'line': b'tmpxft_00005b61_00000000-6_cuda_kernels.cudafe1.stub.c:4:3: warning: style of line directive is a GCC extension\n'}
+[3.246788] (paralel) StderrLine: {'line': b'In file included from tmpxft_00005b61_00000000-6_cuda_kernels.cudafe1.stub.c:1:\n'}
+[3.246941] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:60:3: warning: style of line directive is a GCC extension\n'}
+[3.247067] (paralel) StderrLine: {'line': b'   60 |     const float * __restrict__ d_query,   // Nq x 128\n'}
+[3.247193] (paralel) StderrLine: {'line': b'      |   ^ \n'}
+[3.247330] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:67:3: warning: style of line directive is a GCC extension\n'}
+[3.247502] (paralel) StderrLine: {'line': b'   67 |     const int q = blockIdx.x;\n'}
+[3.247639] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.247784] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:155:3: warning: style of line directive is a GCC extension\n'}
+[3.247919] (paralel) StderrLine: {'line': b'  155 | \n'}
+[3.248045] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.248191] (paralel) StderrLine: {'line': b'/tmp/tmpxft_00005b61_00000000-6_cuda_kernels.cudafe1.stub.c:4:3: warning: style of line directive is a GCC extension\n'}
+[3.248328] (paralel) StderrLine: {'line': b'    4 | #define __NV_MODULE_ID _01fc8191_15_cuda_kernels_cu_a7bc02b3\n'}
+[3.248469] (paralel) StderrLine: {'line': b'      |   ^~~\n'}
+[3.248600] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:160:3: warning: style of line directive is a GCC extension\n'}
+[3.248711] (paralel) StderrLine: {'line': b'  160 |     const unsigned char * __restrict__ d_bgr,\n'}
+[3.248810] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.248889] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:164:3: warning: style of line directive is a GCC extension\n'}
+[3.248969] (paralel) StderrLine: {'line': b'  164 |     int x = blockIdx.x * blockDim.x + threadIdx.x;\n'}
+[3.249044] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.249120] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:178:3: warning: style of line directive is a GCC extension\n'}
+[3.249232] (paralel) StderrLine: {'line': b'  178 | \n'}
+[3.249354] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.249477] (paralel) StderrLine: {'line': b'/tmp/tmpxft_00005b61_00000000-6_cuda_kernels.cudafe1.stub.c:5:3: warning: style of line directive is a GCC extension\n'}
+[3.249601] (paralel) StderrLine: {'line': b'    5 | #define __NV_CUBIN_HANDLE_STORAGE__ extern\n'}
+[3.249724] (paralel) StderrLine: {'line': b'      |   ^~~\n'}
+[3.249893] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:183:3: warning: style of line directive is a GCC extension\n'}
+[3.250010] (paralel) StderrLine: {'line': b'  183 |     const float * __restrict__ d_dist1,\n'}
+[3.250090] (paralel) StderrLine: {'line': b'      |   ^ ~\n'}
+[3.250167] (paralel) StderrLine: {'line': b'/home/sberk/Desktop/paralel/src/paralel/src/cuda_kernels.cu:193:3: warning: style of line directive is a GCC extension\n'}
+[3.250274] (paralel) StderrLine: {'line': b'  193 | \n'}
+[3.250406] (paralel) StderrLine: {'line': b'      |   ^\n'}
+[3.250506] (paralel) StderrLine: {'line': b'tmpxft_00005b61_00000000-6_cuda_kernels.cudafe1.stub.c:2:3: warning: style of line directive is a GCC extension\n'}
+[3.306988] (-) TimerEvent: {}
+[3.407150] (-) TimerEvent: {}
+[3.507317] (-) TimerEvent: {}
+[3.607664] (-) TimerEvent: {}
+[3.708107] (-) TimerEvent: {}
+[3.808276] (-) TimerEvent: {}
+[3.908440] (-) TimerEvent: {}
+[4.008613] (-) TimerEvent: {}
+[4.108845] (-) TimerEvent: {}
+[4.209322] (-) TimerEvent: {}
+[4.309506] (-) TimerEvent: {}
+[4.409677] (-) TimerEvent: {}
+[4.509836] (-) TimerEvent: {}
+[4.609994] (-) TimerEvent: {}
+[4.617347] (paralel) StdoutLine: {'line': b'[ 40%] Linking CUDA static library libparalel_cuda_kernels.a\n'}
+[4.666986] (paralel) StdoutLine: {'line': b'[ 40%] Built target paralel_cuda_kernels\n'}
+[4.699767] (paralel) StdoutLine: {'line': b'[ 60%] Linking CUDA device code CMakeFiles/sift_pipeline.dir/cmake_device_link.o\n'}
+[4.710097] (-) TimerEvent: {}
+[4.721083] (paralel) StderrLine: {'line': b"nvlink warning : Skipping incompatible '/usr/lib/x86_64-linux-gnu/libdl.a' when searching for -ldl\n"}
+[4.722614] (paralel) StderrLine: {'line': b"nvlink warning : Skipping incompatible '/usr/lib/x86_64-linux-gnu/librt.a' when searching for -lrt\n"}
+[4.722786] (paralel) StderrLine: {'line': b"nvlink warning : Skipping incompatible '/usr/lib/x86_64-linux-gnu/libpthread.a' when searching for -lpthread\n"}
+[4.774343] (paralel) StdoutLine: {'line': b'[ 80%] Linking CXX executable sift_pipeline\n'}
+[4.810199] (-) TimerEvent: {}
+[4.910390] (-) TimerEvent: {}
+[5.010597] (-) TimerEvent: {}
+[5.110985] (-) TimerEvent: {}
+[5.211263] (-) TimerEvent: {}
+[5.311466] (-) TimerEvent: {}
+[5.411637] (-) TimerEvent: {}
+[5.416549] (paralel) StdoutLine: {'line': b'[100%] Built target sift_pipeline\n'}
+[5.427309] (paralel) CommandEnded: {'returncode': 0}
+[5.428064] (paralel) JobProgress: {'identifier': 'paralel', 'progress': 'install'}
+[5.438987] (paralel) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sberk/Desktop/paralel/build/paralel'], 'cwd': '/home/sberk/Desktop/paralel/build/paralel', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:', 'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'sberk', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib:/home/sberk/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sberk', 'CHROME_DESKTOP': 'code.desktop', 'TERM_PROGRAM_VERSION': '1.119.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2352', 'SYSTEMD_EXEC_PID': '2838', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '21165', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/sberk/Desktop/paralel/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'sberk', 'JOURNAL_STREAM': '9:22706', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ARDUPILOT_HOME': '/home/sberk/ardupilot', 'USERNAME': 'sberk', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/sberk/scripts:/home/sberk/Desktop/paralel/scripts', 'SESSION_MANAGER': 'local/sberk:@/tmp/.ICE-unix/2793,unix/sberk:/tmp/.ICE-unix/2793', 'INVOCATION_ID': '0dd894c469a6418886d948c881209e04', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'CLINE_ACTIVE': 'true', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d3d19fc3fc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/sequential:/home/sberk/Desktop/paralel/install/parallel:/home/sberk/Desktop/paralel/install/paralel:/home/sberk/Desktop/paralel/install/sift_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'GZ_VERSION': 'harmonic', 'VIRTUAL_ENV': '/home/sberk/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/sberk/Desktop/paralel/build/paralel', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/sequential/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/parallel/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces:/home/sberk/Desktop/paralel/install/paralel:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/sberk/Desktop/paralel/install/sequential:/home/sberk/Desktop/paralel/install/parallel:/opt/ros/jazzy'}), 'shell': False}
+[5.447746] (paralel) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.448152] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/lib/paralel/sift_pipeline\n'}
+[5.449977] (paralel) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/sberk/Desktop/paralel/install/paralel/lib/paralel/sift_pipeline" to ""\n'}
+[5.451563] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/launch\n'}
+[5.451658] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/launch/sift_matching.launch.py\n'}
+[5.451736] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include\n'}
+[5.451833] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel\n'}
+[5.451948] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel/cuda_kernels.hpp\n'}
+[5.452054] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel/gpu_feature_bus.hpp\n'}
+[5.452180] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/include/paralel/perf_tracker.hpp\n'}
+[5.452306] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/package_run_dependencies/paralel\n'}
+[5.452436] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/parent_prefix_path/paralel\n'}
+[5.452567] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/ament_prefix_path.sh\n'}
+[5.452660] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/ament_prefix_path.dsv\n'}
+[5.453042] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/path.sh\n'}
+[5.454264] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/path.dsv\n'}
+[5.454562] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.bash\n'}
+[5.454754] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.sh\n'}
+[5.454987] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.zsh\n'}
+[5.455482] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.dsv\n'}
+[5.457084] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/package.dsv\n'}
+[5.457295] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/packages/paralel\n'}
+[5.457541] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/cmake/paralelConfig.cmake\n'}
+[5.457683] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/cmake/paralelConfig-version.cmake\n'}
+[5.458084] (paralel) StdoutLine: {'line': b'-- Up-to-date: /home/sberk/Desktop/paralel/install/paralel/share/paralel/package.xml\n'}
+[5.458705] (paralel) CommandEnded: {'returncode': 0}
+[5.479904] (paralel) JobEnded: {'identifier': 'paralel', 'rc': 0}
+[5.482201] (-) EventReactorShutdown: {}

@@ -1,0 +1,65 @@
+==============================================================================
+  PERFORMANCE REPORT  --  sift_pipeline
+==============================================================================
+  Date/time        : 2026-06-11 16:38:57
+  Host             : sberk
+  PID              : 34318
+  Language         : C++17 / CUDA
+------------------------------------------------------------------------------
+  GENERAL INFO
+------------------------------------------------------------------------------
+  large_image_path                : ankara.jpg
+  query_image_path                : test.jpg
+  cuda_device                     : NVIDIA GeForce GTX 1650 with Max-Q Design  (sm_75, 3904 MB, 14 SMs, CUDA 7.5)
+  transport                       : in-process VRAM bus (no sockets, no ROS payload)
+  query_keypoints                 : 7695
+  query_size                      : 775x775
+  large_keypoints                 : 123741
+  large_size                      : 3228x2300
+  query_bus_latency_ms            : 2810.44
+  large_bus_latency_ms            : 578.160
+  detected_region_corners         : (1155.6, 864.74); (1102.3, 819.08); (1056.8, 872.29); (1109.9, 917.91)
+  good_matches_after_ratio_test   : 69
+  ransac_inliers                  : 51
+  pipeline_success                : true
+------------------------------------------------------------------------------
+  STAGE TIMINGS
+------------------------------------------------------------------------------
+  Stage                               Wall (ms)   CPU (ms)   % wall
+------------------------------------------------------------------------------
+  A_parallel_sift_upload_publish       3038.991   7268.952   43.75%
+      - note: each set published to VRAM bus as soon as ready
+      - threads_per_sift: 4 of 8
+  B_vram_bus_subscribe                    0.007      0.007    0.00%
+      - note: device-pointer hand-off, zero payload copy
+      - query_kp: 7695
+      - train_kp: 123741
+  C_gpu_knn_match_ratio                1302.838   1286.283   18.76%
+      - good_matches: 69
+      - method: GPU brute-force kNN (k=2, L2) + fused Lowe ratio (VRAM-resident)
+      - rejection_rate: 99%
+  D_collect_matched_points                1.319      1.320    0.02%
+      - point_pairs: 69
+  E_homography_ransac                     5.080      0.609    0.07%
+      - inliers: 51/69 (73%)
+  F_perspective_transform                 0.006      0.006    0.00%
+  G_save_result_visualization           940.385    850.036   13.54%
+      - file: /home/sberk/Desktop/paralel/src/paralel/output/pipeline_detected_region.png
+------------------------------------------------------------------------------
+  Sum of measured stages               5288.627              76.14%
+  TOTAL (since node start)             6945.614   9771.269  100.00%
+------------------------------------------------------------------------------
+  TIMELINE EVENTS (ms since node start)
+------------------------------------------------------------------------------
+  pipeline_started                               1656.042 ms
+  features_received_from_vram_bus                4695.438 ms
+  pipeline_finished                              6945.278 ms
+------------------------------------------------------------------------------
+  PROCESS RESOURCE USAGE
+------------------------------------------------------------------------------
+  Peak RSS memory                   : 1959.03 MB
+  User CPU time                     : 8.389 s
+  System CPU time                   : 1.473 s
+  Context switches (vol/invol)      : 1288 / 869
+  Page faults (minor/major)         : 532506 / 77
+==============================================================================

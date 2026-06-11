@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-38ffca33299c0629d58e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "paralel",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "paralel_cuda_kernels::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-paralel_cuda_kernels-d7e286858ddce00dab8b.json",
+					"name" : "paralel_cuda_kernels",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "paralel_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-paralel_uninstall-255e6a0437936d3f572f.json",
+					"name" : "paralel_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_pipeline::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_pipeline-2fcfa09589025d531950.json",
+					"name" : "sift_pipeline",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-8c877f4c8d3fd85957c1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sberk/Desktop/paralel/build/paralel",
+		"source" : "/home/sberk/Desktop/paralel/src/paralel"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

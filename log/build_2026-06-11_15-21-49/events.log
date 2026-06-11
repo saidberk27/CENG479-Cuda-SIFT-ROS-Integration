@@ -1,0 +1,177 @@
+[0.000000] (-) TimerEvent: {}
+[0.000358] (-) JobUnselected: {'identifier': 'parallel'}
+[0.000695] (-) JobUnselected: {'identifier': 'sequential'}
+[0.000836] (-) JobUnselected: {'identifier': 'sift_interfaces'}
+[0.001070] (paralel) JobQueued: {'identifier': 'paralel', 'dependencies': OrderedDict({'sift_interfaces': '/home/sberk/Desktop/paralel/install/sift_interfaces'})}
+[0.001124] (paralel) JobStarted: {'identifier': 'paralel'}
+[0.012627] (paralel) JobProgress: {'identifier': 'paralel', 'progress': 'cmake'}
+[0.014082] (paralel) JobProgress: {'identifier': 'paralel', 'progress': 'build'}
+[0.015805] (paralel) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sberk/Desktop/paralel/build/paralel', '--', '-j8', '-l8'], 'cwd': '/home/sberk/Desktop/paralel/build/paralel', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:', 'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'sberk', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib:/home/sberk/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sberk', 'CHROME_DESKTOP': 'code.desktop', 'TERM_PROGRAM_VERSION': '1.119.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2352', 'SYSTEMD_EXEC_PID': '2838', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '3873', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/sberk/Desktop/paralel/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'sberk', 'JOURNAL_STREAM': '9:22706', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ARDUPILOT_HOME': '/home/sberk/ardupilot', 'USERNAME': 'sberk', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/sberk/scripts:/home/sberk/Desktop/paralel/scripts', 'SESSION_MANAGER': 'local/sberk:@/tmp/.ICE-unix/2793,unix/sberk:/tmp/.ICE-unix/2793', 'INVOCATION_ID': '0dd894c469a6418886d948c881209e04', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'CLINE_ACTIVE': 'true', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d3d19fc3fc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/parallel:/home/sberk/Desktop/paralel/install/sequential:/home/sberk/Desktop/paralel/install/sift_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'GZ_VERSION': 'harmonic', 'VIRTUAL_ENV': '/home/sberk/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/sberk/Desktop/paralel/build/paralel', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/parallel/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/sequential/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/sberk/Desktop/paralel/install/parallel:/home/sberk/Desktop/paralel/install/sequential:/opt/ros/jazzy'}), 'shell': False}
+[0.099814] (-) TimerEvent: {}
+[0.129945] (paralel) StdoutLine: {'line': b'[ 25%] Built target paralel_cuda_kernels\n'}
+[0.193931] (paralel) StdoutLine: {'line': b'[ 62%] Built target sift_publisher\n'}
+[0.194440] (paralel) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/flann_subscriber.dir/src/flann_subscriber.cpp.o\x1b[0m\n'}
+[0.200407] (-) TimerEvent: {}
+[0.300751] (-) TimerEvent: {}
+[0.401105] (-) TimerEvent: {}
+[0.501529] (-) TimerEvent: {}
+[0.602225] (-) TimerEvent: {}
+[0.702671] (-) TimerEvent: {}
+[0.802976] (-) TimerEvent: {}
+[0.903482] (-) TimerEvent: {}
+[1.004093] (-) TimerEvent: {}
+[1.104702] (-) TimerEvent: {}
+[1.205028] (-) TimerEvent: {}
+[1.305369] (-) TimerEvent: {}
+[1.405685] (-) TimerEvent: {}
+[1.506005] (-) TimerEvent: {}
+[1.606350] (-) TimerEvent: {}
+[1.706676] (-) TimerEvent: {}
+[1.806964] (-) TimerEvent: {}
+[1.907244] (-) TimerEvent: {}
+[2.007540] (-) TimerEvent: {}
+[2.107842] (-) TimerEvent: {}
+[2.208186] (-) TimerEvent: {}
+[2.308440] (-) TimerEvent: {}
+[2.408952] (-) TimerEvent: {}
+[2.509505] (-) TimerEvent: {}
+[2.610307] (-) TimerEvent: {}
+[2.710569] (-) TimerEvent: {}
+[2.810864] (-) TimerEvent: {}
+[2.911106] (-) TimerEvent: {}
+[3.011394] (-) TimerEvent: {}
+[3.111843] (-) TimerEvent: {}
+[3.212273] (-) TimerEvent: {}
+[3.312606] (-) TimerEvent: {}
+[3.412913] (-) TimerEvent: {}
+[3.513191] (-) TimerEvent: {}
+[3.613425] (-) TimerEvent: {}
+[3.713738] (-) TimerEvent: {}
+[3.814221] (-) TimerEvent: {}
+[3.914980] (-) TimerEvent: {}
+[4.015677] (-) TimerEvent: {}
+[4.116183] (-) TimerEvent: {}
+[4.216474] (-) TimerEvent: {}
+[4.316725] (-) TimerEvent: {}
+[4.417022] (-) TimerEvent: {}
+[4.517313] (-) TimerEvent: {}
+[4.617580] (-) TimerEvent: {}
+[4.717851] (-) TimerEvent: {}
+[4.818095] (-) TimerEvent: {}
+[4.918425] (-) TimerEvent: {}
+[5.018835] (-) TimerEvent: {}
+[5.119173] (-) TimerEvent: {}
+[5.219603] (-) TimerEvent: {}
+[5.320042] (-) TimerEvent: {}
+[5.420385] (-) TimerEvent: {}
+[5.520701] (-) TimerEvent: {}
+[5.621053] (-) TimerEvent: {}
+[5.721336] (-) TimerEvent: {}
+[5.821583] (-) TimerEvent: {}
+[5.921845] (-) TimerEvent: {}
+[6.022091] (-) TimerEvent: {}
+[6.122350] (-) TimerEvent: {}
+[6.222643] (-) TimerEvent: {}
+[6.322923] (-) TimerEvent: {}
+[6.423171] (-) TimerEvent: {}
+[6.523399] (-) TimerEvent: {}
+[6.623628] (-) TimerEvent: {}
+[6.723877] (-) TimerEvent: {}
+[6.824151] (-) TimerEvent: {}
+[6.924409] (-) TimerEvent: {}
+[7.024669] (-) TimerEvent: {}
+[7.124911] (-) TimerEvent: {}
+[7.225404] (-) TimerEvent: {}
+[7.326394] (-) TimerEvent: {}
+[7.427089] (-) TimerEvent: {}
+[7.527406] (-) TimerEvent: {}
+[7.628713] (-) TimerEvent: {}
+[7.729034] (-) TimerEvent: {}
+[7.829356] (-) TimerEvent: {}
+[7.929600] (-) TimerEvent: {}
+[8.029888] (-) TimerEvent: {}
+[8.130108] (-) TimerEvent: {}
+[8.230336] (-) TimerEvent: {}
+[8.330730] (-) TimerEvent: {}
+[8.431381] (-) TimerEvent: {}
+[8.531608] (-) TimerEvent: {}
+[8.631938] (-) TimerEvent: {}
+[8.732156] (-) TimerEvent: {}
+[8.832421] (-) TimerEvent: {}
+[8.932856] (-) TimerEvent: {}
+[9.033305] (-) TimerEvent: {}
+[9.133711] (-) TimerEvent: {}
+[9.233948] (-) TimerEvent: {}
+[9.334177] (-) TimerEvent: {}
+[9.434428] (-) TimerEvent: {}
+[9.534690] (-) TimerEvent: {}
+[9.634933] (-) TimerEvent: {}
+[9.735172] (-) TimerEvent: {}
+[9.835458] (-) TimerEvent: {}
+[9.935697] (-) TimerEvent: {}
+[10.035932] (-) TimerEvent: {}
+[10.136175] (-) TimerEvent: {}
+[10.236418] (-) TimerEvent: {}
+[10.336715] (-) TimerEvent: {}
+[10.437002] (-) TimerEvent: {}
+[10.537293] (-) TimerEvent: {}
+[10.637631] (-) TimerEvent: {}
+[10.737984] (-) TimerEvent: {}
+[10.838272] (-) TimerEvent: {}
+[10.938593] (-) TimerEvent: {}
+[11.038923] (-) TimerEvent: {}
+[11.139213] (-) TimerEvent: {}
+[11.239470] (-) TimerEvent: {}
+[11.339747] (-) TimerEvent: {}
+[11.440071] (-) TimerEvent: {}
+[11.540334] (-) TimerEvent: {}
+[11.640601] (-) TimerEvent: {}
+[11.665848] (paralel) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking CUDA device code CMakeFiles/flann_subscriber.dir/cmake_device_link.o\x1b[0m\n'}
+[11.695970] (paralel) StderrLine: {'line': b"nvlink warning : Skipping incompatible '/usr/lib/x86_64-linux-gnu/libdl.a' when searching for -ldl\n"}
+[11.699151] (paralel) StderrLine: {'line': b"nvlink warning : Skipping incompatible '/usr/lib/x86_64-linux-gnu/librt.a' when searching for -lrt\n"}
+[11.699528] (paralel) StderrLine: {'line': b"nvlink warning : Skipping incompatible '/usr/lib/x86_64-linux-gnu/libpthread.a' when searching for -lpthread\n"}
+[11.740711] (-) TimerEvent: {}
+[11.750550] (paralel) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable flann_subscriber\x1b[0m\n'}
+[11.840832] (-) TimerEvent: {}
+[11.941258] (-) TimerEvent: {}
+[12.041856] (-) TimerEvent: {}
+[12.142606] (-) TimerEvent: {}
+[12.243184] (-) TimerEvent: {}
+[12.343615] (-) TimerEvent: {}
+[12.444469] (-) TimerEvent: {}
+[12.545068] (-) TimerEvent: {}
+[12.645464] (-) TimerEvent: {}
+[12.745963] (-) TimerEvent: {}
+[12.750024] (paralel) StdoutLine: {'line': b'[100%] Built target flann_subscriber\n'}
+[12.767110] (paralel) CommandEnded: {'returncode': 0}
+[12.767857] (paralel) JobProgress: {'identifier': 'paralel', 'progress': 'install'}
+[12.780102] (paralel) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sberk/Desktop/paralel/build/paralel'], 'cwd': '/home/sberk/Desktop/paralel/build/paralel', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/gz_ws/src/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:', 'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/home/sberk/gz_ws/src/ardupilot_gazebo/models:/home/sberk/gz_ws/src/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'sberk', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib:/home/sberk/ardupilot_gazebo/build:/home/sberk/ardupilot_gazebo/build:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sberk', 'CHROME_DESKTOP': 'code.desktop', 'TERM_PROGRAM_VERSION': '1.119.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'PS1': '\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '2352', 'SYSTEMD_EXEC_PID': '2838', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '3873', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/sberk/Desktop/paralel/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'sberk', 'JOURNAL_STREAM': '9:22706', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ARDUPILOT_HOME': '/home/sberk/ardupilot', 'USERNAME': 'sberk', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/home/sberk/.local/bin:/home/sberk/ardupilot/Tools/autotest:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/sberk/venv-ardupilot/bin:/home/sberk/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/sberk/scripts:/home/sberk/Desktop/paralel/scripts', 'SESSION_MANAGER': 'local/sberk:@/tmp/.ICE-unix/2793,unix/sberk:/tmp/.ICE-unix/2793', 'INVOCATION_ID': '0dd894c469a6418886d948c881209e04', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'CLINE_ACTIVE': 'true', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d3d19fc3fc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/parallel:/home/sberk/Desktop/paralel/install/sequential:/home/sberk/Desktop/paralel/install/sift_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'GZ_VERSION': 'harmonic', 'VIRTUAL_ENV': '/home/sberk/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/sberk/Desktop/paralel/build/paralel', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/sberk/Desktop/paralel/install/sift_interfaces/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/parallel/lib/python3.12/site-packages:/home/sberk/Desktop/paralel/install/sequential/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/sberk/Desktop/paralel/install/sift_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/sberk/Desktop/paralel/install/parallel:/home/sberk/Desktop/paralel/install/sequential:/opt/ros/jazzy'}), 'shell': False}
+[12.788457] (paralel) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.789101] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/lib/paralel/sift_publisher\n'}
+[12.790017] (paralel) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/sberk/Desktop/paralel/install/paralel/lib/paralel/sift_publisher" to ""\n'}
+[12.790205] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/lib/paralel/flann_subscriber\n'}
+[12.796859] (paralel) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/sberk/Desktop/paralel/install/paralel/lib/paralel/flann_subscriber" to ""\n'}
+[12.797291] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/launch\n'}
+[12.797519] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/launch/sift_matching.launch.py\n'}
+[12.797609] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/include\n'}
+[12.797715] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/include/paralel\n'}
+[12.797793] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/include/paralel/cuda_kernels.hpp\n'}
+[12.797874] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/include/paralel/perf_tracker.hpp\n'}
+[12.797984] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/package_run_dependencies/paralel\n'}
+[12.798060] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/parent_prefix_path/paralel\n'}
+[12.798238] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/ament_prefix_path.sh\n'}
+[12.798338] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/ament_prefix_path.dsv\n'}
+[12.798528] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/path.sh\n'}
+[12.798631] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/environment/path.dsv\n'}
+[12.798921] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.bash\n'}
+[12.799201] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.sh\n'}
+[12.799326] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.zsh\n'}
+[12.799474] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/local_setup.dsv\n'}
+[12.799685] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/package.dsv\n'}
+[12.799943] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/ament_index/resource_index/packages/paralel\n'}
+[12.800049] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/cmake/paralelConfig.cmake\n'}
+[12.800146] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/cmake/paralelConfig-version.cmake\n'}
+[12.800242] (paralel) StdoutLine: {'line': b'-- Installing: /home/sberk/Desktop/paralel/install/paralel/share/paralel/package.xml\n'}
+[12.802000] (paralel) CommandEnded: {'returncode': 0}
+[12.822033] (paralel) JobEnded: {'identifier': 'paralel', 'rc': 0}
+[12.822670] (-) EventReactorShutdown: {}

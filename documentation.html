@@ -1,0 +1,1365 @@
+palı<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIFT-FLANN Pipeline Projesi Dokümantasyonu</title>
+<style>
+  /* ── CSS Reset & Variables ─────────────────────────────────────────── */
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d28;
+    --surface2: #242837;
+    --border: #2e3348;
+    --text: #e2e4ed;
+    --text-dim: #8890a8;
+    --accent: #6c9cff;
+    --accent2: #a78bfa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --orange: #fb923c;
+    --cyan: #22d3ee;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── Layout ────────────────────────────────────────────────────────── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Navbar ─────────────────────────────────────────────────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  nav .container {
+    display: flex; align-items: center; gap: 32px;
+    height: 56px; overflow-x: auto;
+  }
+  nav a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    white-space: nowrap; transition: color .2s;
+  }
+  nav a:hover, nav a.active { color: var(--accent); }
+  nav .brand {
+    font-weight: 700; font-size: 15px;
+    color: var(--text) !important;
+    margin-right: 12px;
+  }
+  nav .brand span { color: var(--accent); }
+
+  /* ── Hero ───────────────────────────────────────────────────────────── */
+  .hero {
+    text-align: center; padding: 80px 0 60px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  }
+  .hero h1 { font-size: 42px; margin-bottom: 12px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { color: var(--text-dim); font-size: 18px; max-width: 720px; margin: 0 auto; }
+  .hero .badges { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: .3px;
+  }
+  .badge.cuda { background: #76b90022; color: #76b900; border: 1px solid #76b90044; }
+  .badge.cpp  { background: #00599c22; color: #5c9bdb; border: 1px solid #00599c44; }
+  .badge.py   { background: #ffd34322; color: #ffd343; border: 1px solid #ffd34344; }
+  .badge.ros2 { background: #22314e22; color: #5a8fd8; border: 1px solid #22314e44; }
+  .badge.gpu  { background: #a78bfa22; color: #a78bfa; border: 1px solid #a78bfa44; }
+
+  /* ── TOC ────────────────────────────────────────────────────────────── */
+  .toc {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px 32px; margin: 40px 0;
+  }
+  .toc h2 { font-size: 16px; color: var(--text-dim); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+  .toc ul { list-style: none; columns: 2; column-gap: 32px; }
+  .toc li { break-inside: avoid; margin-bottom: 6px; }
+  .toc a {
+    color: var(--accent); text-decoration: none; font-size: 14px;
+    display: block; padding: 4px 0;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── Sections ───────────────────────────────────────────────────────── */
+  section { padding: 48px 0; }
+  section h2 {
+    font-size: 26px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  section h2::before {
+    content: ''; display: inline-block;
+    width: 4px; height: 28px; background: var(--accent); border-radius: 4px;
+  }
+  section h3 {
+    font-size: 18px; margin: 28px 0 12px; color: var(--accent2);
+  }
+  section p, section li { color: var(--text-dim); margin-bottom: 10px; }
+  section ul, section ol { padding-left: 20px; margin-bottom: 16px; }
+  section li { margin-bottom: 6px; }
+
+  /* ── Cards ──────────────────────────────────────────────────────────── */
+  .card-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px; margin: 20px 0;
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; transition: border-color .2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card .icon { font-size: 28px; margin-bottom: 8px; }
+  .card h4 { font-size: 15px; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: var(--text-dim); }
+
+  /* ── Code blocks ────────────────────────────────────────────────────── */
+  pre {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+    font-family: var(--mono); font-size: 13px;
+    overflow-x: auto; margin: 16px 0;
+    line-height: 1.5;
+  }
+  pre .kw { color: #c792ea; }
+  pre .tp { color: #82aaff; }
+  pre .str { color: #c3e88d; }
+  pre .cm { color: #546e7a; font-style: italic; }
+  pre .fn { color: #82aaff; }
+  pre .num { color: #f78c6c; }
+  pre .op { color: #89ddff; }
+  code { font-family: var(--mono); font-size: 13px; }
+  p code, li code {
+    background: var(--surface); padding: 1px 6px;
+    border-radius: 4px; border: 1px solid var(--border);
+    font-size: 12.5px;
+  }
+
+  /* ── Tables ─────────────────────────────────────────────────────────── */
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--surface); color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
+  tr:hover td { background: var(--surface2); }
+
+  /* ── Pipeline Diagram ───────────────────────────────────────────────── */
+  .diagram {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin: 20px 0;
+    font-family: var(--mono); font-size: 13px;
+    line-height: 1.8;
+  }
+  .diagram .box {
+    display: inline-block; padding: 6px 14px; border-radius: 6px;
+    margin: 2px 0;
+  }
+  .diagram .box.cpu { background: #6c9cff22; border: 1px solid #6c9cff66; }
+  .diagram .box.gpu { background: #a78bfa22; border: 1px solid #a78bfa66; }
+  .diagram .box.io  { background: #34d39922; border: 1px solid #34d39966; }
+  .diagram .arrow { color: var(--text-dim); }
+
+  /* ── Stats / KPI ────────────────────────────────────────────────────── */
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin: 20px 0;
+  }
+  .kpi {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; text-align: center;
+  }
+  .kpi .value {
+    font-size: 32px; font-weight: 700; font-family: var(--mono);
+    color: var(--accent);
+  }
+  .kpi .label { font-size: 12px; color: var(--text-dim); margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+  .kpi.green .value { color: var(--green); }
+  .kpi.orange .value { color: var(--orange); }
+  .kpi.cyan .value { color: var(--cyan); }
+
+  /* ── Architecture callout ───────────────────────────────────────────── */
+  .callout {
+    background: var(--surface2); border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 16px 0;
+  }
+  .callout.warn { border-left-color: var(--yellow); }
+  .callout.info { border-left-color: var(--cyan); }
+  .callout h4 { margin-bottom: 6px; font-size: 14px; }
+
+  /* ── File tree ──────────────────────────────────────────────────────── */
+  .file-tree {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px 24px;
+    font-family: var(--mono); font-size: 13px; line-height: 1.8;
+  }
+  .file-tree .dir  { color: var(--accent2); }
+  .file-tree .file { color: var(--text-dim); }
+  .file-tree .indent { padding-left: 20px; }
+  .file-tree .indent2 { padding-left: 40px; }
+
+  /* ── Tab switcher ───────────────────────────────────────────────────── */
+  .tabs { margin: 16px 0; }
+  .tab-btns {
+    display: flex; gap: 0; border-bottom: 2px solid var(--border);
+  }
+  .tab-btn {
+    padding: 8px 20px; cursor: pointer; border: none;
+    background: transparent; color: var(--text-dim); font-size: 13px;
+    font-weight: 500; transition: all .2s;
+    border-bottom: 2px solid transparent; margin-bottom: -2px;
+  }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: transparent; }
+  .tab-btn:hover { color: var(--text); }
+  .tab-content { display: none; padding: 16px 0; }
+  .tab-content.active { display: block; }
+
+  /* ── Footer ─────────────────────────────────────────────────────────── */
+  footer {
+    text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Responsive ─────────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .toc ul { columns: 1; }
+    .card-grid { grid-template-columns: 1fr; }
+    nav .container { gap: 16px; }
+  }
+
+  /* ── Dark scrollbar ─────────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- NAVBAR -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="container">
+    <a href="#" class="brand">SIFT<span>Pipeline</span></a>
+    <a href="#overview">Genel Bakış</a>
+    <a href="#architecture">Mimari</a>
+    <a href="#sequential">Sequential</a>
+    <a href="#paralel">Paralel (CUDA)</a>
+    <a href="#comparison">Karşılaştırma</a>
+    <a href="#performance">Performans</a>
+    <a href="#files">Dosya Yapısı</a>
+    <a href="#usage">Kullanım</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="hero">
+  <h1>SIFT–FLANN <span>Pipeline</span></h1>
+  <p>
+    Sequential (Python/ROS2) ve Paralel (C++/CUDA) olmak üzere iki farklı
+    implementasyonu olan, SIFT öznitelik çıkarımı ve FLANN tabanlı görüntü
+    eşleme boru hattı projesinin kapsamlı dokümantasyonu.
+  </p>
+  <div class="badges">
+    <span class="badge cuda">CUDA 12.0</span>
+    <span class="badge cpp">C++17</span>
+    <span class="badge py">Python 3</span>
+    <span class="badge ros2">ROS2 Humble</span>
+    <span class="badge gpu">GPU kNN</span>
+  </div>
+</div>
+
+<div class="container">
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- TOC -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div class="toc">
+    <h2>İçindekiler</h2>
+    <ul>
+      <li><a href="#overview">1. Proje Genel Bakış</a></li>
+      <li><a href="#architecture">2. Mimari & Tasarım</a></li>
+      <li><a href="#pipeline-flow">3. Pipeline Akışı</a></li>
+      <li><a href="#sequential">4. Sequential (Python) İmplementasyonu</a></li>
+      <li><a href="#paralel">5. Paralel (C++/CUDA) İmplementasyonu</a></li>
+      <li><a href="#comparison">6. İki İmplementasyonun Karşılaştırması</a></li>
+      <li><a href="#performance">7. Performans Analizi</a></li>
+      <li><a href="#gpu-kernels">8. CUDA Kernel Mimarisi</a></li>
+      <li><a href="#files">9. Proje Dosya Yapısı</a></li>
+      <li><a href="#usage">10. Derleme & Çalıştırma</a></li>
+      <li><a href="#benchmark">11. Benchmark Sistemi</a></li>
+    </ul>
+  </div>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 1. OVERVIEW -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="overview">
+    <h2>Proje Genel Bakış</h2>
+    <p>
+      Bu proje, iki görüntü arasında SIFT (Scale-Invariant Feature Transform)
+      öznitelik çıkarımı ve FLANN (Fast Library for Approximate Nearest Neighbors)
+      tabanlı eşleme yapan bir ROS2 pipeline'ının iki farklı versiyonunu içerir:
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon">🐍</div>
+        <h4>Sequential (Python)</h4>
+        <p>
+          İki ayrı ROS2 node'u (publisher + subscriber) ile çalışan, CPU tabanlı
+          klasik pipeline. SIFT öznitelikleri ROS2 topic'leri üzerinden TCP
+          socket ile iletilir.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h4>Paralel (C++/CUDA)</h4>
+        <p>
+          Tek bir fused proses içinde, VRAM'de resident GPU pub/sub bus'ı
+          kullanan yüksek performanslı pipeline. Sıfır kopyalama (zero-copy)
+          ve GPU'da fused kNN + Lowe ratio test.
+        </p>
+      </div>
+    </div>
+
+    <h3>Temel Teknik Özellikler</h3>
+    <ul>
+      <li><strong>ROS2 Humble</strong> altyapısı üzerinde çalışan modüler pipeline mimarisi</li>
+      <li><strong>SIFT</strong> öznitelik çıkarımı (OpenCV implementation)</li>
+      <li><strong>Sequential:</strong> FLANN KD-Tree tabanlı kNN eşleme + Lowe's ratio test</li>
+      <li><strong>Paralel:</strong> GPU brute-force kNN + fused ratio test (CUDA kernel)</li>
+      <li><strong>RANSAC</strong> homografi hesaplama ve perspektif dönüşüm</li>
+      <li>Detaylı performans metrikleri (wall/CPU time, stage bazında)</li>
+      <li>Benchmark sistemi ile iki implementasyonun karşılaştırılması</li>
+    </ul>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 2. ARCHITECTURE -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="architecture">
+    <h2>Mimari & Tasarım</h2>
+
+    <div class="tabs">
+      <div class="tab-btns">
+        <button class="tab-btn active" data-tab="arch-seq">Sequential Mimari</button>
+        <button class="tab-btn" data-tab="arch-par">Paralel (CUDA) Mimari</button>
+      </div>
+
+      <div class="tab-content active" id="arch-seq">
+        <div class="diagram">
+          <span class="box io">📷 large.jpg</span>
+          <span class="arrow">→</span>
+          <span class="box cpu">SIFT (CPU)</span>
+          <span class="arrow">→</span>
+          <span class="box io">Serialize</span>
+          <span class="arrow">→</span>
+          <span class="box cpu">ROS2 Topic<br/>TCP Socket</span>
+          <span class="arrow">→</span>
+          <span class="box io">Deserialize</span>
+          <span class="arrow">→</span>
+          <span class="box cpu">FLANN kNN (CPU)</span>
+          <span class="arrow">→</span>
+          <span class="box cpu">RANSAC</span>
+          <br/>
+          <span class="box io">📷 query.jpg</span>
+          <span class="arrow">→</span>
+          <span class="box cpu">SIFT (CPU)</span>
+          <span class="arrow">→</span>
+          <span class="box io">Serialize</span>
+          <span class="arrow">→</span>
+          <span class="box cpu">ROS2 Topic<br/>TCP Socket</span>
+          <span class="arrow">→</span>
+          <span class="box io">Deserialize</span>
+          <span class="arrow">→</span>
+          <span style="color:var(--text-dim)">↑ (yukarıdakiyle birleşir)</span>
+        </div>
+        <p><strong>İki proses:</strong> sift_publisher ve flann_subscriber ayrı process'lerde çalışır, büyük deskriptör verisi (~62 MB) ROS2 üzerinden TCP socket ile iletilir.</p>
+      </div>
+
+      <div class="tab-content" id="arch-par">
+        <div class="diagram">
+          ╔══════════════════ SINGLE PROCESS ═══════════════════╗<br/>
+          ║  <span class="box io">📷 large.jpg</span> <span class="arrow">→</span> <span class="box cpu">SIFT (Thread 1)</span> <span class="arrow">→</span> <span class="box gpu">VRAM Upload</span> <span class="arrow">→</span> <span class="box gpu">📡 Pub</span>  ║<br/>
+          ║                                                    ║<br/>
+          ║  <span class="box io">📷 query.jpg</span>  <span class="arrow">→</span> <span class="box cpu">SIFT (Thread 2)</span> <span class="arrow">→</span> <span class="box gpu">VRAM Upload</span> <span class="arrow">→</span> <span class="box gpu">📡 Pub</span>  ║<br/>
+          ║                                                    ║<br/>
+          ║  <span class="box gpu">GpuFeatureBus</span>  <span class="arrow">→</span>  <span class="box gpu">GPU kNN + Ratio (fused)</span>  <span class="arrow">→</span>  <span class="box cpu">RANSAC</span>  ║<br/>
+          ╚════════════════════════════════════════════════════╝
+        </div>
+        <p><strong>Tek proses:</strong> Producer ve consumer aynı adres alanında, veri VRAM'den hiç ayrılmaz. "Pub/sub" bir atomic pointer hand-off'udur.</p>
+      </div>
+    </div>
+
+    <h3>Veri Akışı (Data Flow)</h3>
+    <div class="callout info">
+      <h4>Her iki pipeline'da da ortak olan adımlar (farklı implementasyonlarla):</h4>
+    </div>
+    <ol>
+      <li><strong>Görüntü Yükleme:</strong> large (ankara.jpg, 3228×2300) ve query (test.jpg, 775×775) görüntülerinin diskten okunması</li>
+      <li><strong>Grayscale Dönüşüm:</strong> BGR → gri tonlama (paralel versiyonda legacy CUDA kernel mevcut)</li>
+      <li><strong>SIFT Öznitelik Çıkarımı:</strong> ~123K (large) ve ~7.7K (query) keypoint</li>
+      <li><strong>Veri İletimi:</strong> Sequential'de ROS2 topic (TCP), Paralel'de VRAM bus (pointer hand-off)</li>
+      <li><strong>kNN Eşleme:</strong> Sequential'de FLANN KD-Tree (CPU), Paralel'de GPU brute-force + fused ratio test</li>
+      <li><strong>RANSAC Homografi:</strong> Her iki implementasyonda da OpenCV findHomography</li>
+      <li><strong>Perspektif Dönüşüm:</strong> Query köşelerinin large görüntüye izdüşümü</li>
+    </ol>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 3. PIPELINE FLOW -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="pipeline-flow">
+    <h2>Pipeline Akışı (Stage-by-Stage)</h2>
+
+    <p>
+      Her iki implementasyon da aşağıdaki aşamalardan geçer. Paralel versiyon
+      bazı aşamaları birleştirir (fused kernels), sequential versiyon ise her
+      adımı ayrı ayrı işler.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Aşama</th>
+            <th>Sequential (Python)</th>
+            <th>Paralel (C++/CUDA)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Image Loading</code></td>
+            <td><code>pub_1_image_loading</code></td>
+            <td>— (SIFT stage içinde)</td>
+          </tr>
+          <tr>
+            <td><code>Grayscale</code></td>
+            <td><code>pub_2_grayscale_conversion</code></td>
+            <td>— (SIFT stage içinde)</td>
+          </tr>
+          <tr>
+            <td><code>SIFT Extraction (CPU)</code></td>
+            <td><code>pub_3_sift_large</code> (~1655 ms) + <code>pub_4_sift_query</code> (~121 ms) — <strong>seri</strong>, toplam ~1776 ms</td>
+            <td><code>A_parallel_sift_upload_publish</code> (~2461 ms) içinde <strong>2 thread'te eşzamanlı</strong> (SIFT + VRAM upload birlikte kaydedilir)</td>
+          </tr>
+          <tr>
+            <td><code>Serialization</code></td>
+            <td><code>pub_5_message_serialization</code> (~807 ms)</td>
+            <td>— (pointer hand-off ile serialization gerekmez)</td>
+          </tr>
+          <tr>
+            <td><code>Transport</code></td>
+            <td>ROS2 topic / DDS (TCP socket, ~105-217 ms latency)</td>
+            <td>VRAM bus (~0.008 ms, ~25.000× daha hızlı)</td>
+          </tr>
+          <tr>
+            <td><code>kNN Matching</code></td>
+            <td><code>sub_3_flann_knn_matching</code> (~1692 ms, CPU FLANN KD-Tree)</td>
+            <td><code>C_gpu_knn_match_ratio</code> (~1287 ms, GPU brute-force fused kernel)</td>
+          </tr>
+          <tr>
+            <td><code>Ratio Test</code></td>
+            <td><code>sub_4_lowes_ratio_test</code> (ayrı CPU adımı)</td>
+            <td>GPU kernel içinde fused (ek süre yok)</td>
+          </tr>
+          <tr>
+            <td><code>Point Extraction</code></td>
+            <td><code>sub_5_point_extraction</code></td>
+            <td><code>D_collect_matched_points</code> (D2H transfer, ~1.14 ms)</td>
+          </tr>
+          <tr>
+            <td><code>Homography RANSAC</code></td>
+            <td><code>sub_6_homography_ransac</code></td>
+            <td><code>E_homography_ransac</code></td>
+          </tr>
+          <tr>
+            <td><code>Perspective Transform</code></td>
+            <td><code>sub_7_perspective_transform</code></td>
+            <td><code>F_perspective_transform</code></td>
+          </tr>
+          <tr>
+            <td><code>Visualization</code></td>
+            <td><code>sub_8_final_composite_figure</code> (~2761 ms, matplotlib)</td>
+            <td><code>G_save_result_visualization</code> (~801 ms, OpenCV imwrite)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 4. SEQUENTIAL -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="sequential">
+    <h2>Sequential (Python/ROS2) Implementasyonu</h2>
+
+    <div class="callout warn">
+      <h4>⚠️ İki-Proses Mimarisi</h4>
+      <p>
+        Sequential pipeline iki ayrı ROS2 node'u olarak çalışır:
+        <strong>sift_publisher</strong> ve <strong>flann_subscriber</strong>.
+        Büyük deskriptör verisi (~62 MB) ROS2 topic'leri üzerinden DDS/TCP
+        ile iletilir.
+      </p>
+    </div>
+
+    <h3>Publisher (sift_publisher.py)</h3>
+    <p>
+      Görüntüleri yükler, SIFT özniteliklerini çıkarır ve ROS2
+      <code>ImageFeatures</code> message'larına serileştirerek yayınlar.
+      Her aşama detaylı performans metrikleriyle kaydedilir.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Stage 1: Image Loading</h4>
+        <p>~61 ms'de iki görüntüyü diskten yükler.</p>
+      </div>
+      <div class="card">
+        <h4>Stage 2: Grayscale</h4>
+        <p>~5 ms'de BGR→Gray dönüşümü. Ara görüntüler kaydedilir.</p>
+      </div>
+      <div class="card">
+        <h4>Stage 3-4: SIFT</h4>
+        <p>Large: ~1655 ms (123K kp), Query: ~121 ms (7.7K kp). Seri çalışır.</p>
+      </div>
+      <div class="card">
+        <h4>Stage 5: Serialization</h4>
+        <p>~808 ms'de ~62 MB + ~3.9 MB payload ROS2 message'ına dönüştürülür.</p>
+      </div>
+      <div class="card">
+        <h4>Stage 6: Publish</h4>
+        <p>~105 ms'de iki topic'e yayın. İlk query, sonra large gönderilir.</p>
+      </div>
+    </div>
+
+    <h3>Subscriber (flann_subscriber.py)</h3>
+    <p>
+      Publisher'dan gelen message'ları alır, deskriptörleri yeniden oluşturur,
+      FLANN kNN eşleme yapar ve RANSAC homografi hesaplar. Görsel çıktılar
+      matplotlib ile oluşturulur.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Transport Latency</h4>
+        <p>Query: ~41 ms, Large: ~217 ms (DDS/TCP overhead)</p>
+      </div>
+      <div class="card">
+        <h4>FLANN kNN Matching</h4>
+        <p>KD-Tree (trees=5, checks=50). ~1692 ms, ~4.5K matches/s</p>
+      </div>
+      <div class="card">
+        <h4>Ratio Test</h4>
+        <p>Lowe's ratio (0.7). 7.7K → 79 good matches (%99 red)</p>
+      </div>
+      <div class="card">
+        <h4>RANSAC</h4>
+        <p>~0.44 ms ile 79 noktadan 50 inlier (%63.3)</p>
+      </div>
+    </div>
+
+    <h3>ROS2 Interface: ImageFeatures.msg</h3>
+    <div class="callout info">
+      <p>
+        <code>sift_interfaces/msg/ImageFeatures.msg</code> — Görüntü adı, boyut,
+        keypoint koordinatları (x, y, size, angle), düzleştirilmiş deskriptörler
+        (n×128 float32) ve publish timestamp içerir.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 5. PARALEL (CUDA) -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="paralel">
+    <h2>Paralel (C++/CUDA) Implementasyonu</h2>
+
+    <div class="callout" style="border-left-color: var(--green);">
+      <h4>✅ Fused, Tek-Proses, CUDA-aware Pipeline</h4>
+      <p>
+        Publisher ve subscriber aynı proses içinde birleştirilmiştir. Veri
+        VRAM'den hiç ayrılmaz; "yayınlama / abone olma" işlemi atomic pointer
+        hand-off'udur. Socket ve ROS topic yükü tamamen kaldırılmıştır.
+      </p>
+    </div>
+
+    <div class="callout info">
+      <h4>⚠️ SIFT Neden CPU'da? GPU'ya Taşınabilir mi?</h4>
+      <p>
+        <strong>Evet, SIFT extraction GPU'da yapılabilir.</strong> OpenCV'nin standart
+        <code>cv::SIFT::create()</code> implementasyonu CPU tabanlıdır ve CUDA backend'i içermez.
+        Ancak GPU'da SIFT çalıştırabilen üçüncü parti kütüphaneler mevcuttur:
+      </p>
+      <ul style="font-size:13px; margin-top:8px;">
+        <li><strong>SIFTGPU</strong> (Changchang Wu) — GPU'da SIFT'in en bilinen implementasyonu</li>
+        <li><strong>PopSIFT</strong> (Cambridge) — OpenCL tabanlı, CUDA'ya da taşınabilir</li>
+        <li><strong>NVIDIA CV-CUDA</strong> — CUDA-accelerated görüntü işleme kütüphanesi (SIFT feature extraction desteği)</li>
+        <li><strong>cuCIM</strong> — NVIDIA'nın CUDA-accelerated görüntü işleme pipeline'ı</li>
+      </ul>
+      <p>
+        Bu projede OpenCV'nin standart CPU SIFT'i kullanılmıştır çünkü:
+        üçüncü parti kütüphaneler ROS2/Catkin build sistemiyle entegrasyon zorluğu çıkarır,
+        lisans farklılıkları olabilir ve SIFTGPU gibi kütüphaneler bakımı durdurulmuştur.
+      </p>
+      <p style="margin-top:8px;">
+        <strong>Mevcut SIFT paralelleştirmesi:</strong> İki thread'te eşzamanlı (large + query),
+        her thread CPU'nun yarısını kullanır (<code>cv::setNumThreads(half_cores)</code>).
+      </p>
+    </div>
+
+    <div class="callout warn">
+      <h4>⚡ Projede GPU'ya Taşınabilecek Diğer Adımlar</h4>
+      <p>
+        Aşağıda, paralel pipeline'da <strong>henüz GPU'da olmayan</strong> adımlar ve taşınabilirlik
+        analizi listelenmiştir:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Adım</th><th>Şu Anki Durum</th><th>GPU'ya Taşınabilir mi?</th><th>Kazanç</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SIFT Extraction</strong></td>
+              <td>CPU (OpenCV, 2 thread)</td>
+              <td>✅ Evet — SIFTGPU, CV-CUDA ile</td>
+              <td>🔥 <strong>YÜKSEK</strong> (~1655 ms → ~200-400 ms)</td>
+            </tr>
+            <tr>
+              <td><strong>kNN Matching</strong></td>
+              <td>✅ <strong>ZATEN GPU'DA</strong> (CUDA kernel)</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Ratio Test</strong></td>
+              <td>✅ <strong>ZATEN GPU'DA</strong> (fused kernel içinde)</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Homography RANSAC</strong></td>
+              <td>CPU (OpenCV findHomography)</td>
+              <td>⚠️ Teorik olarak evet, ancak pratik değil</td>
+              <td>❌ <strong>ÇOK DÜŞÜK</strong> (0.33 ms → kazanç anlamsız)</td>
+            </tr>
+            <tr>
+              <td><strong>Visualization (imwrite)</strong></td>
+              <td>CPU (OpenCV imwrite)</td>
+              <td>✅ Evet — cv::cuda::GpuMat ile GPU'da çizim</td>
+              <td>⚠️ Orta (801 ms, ancak off-critical-path)</td>
+            </tr>
+            <tr>
+              <td><strong>Deserialization</strong></td>
+              <td>✅ <strong>ZATEN ELİMİNE EDİLDİ</strong> (VRAM bus)</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:8px;">
+        <strong>En büyük kazanç:</strong> SIFT extraction'ı GPU'ya taşımak. Bu, Stage A süresini
+        ~2461 ms'den tahminen ~500-800 ms'ye düşürerek toplam pipeline'ı <strong>~4.5 saniyeye</strong>
+        indirir ve <strong>~2.4× speedup</strong> sağlar.
+      </p>
+    </div>
+
+    <h3>Temel Bileşenler</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon">🚌</div>
+        <h4>GpuFeatureBus</h4>
+        <p>
+          İki slotlu (query/large), mutex+condvar ile senkronize VRAM pub/sub
+          kanalı. <code>publish()</code> atomic pointer hand-off, 
+          <code>wait_for_pair()</code> blokajlı bekleme.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h4>GpuFeatures</h4>
+        <p>
+          Tamamen VRAM'de resident SIFT feature set handle'ı. Deskriptörler
+          (N×128 float), keypoint bilgileri device pointer'larıyla tutulur.
+          Custom deleter ile otomatik cudaFree.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h4>CUDA kNN + Ratio Kernel</h4>
+        <p>
+          Tiled brute-force kNN (k=2, L2) + fused Lowe ratio test. Her warp
+          bir query'yi işler, train tile'ları shared memory üzerinden
+          stream edilir. SM'lerde maksimum verimlilik.
+        </p>
+      </div>
+    </div>
+
+    <h3>Pipeline Adımları (Stage A–G)</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Stage</th><th>Süre (ms)</th><th>Açıklama</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>A_parallel_sift_upload_publish</code></td>
+            <td>2460.9</td>
+            <td>İki thread'te parallel SIFT + VRAM upload. Her thread CPU'nun yarısını kullanır (4/8 core). Her set hazır olur olmaz VRAM bus'a yayınlanır.</td>
+          </tr>
+          <tr>
+            <td><code>B_vram_bus_subscribe</code></td>
+            <td>0.008</td>
+            <td>VRAM bus'tan pair bekleme. Device-pointer hand-off, sıfır payload kopyası. ~25.000× daha hızlı.</td>
+          </tr>
+          <tr>
+            <td><code>C_gpu_knn_match_ratio</code></td>
+            <td>1286.7</td>
+            <td>GPU brute-force kNN (k=2, L2) + fused ratio test. 7.7K query × 123K train. 69 good match (%99 red).</td>
+          </tr>
+          <tr>
+            <td><code>D_collect_matched_points</code></td>
+            <td>1.14</td>
+            <td>Eşleşen keypoint koordinatlarının D2H transferi (çok küçük veri, ~69 nokta).</td>
+          </tr>
+          <tr>
+            <td><code>E_homography_ransac</code></td>
+            <td>0.33</td>
+            <td>OpenCV findHomography (RANSAC, 5.0 threshold). 51 inlier / 69 (%73).</td>
+          </tr>
+          <tr>
+            <td><code>F_perspective_transform</code></td>
+            <td>0.003</td>
+            <td>Query köşelerinin perspective dönüşümü.</td>
+          </tr>
+          <tr>
+            <td><code>G_save_result_visualization</code></td>
+            <td>801.3</td>
+            <td>Off-critical-path görselleştirme (polylines çizimi, imwrite).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>VRAM Bus Tasarımı</h3>
+    <pre><span class="kw">class</span> <span class="tp">GpuFeatureBus</span> {
+  <span class="kw">enum class</span> <span class="tp">Slot</span> { <span class="op">kQuery</span> = <span class="num">0</span>, <span class="op">kLarge</span> = <span class="num">1</span> };
+
+  <span class="cm">// Publisher: atomic pointer hand-off (nanosaniye mertebesinde)</span>
+  <span class="kw">void</span> publish(<span class="tp">Slot</span> slot, <span class="tp">shared_ptr</span><<span class="tp">GpuFeatures</span>> features) {
+    <span class="fn">lock_guard</span><<span class="tp">mutex</span>> lk(mtx_);
+    slots_[<span class="fn">static_cast</span><<span class="kw">int</span>>(slot)] = <span class="fn">move</span>(features);
+    cv_.notify_all();
+  }
+
+  <span class="cm">// Subscriber: her iki slot dolana kadar blokajlı bekleme</span>
+  <span class="tp">pair</span><<span class="tp">shared_ptr</span><<span class="tp">GpuFeatures</span>>,
+        <span class="tp">shared_ptr</span><<span class="tp">GpuFeatures</span>>> wait_for_pair() {
+    <span class="fn">unique_lock</span><<span class="tp">mutex</span>> lk(mtx_);
+    cv_.wait(lk, [<span class="kw">this</span>] {
+      <span class="kw">return</span> slots_[<span class="num">0</span>] != <span class="kw">nullptr</span> && slots_[<span class="num">1</span>] != <span class="kw">nullptr</span>;
+    });
+    <span class="kw">return</span> {slots_[<span class="num">0</span>], slots_[<span class="num">1</span>]};
+  }
+
+  <span class="tp">shared_ptr</span><<span class="tp">GpuFeatures</span>> slots_[<span class="num">2</span>];
+  <span class="tp">mutex</span> mtx_;
+  <span class="tp">condition_variable</span> cv_;
+};</pre>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 6. COMPARISON -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="comparison">
+    <h2>İki İmplementasyonun Karşılaştırması</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Özellik</th>
+            <th>Sequential (Python)</th>
+            <th>Paralel (C++/CUDA)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Dil</strong></td><td>Python 3</td><td>C++17 + CUDA</td></tr>
+          <tr><td><strong>Proses Sayısı</strong></td><td>2 (publisher + subscriber)</td><td>1 (fused)</td></tr>
+          <tr><td><strong>Thread Kullanımı</strong></td><td>Tek thread (seri)</td><td>2 producer thread + 1 consumer thread</td></tr>
+          <tr><td><strong>Veri İletimi</strong></td><td>ROS2 topic / DDS (TCP socket)</td><td>VRAM bus (pointer hand-off)</td></tr>
+          <tr><td><strong>Veri Kopyalama</strong></td><td>Serialize → TCP → Deserialize (5× kopya)</td><td>1× H2D upload, sonrası VRAM'de kalır</td></tr>
+          <tr><td><strong>kNN Algorithm</strong></td><td>FLANN KD-Tree (CPU, approximate)</td><td>Brute-force GPU (kesin, fused ratio test)</td></tr>
+          <tr><td><strong>kNN Hız</strong></td><td>~1692 ms</td><td>~1287 ms (<strong>1.3×</strong>)</td></tr>
+          <tr><td><strong>Transport Süresi</strong></td><td>~105-217 ms</td><td>~0.008 ms (<strong>~25.000×</strong>)</td></tr>
+          <tr><td><strong>Pipeline Total</strong></td><td>~10.754 ms</td><td>~6.191 ms (<strong>1.74×</strong>)</td></tr>
+          <tr><td><strong>CPU Kullanımı</strong></td><td>~9.014 + 6.672 ms</td><td>~8.065 ms (daha verimli)</td></tr>
+          <tr><td><strong>GPU</strong></td><td>Kullanılmaz</td><td>GTX 1650 Max-Q (sm_75, 3.9 GB)</td></tr>
+          <tr><td><strong>Görselleştirme</strong></td><td>matplotlib (çok yavaş, ~2761 ms)</td><td>OpenCV imwrite (hızlı, ~801 ms)</td></tr>
+          <tr><td><strong>Eşleme Sonucu</strong></td><td>79 good / 50 inlier</td><td>69 good / 51 inlier</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Hangi Durumda Hangisi?</h3>
+    <div class="card-grid">
+      <div class="card" style="border-left: 4px solid var(--yellow);">
+        <h4>🔶 Sequential (Python)</h4>
+        <ul style="font-size:13px; padding-left:16px;">
+          <li>GPU olmayan sistemler için</li>
+          <li>ROS2 entegrasyonu önemliyse</li>
+          <li>Modüler yapı (node'lar ayrı) tercih ediliyorsa</li>
+          <li>Hızlı prototipleme için</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--green);">
+        <h4>🟢 Paralel (CUDA)</h4>
+        <ul style="font-size:13px; padding-left:16px;">
+          <li>Yüksek performans gerektiğinde (1.74×)</li>
+          <li>GPU mevcut olduğunda</li>
+          <li>Büyük görüntüler / çok keypoint (123K+) ile</li>
+          <li>Zero-copy verimliliği kritik olduğunda</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 7. PERFORMANCE -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="performance">
+    <h2>Performans Analizi</h2>
+
+    <p>
+      Aşağıdaki metrikler, 2026-06-11 tarihinde aynı girdi görüntüleri
+      (ankara.jpg 3228×2300, test.jpg 775×775) ile yapılan benchmark
+      sonuçlarından alınmıştır.
+    </p>
+
+    <div class="kpi-grid">
+      <div class="kpi green">
+        <div class="value">1.74×</div>
+        <div class="label">Total Pipeline Speedup</div>
+      </div>
+      <div class="kpi">
+        <div class="value">1.31×</div>
+        <div class="label">kNN Matching Speedup</div>
+      </div>
+      <div class="kpi orange">
+        <div class="value">~25.000×</div>
+        <div class="label">Transport Speedup</div>
+      </div>
+      <div class="kpi cyan">
+        <div class="value">6.2 s</div>
+        <div class="label">Paralel Total (vs 10.8 s)</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi green">
+        <div class="value">1287 ms</div>
+        <div class="label">GPU kNN (vs 1692 ms CPU)</div>
+      </div>
+      <div class="kpi">
+        <div class="value">0.008 ms</div>
+        <div class="label">VRAM Bus Hand-off</div>
+      </div>
+      <div class="kpi orange">
+        <div class="value">1.14 ms</div>
+        <div class="label">D2H Point Transfer</div>
+      </div>
+      <div class="kpi cyan">
+        <div class="value">801 ms</div>
+        <div class="label">Visualization (vs 2761 ms)</div>
+      </div>
+    </div>
+
+    <h3>Stage-by-Stage Hız Karşılaştırması</h3>
+    <div id="perf-chart" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:20px 0;">
+      <canvas id="chart-canvas" width="800" height="400"></canvas>
+    </div>
+
+    <h3>Darboğaz Analizi</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>🔴 Sequential Darboğazları</h4>
+        <ul style="font-size:13px; padding-left:16px;">
+          <li><strong>Transport:</strong> 62 MB deskriptörün TCP üzerinden iletilmesi (~217 ms)</li>
+          <li><strong>CPU kNN:</strong> 123K × 7.7K brute-force FLANN (~1692 ms)</li>
+          <li><strong>Serialization:</strong> Python list flatten + message build (~807 ms)</li>
+          <li><strong>matplotlib:</strong> 4-panel composite figure (~2761 ms)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>🟢 Paralel Çözümleri</h4>
+        <ul style="font-size:13px; padding-left:16px;">
+          <li><strong>Zero-copy:</strong> VRAM bus ile 0.008 ms transport</li>
+          <li><strong>GPU kNN:</strong> Tiled brute-force kernel ile 1287 ms</li>
+          <li><strong>Fused ratio test:</strong> Ayrı stage gerektirmez</li>
+          <li><strong>Parallel SIFT:</strong> 2 thread ile ~2461 ms (vs ~1776 seri)</li>
+          <li><strong>OpenCV imwrite:</strong> 801 ms (matplotlib'in 1/3'ü)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 8. GPU KERNELS -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="gpu-kernels">
+    <h2>CUDA Kernel Mimarisi</h2>
+
+    <h3>kernel_knn_match_ratio — Tiled Brute-Force kNN + Fused Ratio Test</h3>
+    <div class="callout info">
+      <h4>🔬 Kernel Tasarım Detayları</h4>
+    </div>
+    <pre>
+<span class="cm">// Her warp bir query descriptor'ı işler.</span>
+<span class="cm">// Train descriptor'ları shared memory'ye TILE_T=64 satırlık tile'lar halinde</span>
+<span class="cm">// yüklenir ve QUERIES_PER_BLOCK=8 warp tarafından ortaklaşa kullanılır.</span>
+<span class="cm">// Bu, global memory trafiğini O(Nq×Nt) → O((Nq/8)×Nt) azaltır.</span>
+
+<span class="kw">constexpr int</span> WARP             = <span class="num">32</span>;    <span class="cm">// thread per warp</span>
+<span class="kw">constexpr int</span> QUERIES_PER_BLOCK = <span class="num">8</span>;    <span class="cm">// warps per block</span>
+<span class="kw">constexpr int</span> TILE_T            = <span class="num">64</span>;   <span class="cm">// train rows cached per tile</span>
+
+__global__ <span class="kw">void</span> kernel_knn_match_ratio(
+    <span class="kw">const float</span> * __restrict__ d_query,   <span class="cm">// Nq × 128</span>
+    <span class="kw">const float</span> * __restrict__ d_train,   <span class="cm">// Nt × 128</span>
+    <span class="kw">int</span> Nq, <span class="kw">int</span> Nt,
+    <span class="kw">float</span> ratio_sq,
+    <span class="kw">int</span> * __restrict__ d_train_idx,
+    <span class="kw">unsigned char</span> * __restrict__ d_pass)
+{
+    <span class="cm">// Shared tile: TILE_T × 128 train descriptors + QUERIES_PER_BLOCK × 128 query</span>
+    __shared__ <span class="kw">float4</span> s_train[TILE_T][<span class="num">32</span>];      <span class="cm">// 128/4 = 32 float4</span>
+    __shared__ <span class="kw">float4</span> s_q[QUERIES_PER_BLOCK][<span class="num">32</span>];
+
+    <span class="cm">// Her warp query'sini shared memory'ye yükler</span>
+    <span class="cm">// (her lane kendi float4'ünü __ldg ile getirir)</span>
+
+    <span class="cm">// Ana döngü: train tile'ları üzerinde stride</span>
+    <span class="kw">for</span> (<span class="kw">int</span> t0 = <span class="num">0</span>; t0 < Nt; t0 += TILE_T) {
+        <span class="cm">// Cooperatif shared memory yükleme (coalesced)</span>
+        <span class="cm">// __syncthreads() ile senkronizasyon</span>
+
+        <span class="cm">// Her train satırı için 128-dim L2 mesafe hesabı</span>
+        <span class="cm">// Warp reduction: __shfl_down_sync ile 32 lane → full distance</span>
+        <span class="cm">// Her lane 1 float4 (4 eleman) işler</span>
+    }
+
+    <span class="cm">// Çıktı: Lowe ratio test (squared form, sqrt'siz)</span>
+    <span class="cm">//   keep  iff  best < ratio² × second</span>
+}</pre>
+
+    <h3>Kernel Performans Özellikleri</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parametre</th><th>Değer</th><th>Açıklama</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Block size</td><td>(32, 8)</td><td>1 warp × 8 warps = 256 thread/block</td></tr>
+          <tr><td>Grid size</td><td>ceil(Nq / 8)</td><td>7.7K query → 962 blocks</td></tr>
+          <tr><td>Shared memory</td><td>(64+8)×32×16 = 36.8 KB</td><td>float4 × 72 × 32 = 9216 bytes → çok düşük</td></tr>
+          <tr><td>Query descriptor</td><td>128 floats = 32 float4</td><td>1 warp lane = 1 float4 (4 eleman)</td></tr>
+          <tr><td>Train tile</td><td>64 satır × 128 eleman</td><td>Tüm warplar ortak kullanır</td></tr>
+          <tr><td>Mesafe hesaplama</td><td>L2 squared (sqrt'siz)</td><td>32 lane → __shfl_down_sync reduction</td></tr>
+          <tr><td>Ratio test</td><td>Fused (ayrı kernel gerekmez)</td><td>0.7² = 0.49 threshold</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Neden Tiled Yaklaşım?</h3>
+    <p>
+      SIFT eşleme asimetrik bir problemdir: 7.7K query × 123K train.
+      Her query tüm train seti ile karşılaştırılır. Tiled yaklaşım ile
+      train descriptor'ları shared memory'ye <strong>bir kere</strong>
+      yüklenir ve 8 farklı warp tarafından tekrar kullanılır. Bu,
+      global memory okuma trafiğini ~8× azaltır.
+    </p>
+    <div class="callout warn">
+      <h4>📊 Bellek Trafiği Hesabı</h4>
+      <p>
+        Tiled olmadan: 7.7K × 123K × 128 × 4 bayt = 485 GB global okuma<br/>
+        Tiled ile: (7.7K/8) × 123K × 128 × 4 bayt = 60.6 GB (~8× azalma)
+      </p>
+    </div>
+
+    <h3>Veri Yolu (Pipeline)</h3>
+    <div class="diagram">
+      <strong>CUDA-aware Zero-copy Path:</strong><br/><br/>
+      <span class="box cpu">CPU SIFT</span> <span class="arrow">→</span>
+      <span class="box gpu">cudaMemcpyAsync (H2D, pinned)</span> <span class="arrow">→</span>
+      <span class="box gpu">VRAM (d_descriptors)</span> <span class="arrow">→</span>
+      <span class="box gpu">GpuFeatureBus (pointer hand-off)</span> <span class="arrow">→</span>
+      <span class="box gpu">kernel_knn_match_ratio (GPU)</span> <span class="arrow">→</span>
+      <span class="box gpu">D2H (tiny match indices)</span> <span class="arrow">→</span>
+      <span class="box cpu">CPU RANSAC</span><br/><br/>
+      <span style="color:var(--green);font-size:12px;">✅ Hiçbir deskriptör CPU'ya geri dönmez. Sadece eşleşme indisleri (birkaç KB) D2H transfer edilir.</span>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 9. FILE STRUCTURE -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="files">
+    <h2>Proje Dosya Yapısı</h2>
+
+    <div class="file-tree">
+<strong class="dir">src/</strong>
+  <strong class="dir indent">paralel/</strong>                    <span class="file">← C++/CUDA paralel implementasyonu</span>
+    <strong class="dir indent2">include/paralel/</strong>
+      <span class="file indent2">cuda_kernels.hpp</span>          <span class="file">← Host-callable CUDA kernel wrapper'ları</span>
+      <span class="file indent2">gpu_feature_bus.hpp</span>       <span class="file">← VRAM-resident pub/sub bus (GpuFeatureBus)</span>
+      <span class="file indent2">perf_tracker.hpp</span>           <span class="file">← C++ performans ölçüm utility</span>
+    <strong class="dir indent2">src/</strong>
+      <span class="file indent2">sift_pipeline.cpp</span>          <span class="file">← Fused pipeline (main, SiftPipeline node)</span>
+      <span class="file indent2">cuda_kernels.cu</span>            <span class="file">← CUDA kernel implementasyonları</span>
+    <span class="file indent">CMakeLists.txt</span>                 <span class="file">← CMake build yapılandırması</span>
+    <span class="file indent">package.xml</span>                    <span class="file">← ROS2 package tanımı</span>
+    <span class="file indent">launch/sift_matching.launch.py</span>
+
+  <strong class="dir indent">sequential/</strong>                  <span class="file">← Python sequential implementasyonu</span>
+    <strong class="dir indent2">sequential/</strong>
+      <span class="file indent2">sift_publisher.py</span>           <span class="file">← SIFT publisher node (CPU)</span>
+      <span class="file indent2">flann_subscriber.py</span>          <span class="file">← FLANN subscriber node (CPU)</span>
+      <span class="file indent2">perf_utils.py</span>                <span class="file">← Python performans tracker</span>
+    <span class="file indent">package.xml / setup.py / setup.cfg</span>
+    <span class="file indent">launch/sift_matching.launch.py</span>
+
+  <strong class="dir indent">parallel/</strong>                    <span class="file">← Python parallel template (skeleton)</span>
+    <strong class="dir indent2">parallel/</strong>
+      <span class="file indent2">sift_publisher.py</span>           <span class="file">← Hello-world template node</span>
+      <span class="file indent2">flann_subscriber.py</span>          <span class="file">← Template subscriber</span>
+
+  <strong class="dir indent">sift_interfaces/</strong>              <span class="file">← ROS2 message tanımları</span>
+    <span class="file indent">msg/ImageFeatures.msg</span>         <span class="file">← SIFT feature mesaj yapısı</span>
+
+<span class="file">benchmark.py</span>                      <span class="file">← Sequential vs Paralel benchmark aracı</span>
+<span class="file">benchmark_results.json</span>           <span class="file">← Benchmark sonuçları (JSON)</span>
+<span class="file">ankara.jpg / test.jpg</span>           <span class="file">← Test görüntüleri</span>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 10. USAGE -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="usage">
+    <h2>Derleme & Çalıştırma</h2>
+
+    <h3>1. Build (colcon)</h3>
+    <pre>
+<span class="cm"># Workspace kök dizininde</span>
+<span class="fn">cd</span> ~/Desktop/paralel
+<span class="fn">colcon build</span> --packages-up-to paralel sequential parallel sift_interfaces
+<span class="fn">source</span> install/setup.bash</pre>
+
+    <h3>2. Sequential Pipeline Çalıştırma</h3>
+    <pre>
+<span class="cm"># Launch dosyası publisher + subscriber'ı başlatır</span>
+<span class="fn">ros2 launch</span> sequential sift_matching.launch.py \
+    large_image:=ankara.jpg query_image:=test.jpg
+
+<span class="cm"># Çıktılar: src/sequential/output/</span>
+<span class="cm">#   publisher_performance.{txt,json}</span>
+<span class="cm">#   subscriber_performance.{txt,json}</span>
+<span class="cm">#   pipeline_performance.json</span></pre>
+
+    <h3>3. Paralel (CUDA) Pipeline Çalıştırma</h3>
+    <pre>
+<span class="cm"># Tek bir node (fused pipeline)</span>
+<span class="fn">ros2 run</span> paralel sift_pipeline \
+    --ros-args -p large_image:=ankara.jpg -p query_image:=test.jpg
+
+<span class="cm"># Veya launch ile:</span>
+<span class="fn">ros2 launch</span> paralel sift_matching.launch.py
+
+<span class="cm"># Çıktılar: src/paralel/output/</span>
+<span class="cm">#   pipeline_performance.json</span>
+<span class="cm">#   pipeline_detected_region.png</span>
+<span class="cm">#   pipeline_{query,large}_keypoints.png</span></pre>
+
+    <h3>4. Benchmark Çalıştırma</h3>
+    <pre>
+<span class="cm"># Her iki pipeline'ı sırayla çalıştırır ve karşılaştırma tablosu basar</span>
+<span class="fn">python3</span> benchmark.py --large ankara.jpg --query test.jpg
+
+<span class="cm"># Mevcut JSON sonuçlarını tekrar göstermek için (pipeline'ları çalıştırmadan):</span>
+<span class="fn">python3</span> benchmark.py --skip-run</pre>
+
+    <h3>5. Parametreler</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parametre</th><th>Varsayılan</th><th>Açıklama</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>large_image</code></td><td>ankara.jpg</td><td>Büyük (train/referans) görüntü yolu</td></tr>
+          <tr><td><code>query_image</code></td><td>test.jpg</td><td>Sorgu (query) görüntü yolu</td></tr>
+          <tr><td><code>output_dir</code></td><td>src/{package}/output</td><td>Performans raporları ve görsel çıktılar dizini</td></tr>
+          <tr><td><code>save_visualizations</code></td><td>true (paralel)</td><td>Görsel çıktıların kaydedilip kaydedilmeyeceği</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- 11. BENCHMARK -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <section id="benchmark">
+    <h2>Benchmark Sistemi</h2>
+
+    <p>
+      <code>benchmark.py</code> script'i, her iki pipeline'ı sırayla
+      çalıştırır, çıktı JSON dosyalarını okur ve detaylı bir karşılaştırma
+      tablosu basar. Sonuçlar <code>benchmark_results.json</code>'a kaydedilir.
+    </p>
+
+    <h3>Benchmark Çıktısı (Terminal)</h3>
+    <pre>
+<span class="cm">══════════════════════════════════════════════════════════════════════════════</span>
+<span class="cm">  SIFT-FLANN PIPELINE BENCHMARK  —  Sequential vs Paralel (CUDA)</span>
+<span class="cm">══════════════════════════════════════════════════════════════════════════════</span>
+<span class="cm">  Parallel    : sift_pipeline  (C++17/CUDA)</span>
+<span class="cm">  Host       : sberk</span>
+<span class="cm">────────────────────────────────────────────────────────────────────────────────</span>
+<span class="cm">  TOTAL WALL TIME</span>
+<span class="cm">  Metric                                       Sequential      Paralel   Speedup</span>
+<span class="cm">  ────────────────────────────────────────────────────────────────────────────────</span>
+<span class="cm">  Subscriber/pipeline total wall              10754.2 ms     6190.6 ms     1.74×</span>
+
+<span class="cm">────────────────────────────────────────────────────────────────────────────────</span>
+<span class="cm">  STAGE-LEVEL COMPARISON  (wall ms)</span>
+<span class="cm">  Stage                                               Sequential      Paralel   Speedup</span>
+<span class="cm">  ────────────────────────────────────────────────────────────────────────────────</span>
+<span class="cm">  Image loading                                          61.4 ms           —   (no par)</span>
+<span class="cm">  SIFT (seri: large+query)                              1776.8 ms           —   (no par)</span>
+<span class="cm">  SIFT+upload+publish (2 thread paralel)                      —       2460.9 ms   (no seq)</span>
+<span class="cm">  Subscribe / VRAM bus hand-off                              —        0.008 ms   (no seq)</span>
+<span class="cm">  kNN matching                                         1691.8 ms     1286.7 ms     1.31×</span>
+<span class="cm">  Homography RANSAC                                       0.44 ms       0.33 ms     1.34×</span>
+<span class="cm">────────────────────────────────────────────────────────────────────────────────</span>
+<span class="cm">  TRANSPORT OVERHEAD</span>
+<span class="cm">  Sequential transport overhead          : 1017.5 ms (serialize + publish + recon)</span>
+<span class="cm">  Paralel transport overhead             :  0.008 ms (VRAM bus pointer hand-off)</span>
+<span class="cm">  Transport speedup                      : ~127.000×</span>
+<span class="cm">══════════════════════════════════════════════════════════════════════════════</span></pre>
+
+    <div class="callout">
+      <h4>📊 Not: SIFT + VRAM Upload Karşılaştırması</h4>
+      <p>
+        Sequential'de SIFT iki aşamada (large + query) toplam ~1776 ms sürerken,
+        paralel versiyonda SIFT + VRAM upload + publish birlikte ~2461 ms sürmektedir.
+        Bu, paralel versiyonun VRAM upload ve visualization I/O ek yüklerini de
+        kapsamasından kaynaklanır. Saf SIFT süresi karşılaştırılabilir düzeydedir.
+      </p>
+    </div>
+
+    <h3>Sonuç JSON Formatı</h3>
+    <pre>
+{
+  <span class="str">"sequential"</span>: { ... },        <span class="cm">// pipeline_performance.json (sequential)</span>
+  <span class="str">"paralel"</span>: { ... },           <span class="cm">// pipeline_performance.json (paralel)</span>
+  <span class="str">"speedup_total"</span>: <span class="num">1.74</span>,     <span class="cm">// Total pipeline speedup</span>
+  <span class="str">"speedup_knn"</span>: <span class="num">1.31</span>        <span class="cm">// kNN matching speedup (GPU vs CPU)</span>
+}</pre>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    SIFT-FLANN Pipeline Dokümantasyonu &mdash; CENG479 Paralel Programlama Projesi
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<script>
+// ── Tab Switcher ────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const parent = btn.closest('.tabs');
+    parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── Performance Chart (Canvas) ──────────────────────────────────────
+const canvas = document.getElementById('chart-canvas');
+const ctx = canvas.getContext('2d');
+
+const data = [
+  { label: 'Image Loading',      seq: 61.4,  par: 0,    color: '#f87171' },
+  { label: 'SIFT Large',         seq: 1655.2, par: 0,   color: '#fb923c' },
+  { label: 'SIFT Query',         seq: 120.6,  par: 0,   color: '#fbbf24' },
+  { label: 'Serialize (seq)',    seq: 807.5,  par: 0,   color: '#a78bfa' },
+  { label: 'SIFT+Upload (par)',  seq: 0,      par: 2460.9, color: '#34d399' },
+  { label: 'kNN Matching',       seq: 1691.8, par: 1286.7, color: '#22d3ee' },
+  { label: 'Transport',          seq: 104.7,  par: 0.008, color: '#f87171' },
+  { label: 'Homography',         seq: 0.44,   par: 0.33,  color: '#6c9cff' },
+  { label: 'Visualization',      seq: 2760.5, par: 801.3, color: '#a78bfa' },
+];
+
+const CW = canvas.width;
+const CH = canvas.height;
+const MARGIN = { top: 20, right: 20, bottom: 60, left: 60 };
+const plotW = CW - MARGIN.left - MARGIN.right;
+const plotH = CH - MARGIN.top - MARGIN.bottom;
+
+function draw() {
+  ctx.clearRect(0, 0, CW, CH);
+  ctx.fillStyle = '#1a1d28';
+  ctx.fillRect(0, 0, CW, CH);
+
+  const maxVal = Math.max(...data.map(d => Math.max(d.seq, d.par)), 1);
+  const barW = Math.min(25, plotW / data.length / 3 - 4);
+  const gap = plotW / data.length;
+  const mid = MARGIN.left + 10; // slight left offset starting point
+
+  // Title
+  ctx.fillStyle = '#e2e4ed';
+  ctx.font = '14px "Segoe UI", system-ui, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Stage-by-Stage: Wall Time (ms)', CW / 2, 14);
+
+  // Y-axis
+  ctx.strokeStyle = '#2e3348';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(MARGIN.left, MARGIN.top);
+  ctx.lineTo(MARGIN.left, MARGIN.top + plotH);
+  ctx.stroke();
+
+  // Y labels
+  ctx.fillStyle = '#8890a8';
+  ctx.font = '10px "Segoe UI", sans-serif';
+  ctx.textAlign = 'right';
+  for (let i = 0; i <= 4; i++) {
+    const v = (maxVal * i) / 4;
+    const y = MARGIN.top + plotH - (v / maxVal) * plotH;
+    ctx.fillText(Math.round(v).toString(), MARGIN.left - 6, y + 3);
+    ctx.strokeStyle = '#1a1d28';
+    ctx.beginPath();
+    ctx.moveTo(MARGIN.left + 2, y);
+    ctx.lineTo(MARGIN.left + plotW, y);
+    ctx.strokeStyle = '#2e334822';
+    ctx.stroke();
+  }
+
+  // Bars
+  data.forEach((d, i) => {
+    const cx = MARGIN.left + gap * i + gap / 2;
+
+    // Sequential bar (left)
+    if (d.seq > 0) {
+      const h = (d.seq / maxVal) * plotH;
+      const x = cx - barW - 2;
+      const y = MARGIN.top + plotH - h;
+      ctx.fillStyle = '#6c9cff';
+      ctx.fillRect(x, y, barW, h);
+    }
+
+    // Parallel bar (right)
+    if (d.par > 0) {
+      const h = Math.max(3, (d.par / maxVal) * plotH);
+      const x = cx + 2;
+      const y = MARGIN.top + plotH - h;
+      ctx.fillStyle = '#34d399';
+      ctx.fillRect(x, y, barW, h);
+    }
+
+    // X label
+    ctx.fillStyle = '#8890a8';
+    ctx.font = '9px "Segoe UI", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(d.label, cx, MARGIN.top + plotH + 14);
+
+    // Value label
+    ctx.font = '8px "Segoe UI", sans-serif';
+    ctx.fillStyle = '#6c9cff';
+    if (d.seq > 0) {
+      ctx.textAlign = 'center';
+      ctx.fillText(d.seq < 10 ? d.seq.toFixed(2) : Math.round(d.seq).toString(),
+        cx - barW / 2 - 2, MARGIN.top + plotH - (d.seq / maxVal) * plotH - 4);
+    }
+    ctx.fillStyle = '#34d399';
+    if (d.par > 0) {
+      ctx.textAlign = 'center';
+      ctx.fillText(d.par < 1 ? d.par.toFixed(3) + 'ms' : Math.round(d.par).toString(),
+        cx + barW / 2 + 2, MARGIN.top + plotH - Math.max(3, (d.par / maxVal) * plotH) - 4);
+    }
+  });
+
+  // Legend
+  ctx.font = '11px "Segoe UI", sans-serif';
+  ctx.textAlign = 'left';
+  const lx = MARGIN.left + 20;
+  const ly = MARGIN.top + plotH + 38;
+  ctx.fillStyle = '#6c9cff';
+  ctx.fillRect(lx, ly - 8, 12, 8);
+  ctx.fillStyle = '#e2e4ed';
+  ctx.fillText('Sequential (CPU)', lx + 16, ly + 1);
+
+  ctx.fillStyle = '#34d399';
+  ctx.fillRect(lx + 100, ly - 8, 12, 8);
+  ctx.fillStyle = '#e2e4ed';
+  ctx.fillText('Paralel (CUDA)', lx + 116, ly + 1);
+}
+
+draw();
+
+// ── Scroll-based navbar active link ─────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 120;
+    if (scrollY >= top) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+// ── Resize canvas ───────────────────────────────────────────────────
+function resizeCanvas() {
+  const container = document.getElementById('perf-chart');
+  const w = container.clientWidth - 48;
+  if (w > 200) {
+    canvas.width = Math.min(800, w);
+    canvas.height = Math.min(400, canvas.width * 0.5);
+    draw();
+  }
+}
+window.addEventListener('resize', resizeCanvas);
+setTimeout(resizeCanvas, 100);
+</script>
+</body>
+</html>

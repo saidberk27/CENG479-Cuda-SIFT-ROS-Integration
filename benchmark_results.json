@@ -1,0 +1,284 @@
+{
+  "sequential": {
+    "node": "sequential_pipeline",
+    "timestamp": "2026-06-11T16:38:43.984762",
+    "host": "sberk",
+    "language": "Python 3 / OpenCV",
+    "pid_publisher": 34157,
+    "pid_subscriber": 34158,
+    "publisher_total_wall_ms": 5203.488320999895,
+    "publisher_total_cpu_ms": 10539.001939,
+    "subscriber_total_wall_ms": 12845.478670000375,
+    "subscriber_total_cpu_ms": 7516.185685000001,
+    "info": {
+      "large_image_path": "ankara.jpg",
+      "query_image_path": "test.jpg",
+      "query_transport_latency_ms": "25.670",
+      "query_payload_mb": "3.87",
+      "large_transport_latency_ms": "261.937",
+      "large_payload_mb": "62.31",
+      "detected_region_corners": "(1155.7, 864.8); (1102.4, 819.1); (1056.8, 872.3); (1109.9, 917.9)",
+      "raw_matches": 7695,
+      "good_matches_after_ratio_test": 79,
+      "ransac_inliers": 50,
+      "pipeline_success": "True"
+    },
+    "stages": {
+      "pub_1_image_loading": {
+        "wall_ms": 68.88172199978726,
+        "cpu_ms": 70.35149699999998,
+        "started_at_ms": 2.2289820008154493,
+        "meta": {
+          "large_image": "3228x2300 (21.24 MB in memory)",
+          "query_image": "775x775 (1.72 MB in memory)"
+        }
+      },
+      "pub_2_grayscale_conversion": {
+        "wall_ms": 5.57432799905655,
+        "cpu_ms": 17.39943799999999,
+        "started_at_ms": 83.90502000111155,
+        "meta": {}
+      },
+      "pub_2b_save_grayscale_images": {
+        "wall_ms": 124.30599499930395,
+        "cpu_ms": 124.26915900000002,
+        "started_at_ms": 90.63598700049624,
+        "meta": {
+          "files": "/home/sberk/Desktop/paralel/src/sequential/output/publisher_1_large_grayscale.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_2_query_grayscale.png"
+        }
+      },
+      "pub_3_sift_large_image": {
+        "wall_ms": 2340.6368349988043,
+        "cpu_ms": 7856.726150999999,
+        "started_at_ms": 215.52921800139302,
+        "meta": {
+          "keypoints": 123741,
+          "throughput": "3.17 Mpx/s"
+        }
+      },
+      "pub_4_sift_query_image": {
+        "wall_ms": 177.05451199981326,
+        "cpu_ms": 544.7001329999991,
+        "started_at_ms": 2557.2430320007697,
+        "meta": {
+          "keypoints": 7695,
+          "throughput": "3.39 Mpx/s"
+        }
+      },
+      "pub_4b_save_keypoint_images": {
+        "wall_ms": 731.3070130003325,
+        "cpu_ms": 668.9764720000006,
+        "started_at_ms": 2735.063390000505,
+        "meta": {
+          "files": "/home/sberk/Desktop/paralel/src/sequential/output/publisher_3_large_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_4_query_keypoints.png"
+        }
+      },
+      "pub_5_message_serialization": {
+        "wall_ms": 1135.8928450008534,
+        "cpu_ms": 1131.0978939999998,
+        "started_at_ms": 3467.4849650000397,
+        "meta": {
+          "large_payload": "~62.31 MB (123741 kp)",
+          "query_payload": "~3.87 MB (7695 kp)"
+        }
+      },
+      "pub_6_publish_messages": {
+        "wall_ms": 96.09042999909434,
+        "cpu_ms": 97.09413100000042,
+        "started_at_ms": 5105.150676001358,
+        "meta": {
+          "topics": "/sift/large_features, /sift/query_features"
+        }
+      },
+      "sub_1_data_reconstruction": {
+        "wall_ms": 117.3904789993685,
+        "cpu_ms": 117.22882000000001,
+        "started_at_ms": 5486.235441001554,
+        "meta": {
+          "large_keypoints": 123741,
+          "query_keypoints": 7695
+        }
+      },
+      "sub_1b_save_received_keypoints_image": {
+        "wall_ms": 695.6526640005904,
+        "cpu_ms": 638.020445,
+        "started_at_ms": 5604.107395000028,
+        "meta": {
+          "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_1_large_received_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_2_query_received_keypoints.png"
+        }
+      },
+      "sub_2_flann_index_build": {
+        "wall_ms": 0.05178900028113276,
+        "cpu_ms": 0.05116199999988247,
+        "started_at_ms": 6300.4416990006575,
+        "meta": {
+          "algorithm": "KD-Tree (trees=5, checks=50)"
+        }
+      },
+      "sub_3_flann_knn_matching": {
+        "wall_ms": 2061.676504999923,
+        "cpu_ms": 2031.0088009999995,
+        "started_at_ms": 6300.498677001087,
+        "meta": {
+          "raw_matches": 7695,
+          "throughput": "3732 matches/s"
+        }
+      },
+      "sub_4_lowes_ratio_test": {
+        "wall_ms": 0.5307179999363143,
+        "cpu_ms": 0.530892000000005,
+        "started_at_ms": 8362.762135000594,
+        "meta": {
+          "good_matches": 79,
+          "rejection_rate": "99.0%"
+        }
+      },
+      "sub_4b_save_ratio_test_image": {
+        "wall_ms": 522.2136640004464,
+        "cpu_ms": 476.7788960000003,
+        "started_at_ms": 8363.852237000174,
+        "meta": {
+          "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_3_ratio_test_matches.png"
+        }
+      },
+      "sub_5_point_extraction": {
+        "wall_ms": 0.11637200077529997,
+        "cpu_ms": 0.11623800000037932,
+        "started_at_ms": 8886.699848000717,
+        "meta": {
+          "point_pairs": 79
+        }
+      },
+      "sub_6_homography_ransac": {
+        "wall_ms": 0.4722970006696414,
+        "cpu_ms": 0.4724220000005275,
+        "started_at_ms": 8887.413467000442,
+        "meta": {
+          "inliers": "50/79 (63.3%)"
+        }
+      },
+      "sub_7_perspective_transform": {
+        "wall_ms": 0.03626000034273602,
+        "cpu_ms": 0.035981999999989966,
+        "started_at_ms": 8889.038913001059,
+        "meta": {}
+      },
+      "sub_7b_save_ransac_stage_images": {
+        "wall_ms": 756.6842450014519,
+        "cpu_ms": 736.5911260000005,
+        "started_at_ms": 8895.360806000099,
+        "meta": {
+          "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_4_ransac_inlier_matches.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_5_detected_region.png"
+        }
+      },
+      "sub_8_final_composite_figure": {
+        "wall_ms": 3184.9900920005894,
+        "cpu_ms": 3242.9941939999994,
+        "started_at_ms": 9653.085977000956,
+        "meta": {
+          "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_6_matching_result.png"
+        }
+      }
+    },
+    "events_ms": {
+      "pub_messages_published": 5201.262676000624,
+      "sub_received_query_features": 5182.25824900037,
+      "sub_received_large_features": 5422.944683001333,
+      "sub_matching_pipeline_started": 5423.592310000458,
+      "sub_matching_pipeline_finished": 12842.935548000241
+    }
+  },
+  "paralel": {
+    "node": "sift_pipeline",
+    "timestamp": "2026-06-11 16:38:57",
+    "host": "sberk",
+    "language": "C++17/CUDA",
+    "pid": 34318,
+    "total_wall_ms": 6945.535608,
+    "total_cpu_ms": 9771.190711,
+    "info": {
+      "large_image_path": "ankara.jpg",
+      "query_image_path": "test.jpg",
+      "cuda_device": "NVIDIA GeForce GTX 1650 with Max-Q Design  (sm_75, 3904 MB, 14 SMs, CUDA 7.5)",
+      "transport": "in-process VRAM bus (no sockets, no ROS payload)",
+      "query_keypoints": "7695",
+      "query_size": "775x775",
+      "large_keypoints": "123741",
+      "large_size": "3228x2300",
+      "query_bus_latency_ms": "2810.44",
+      "large_bus_latency_ms": "578.160",
+      "detected_region_corners": "(1155.6, 864.74); (1102.3, 819.08); (1056.8, 872.29); (1109.9, 917.91)",
+      "good_matches_after_ratio_test": "69",
+      "ransac_inliers": "51",
+      "pipeline_success": "true"
+    },
+    "stages": {
+      "A_parallel_sift_upload_publish": {
+        "wall_ms": 3038.990788,
+        "cpu_ms": 7268.952055,
+        "started_at_ms": 1656.353504,
+        "meta": {
+          "note": "each set published to VRAM bus as soon as ready",
+          "threads_per_sift": "4 of 8"
+        }
+      },
+      "B_vram_bus_subscribe": {
+        "wall_ms": 0.00712,
+        "cpu_ms": 0.006781,
+        "started_at_ms": 4695.427811,
+        "meta": {
+          "note": "device-pointer hand-off, zero payload copy",
+          "query_kp": "7695",
+          "train_kp": "123741"
+        }
+      },
+      "C_gpu_knn_match_ratio": {
+        "wall_ms": 1302.838173,
+        "cpu_ms": 1286.283167,
+        "started_at_ms": 4695.455877,
+        "meta": {
+          "good_matches": "69",
+          "method": "GPU brute-force kNN (k=2, L2) + fused Lowe ratio (VRAM-resident)",
+          "rejection_rate": "99%"
+        }
+      },
+      "D_collect_matched_points": {
+        "wall_ms": 1.319337,
+        "cpu_ms": 1.319742,
+        "started_at_ms": 5998.353686,
+        "meta": {
+          "point_pairs": "69"
+        }
+      },
+      "E_homography_ransac": {
+        "wall_ms": 5.079936,
+        "cpu_ms": 0.609089,
+        "started_at_ms": 5999.679166,
+        "meta": {
+          "inliers": "51/69 (73%)"
+        }
+      },
+      "F_perspective_transform": {
+        "wall_ms": 0.006162,
+        "cpu_ms": 0.005712,
+        "started_at_ms": 6004.840533,
+        "meta": {}
+      },
+      "G_save_result_visualization": {
+        "wall_ms": 940.385102,
+        "cpu_ms": 850.036403,
+        "started_at_ms": 6004.866858,
+        "meta": {
+          "file": "/home/sberk/Desktop/paralel/src/paralel/output/pipeline_detected_region.png"
+        }
+      }
+    },
+    "events_ms": {
+      "pipeline_started": 1656.041627,
+      "features_received_from_vram_bus": 4695.437995,
+      "pipeline_finished": 6945.278005
+    }
+  },
+  "speedup_total": 1.849458327620509,
+  "speedup_knn": 1.582450182782542
+}

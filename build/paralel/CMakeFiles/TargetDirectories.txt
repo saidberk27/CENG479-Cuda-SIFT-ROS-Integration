@@ -1,0 +1,11 @@
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/uninstall.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/paralel_uninstall.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/paralel_cuda_kernels.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/sift_pipeline.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/test.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/edit_cache.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/rebuild_cache.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/list_install_components.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/install.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/install/local.dir
+/home/sberk/Desktop/paralel/build/paralel/CMakeFiles/install/strip.dir

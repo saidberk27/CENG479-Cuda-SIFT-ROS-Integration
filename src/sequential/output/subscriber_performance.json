@@ -1,0 +1,130 @@
+{
+  "node": "flann_subscriber",
+  "timestamp": "2026-06-11T16:38:43.984762",
+  "host": "sberk",
+  "python": "3.12.3",
+  "pid": 34158,
+  "total_wall_ms": 12844.282133000888,
+  "total_cpu_ms": 7514.988714,
+  "info": {
+    "query_transport_latency_ms": "25.670",
+    "query_payload_mb": "3.87",
+    "large_transport_latency_ms": "261.937",
+    "large_payload_mb": "62.31",
+    "detected_region_corners": "(1155.7, 864.8); (1102.4, 819.1); (1056.8, 872.3); (1109.9, 917.9)",
+    "raw_matches": 7695,
+    "good_matches_after_ratio_test": 79,
+    "ransac_inliers": 50,
+    "pipeline_success": true
+  },
+  "stages": {
+    "1_data_reconstruction": {
+      "wall_ms": 117.3904789993685,
+      "cpu_ms": 117.22882000000001,
+      "started_at_ms": 5486.235441001554,
+      "meta": {
+        "large_keypoints": 123741,
+        "query_keypoints": 7695
+      }
+    },
+    "1b_save_received_keypoints_image": {
+      "wall_ms": 695.6526640005904,
+      "cpu_ms": 638.020445,
+      "started_at_ms": 5604.107395000028,
+      "meta": {
+        "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_1_large_received_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_2_query_received_keypoints.png"
+      }
+    },
+    "2_flann_index_build": {
+      "wall_ms": 0.05178900028113276,
+      "cpu_ms": 0.05116199999988247,
+      "started_at_ms": 6300.4416990006575,
+      "meta": {
+        "algorithm": "KD-Tree (trees=5, checks=50)"
+      }
+    },
+    "3_flann_knn_matching": {
+      "wall_ms": 2061.676504999923,
+      "cpu_ms": 2031.0088009999995,
+      "started_at_ms": 6300.498677001087,
+      "meta": {
+        "raw_matches": 7695,
+        "throughput": "3732 matches/s"
+      }
+    },
+    "4_lowes_ratio_test": {
+      "wall_ms": 0.5307179999363143,
+      "cpu_ms": 0.530892000000005,
+      "started_at_ms": 8362.762135000594,
+      "meta": {
+        "good_matches": 79,
+        "rejection_rate": "99.0%"
+      }
+    },
+    "4b_save_ratio_test_image": {
+      "wall_ms": 522.2136640004464,
+      "cpu_ms": 476.7788960000003,
+      "started_at_ms": 8363.852237000174,
+      "meta": {
+        "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_3_ratio_test_matches.png"
+      }
+    },
+    "5_point_extraction": {
+      "wall_ms": 0.11637200077529997,
+      "cpu_ms": 0.11623800000037932,
+      "started_at_ms": 8886.699848000717,
+      "meta": {
+        "point_pairs": 79
+      }
+    },
+    "6_homography_ransac": {
+      "wall_ms": 0.4722970006696414,
+      "cpu_ms": 0.4724220000005275,
+      "started_at_ms": 8887.413467000442,
+      "meta": {
+        "inliers": "50/79 (63.3%)"
+      }
+    },
+    "7_perspective_transform": {
+      "wall_ms": 0.03626000034273602,
+      "cpu_ms": 0.035981999999989966,
+      "started_at_ms": 8889.038913001059,
+      "meta": {}
+    },
+    "7b_save_ransac_stage_images": {
+      "wall_ms": 756.6842450014519,
+      "cpu_ms": 736.5911260000005,
+      "started_at_ms": 8895.360806000099,
+      "meta": {
+        "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_4_ransac_inlier_matches.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_5_detected_region.png"
+      }
+    },
+    "8_final_composite_figure": {
+      "wall_ms": 3184.9900920005894,
+      "cpu_ms": 3242.9941939999994,
+      "started_at_ms": 9653.085977000956,
+      "meta": {
+        "files": "/home/sberk/Desktop/paralel/src/sequential/output/subscriber_6_matching_result.png"
+      }
+    }
+  },
+  "events_ms": {
+    "received_query_features": 5182.25824900037,
+    "received_large_features": 5422.944683001333,
+    "matching_pipeline_started": 5423.592310000458,
+    "matching_pipeline_finished": 12842.935548000241
+  },
+  "resources": {
+    "peak_rss_mb": 699.59375,
+    "user_cpu_s": 7.538412,
+    "system_cpu_s": 0.6188859999999999,
+    "voluntary_ctx_switches": 1451,
+    "involuntary_ctx_switches": 393,
+    "page_faults_minor": 239428,
+    "page_faults_major": 12,
+    "proc_vmsize": "2279672 kB",
+    "proc_vmhwm": "716384 kB",
+    "proc_vmrss": "644988 kB",
+    "proc_threads": "22"
+  }
+}

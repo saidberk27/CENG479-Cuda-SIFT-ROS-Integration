@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-20b5b271266bd32c9685.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "sift_interfaces__py",
+					"jsonFile" : "directory-sift_interfaces__py-8966e68af0445a5fb35a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/sberk/Desktop/paralel/build/sift_interfaces/sift_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "sift_interfaces__rs",
+					"jsonFile" : "directory-sift_interfaces__rs-4e17fb5890aa5f47f747.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/sberk/Desktop/paralel/build/sift_interfaces/sift_interfaces__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "sift_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_sift_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_sift_interfaces_egg-19006c22527b5cce2adc.json",
+					"name" : "ament_cmake_python_build_sift_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_sift_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_sift_interfaces-c673472e95f155fb05a8.json",
+					"name" : "ament_cmake_python_symlink_sift_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces-7ebc3f77d3b641b3cde1.json",
+					"name" : "sift_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__cpp-328357f84acc9484165f.json",
+					"name" : "sift_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "sift_interfaces__py::@d91ff500eef8ce71cfac",
+					"jsonFile" : "target-sift_interfaces__py-910ec1451c4d81a2e338.json",
+					"name" : "sift_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_generator_c-25525f2ded29cfaf5e14.json",
+					"name" : "sift_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_generator_py-31a45e30232d7f7b1b68.json",
+					"name" : "sift_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_generator_type_description-6233d0b7917690b2b670.json",
+					"name" : "sift_interfaces__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_typesupport_c-5b2023d8ef1c39a5d8b8.json",
+					"name" : "sift_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_typesupport_cpp-2d3da8aa372c0780c690.json",
+					"name" : "sift_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_typesupport_fastrtps_c-6c615a00c625d9e3580c.json",
+					"name" : "sift_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_typesupport_fastrtps_cpp-9c53484d367c7b0f9cdb.json",
+					"name" : "sift_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_typesupport_introspection_c-77ac55d21c415e6b6f7f.json",
+					"name" : "sift_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces__rosidl_typesupport_introspection_cpp-2ed085e73354617432a2.json",
+					"name" : "sift_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "sift_interfaces__rs::@705c73d220ea0db0513a",
+					"jsonFile" : "target-sift_interfaces__rs-b9172d951d43c0a48e72.json",
+					"name" : "sift_interfaces__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces_s__rosidl_typesupport_c-c53dca8635046180206b.json",
+					"name" : "sift_interfaces_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces_s__rosidl_typesupport_fastrtps_c-8bc0443531a8493b438f.json",
+					"name" : "sift_interfaces_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces_s__rosidl_typesupport_introspection_c-934efb84f3e1117abbdb.json",
+					"name" : "sift_interfaces_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sift_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sift_interfaces_uninstall-949f2479c504ad880b7b.json",
+					"name" : "sift_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-48778d29676151ff42a7.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sberk/Desktop/paralel/build/sift_interfaces",
+		"source" : "/home/sberk/Desktop/paralel/src/sift_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

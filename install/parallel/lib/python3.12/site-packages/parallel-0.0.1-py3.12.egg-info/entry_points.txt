@@ -1,0 +1,3 @@
+[console_scripts]
+flann_subscriber = parallel.flann_subscriber:main
+sift_publisher = parallel.sift_publisher:main

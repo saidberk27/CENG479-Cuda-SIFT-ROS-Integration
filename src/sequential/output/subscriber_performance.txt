@@ -1,0 +1,71 @@
+==============================================================================
+  PERFORMANCE REPORT  --  flann_subscriber
+==============================================================================
+  Date/time        : 2026-06-11 16:38:43
+  Host             : sberk  (x86_64)
+  Python           : 3.12.3
+  PID              : 34158
+------------------------------------------------------------------------------
+  GENERAL INFO
+------------------------------------------------------------------------------
+  query_transport_latency_ms      : 25.670
+  query_payload_mb                : 3.87
+  large_transport_latency_ms      : 261.937
+  large_payload_mb                : 62.31
+  detected_region_corners         : (1155.7, 864.8); (1102.4, 819.1); (1056.8, 872.3); (1109.9, 917.9)
+  raw_matches                     : 7695
+  good_matches_after_ratio_test   : 79
+  ransac_inliers                  : 50
+  pipeline_success                : True
+------------------------------------------------------------------------------
+  STAGE TIMINGS
+------------------------------------------------------------------------------
+  Stage                               Wall (ms)   CPU (ms)   % wall
+------------------------------------------------------------------------------
+  1_data_reconstruction                 117.390    117.229    0.91%
+      - large_keypoints: 123741
+      - query_keypoints: 7695
+  1b_save_received_keypoints_image      695.653    638.020    5.42%
+      - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_1_large_received_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_2_query_received_keypoints.png
+  2_flann_index_build                     0.052      0.051    0.00%
+      - algorithm: KD-Tree (trees=5, checks=50)
+  3_flann_knn_matching                 2061.677   2031.009   16.05%
+      - raw_matches: 7695
+      - throughput: 3732 matches/s
+  4_lowes_ratio_test                      0.531      0.531    0.00%
+      - good_matches: 79
+      - rejection_rate: 99.0%
+  4b_save_ratio_test_image              522.214    476.779    4.07%
+      - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_3_ratio_test_matches.png
+  5_point_extraction                      0.116      0.116    0.00%
+      - point_pairs: 79
+  6_homography_ransac                     0.472      0.472    0.00%
+      - inliers: 50/79 (63.3%)
+  7_perspective_transform                 0.036      0.036    0.00%
+  7b_save_ransac_stage_images           756.684    736.591    5.89%
+      - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_4_ransac_inlier_matches.png, /home/sberk/Desktop/paralel/src/sequential/output/subscriber_5_detected_region.png
+  8_final_composite_figure             3184.990   3242.994   24.80%
+      - files: /home/sberk/Desktop/paralel/src/sequential/output/subscriber_6_matching_result.png
+------------------------------------------------------------------------------
+  Sum of measured stages               7339.815              57.14%
+  TOTAL (since node start)            12844.282   7514.989  100.00%
+------------------------------------------------------------------------------
+  TIMELINE EVENTS (ms since node start)
+------------------------------------------------------------------------------
+  received_query_features                        5182.258 ms
+  received_large_features                        5422.945 ms
+  matching_pipeline_started                      5423.592 ms
+  matching_pipeline_finished                    12842.936 ms
+------------------------------------------------------------------------------
+  PROCESS RESOURCE USAGE
+------------------------------------------------------------------------------
+  Peak RSS memory                   : 699.59 MB
+  User CPU time                     : 7.538 s
+  System CPU time                   : 0.619 s
+  Context switches (vol/invol)      : 1451 / 393
+  Page faults (minor/major)         : 239428 / 12
+  VMRSS                             : 644988 kB
+  VMHWM                             : 716384 kB
+  VMSIZE                            : 2279672 kB
+  THREADS                           : 22
+==============================================================================

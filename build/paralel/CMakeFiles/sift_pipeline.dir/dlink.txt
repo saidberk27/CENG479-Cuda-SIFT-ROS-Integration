@@ -1,0 +1,1 @@
+/usr/bin/nvcc -forward-unknown-to-host-compiler  "--generate-code=arch=compute_75,code=[compute_75,sm_75]" -Xcompiler=-fPIC -Wno-deprecated-gpu-targets -shared -dlink --options-file CMakeFiles/sift_pipeline.dir/deviceObjects1.rsp -o CMakeFiles/sift_pipeline.dir/cmake_device_link.o --options-file CMakeFiles/sift_pipeline.dir/deviceLinkLibs.rsp

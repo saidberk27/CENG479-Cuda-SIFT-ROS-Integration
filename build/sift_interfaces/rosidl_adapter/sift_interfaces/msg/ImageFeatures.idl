@@ -1,0 +1,43 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sift_interfaces/msg/ImageFeatures.msg
+// generated code does not contain a copyright notice
+
+
+module sift_interfaces {
+  module msg {
+    @verbatim (language="comment", text=
+      "Image meta information")
+    struct ImageFeatures {
+      string image_name;
+
+      int32 height;
+
+      int32 width;
+
+      @verbatim (language="comment", text=
+        "Keypoints (n keypoints)" "\n"
+        "Each keypoint has: x, y, size, angle")
+      sequence<float> keypoints_x;
+
+      sequence<float> keypoints_y;
+
+      sequence<float> keypoints_size;
+
+      sequence<float> keypoints_angle;
+
+      @verbatim (language="comment", text=
+        "Descriptors flattened: n x 128 floats" "\n"
+        "Row-major order: descriptor_0[0..127], descriptor_1[0..127], ...")
+      sequence<float> descriptors;
+
+      @verbatim (language="comment", text=
+        "Number of keypoints")
+      int32 num_keypoints;
+
+      @verbatim (language="comment", text=
+        "Publish timestamp (seconds since epoch, set right before publishing)" "\n"
+        "Used by the subscriber to measure transport latency")
+      double publish_timestamp;
+    };
+  };
+};

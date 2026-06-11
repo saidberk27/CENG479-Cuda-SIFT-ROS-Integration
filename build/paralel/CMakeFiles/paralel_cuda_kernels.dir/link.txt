@@ -1,0 +1,2 @@
+/usr/bin/ar qc libparalel_cuda_kernels.a CMakeFiles/paralel_cuda_kernels.dir/src/cuda_kernels.cu.o
+/usr/bin/ranlib libparalel_cuda_kernels.a

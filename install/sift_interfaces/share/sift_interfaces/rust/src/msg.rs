@@ -1,0 +1,1 @@
+/home/sberk/Desktop/paralel/build/sift_interfaces/rosidl_generator_rs/sift_interfaces/rust/src/msg.rs

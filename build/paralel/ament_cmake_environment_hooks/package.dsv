@@ -1,0 +1,4 @@
+source;share/paralel/local_setup.bash
+source;share/paralel/local_setup.dsv
+source;share/paralel/local_setup.sh
+source;share/paralel/local_setup.zsh

@@ -1,0 +1,97 @@
+{
+  "node": "sift_publisher",
+  "timestamp": "2026-06-11T16:38:44.036196",
+  "host": "sberk",
+  "python": "3.12.3",
+  "pid": 34157,
+  "total_wall_ms": 5203.488320999895,
+  "total_cpu_ms": 10539.001939,
+  "info": {
+    "large_image_path": "ankara.jpg",
+    "query_image_path": "test.jpg"
+  },
+  "stages": {
+    "1_image_loading": {
+      "wall_ms": 68.88172199978726,
+      "cpu_ms": 70.35149699999998,
+      "started_at_ms": 2.2289820008154493,
+      "meta": {
+        "large_image": "3228x2300 (21.24 MB in memory)",
+        "query_image": "775x775 (1.72 MB in memory)"
+      }
+    },
+    "2_grayscale_conversion": {
+      "wall_ms": 5.57432799905655,
+      "cpu_ms": 17.39943799999999,
+      "started_at_ms": 83.90502000111155,
+      "meta": {}
+    },
+    "2b_save_grayscale_images": {
+      "wall_ms": 124.30599499930395,
+      "cpu_ms": 124.26915900000002,
+      "started_at_ms": 90.63598700049624,
+      "meta": {
+        "files": "/home/sberk/Desktop/paralel/src/sequential/output/publisher_1_large_grayscale.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_2_query_grayscale.png"
+      }
+    },
+    "3_sift_large_image": {
+      "wall_ms": 2340.6368349988043,
+      "cpu_ms": 7856.726150999999,
+      "started_at_ms": 215.52921800139302,
+      "meta": {
+        "keypoints": 123741,
+        "throughput": "3.17 Mpx/s"
+      }
+    },
+    "4_sift_query_image": {
+      "wall_ms": 177.05451199981326,
+      "cpu_ms": 544.7001329999991,
+      "started_at_ms": 2557.2430320007697,
+      "meta": {
+        "keypoints": 7695,
+        "throughput": "3.39 Mpx/s"
+      }
+    },
+    "4b_save_keypoint_images": {
+      "wall_ms": 731.3070130003325,
+      "cpu_ms": 668.9764720000006,
+      "started_at_ms": 2735.063390000505,
+      "meta": {
+        "files": "/home/sberk/Desktop/paralel/src/sequential/output/publisher_3_large_keypoints.png, /home/sberk/Desktop/paralel/src/sequential/output/publisher_4_query_keypoints.png"
+      }
+    },
+    "5_message_serialization": {
+      "wall_ms": 1135.8928450008534,
+      "cpu_ms": 1131.0978939999998,
+      "started_at_ms": 3467.4849650000397,
+      "meta": {
+        "large_payload": "~62.31 MB (123741 kp)",
+        "query_payload": "~3.87 MB (7695 kp)"
+      }
+    },
+    "6_publish_messages": {
+      "wall_ms": 96.09042999909434,
+      "cpu_ms": 97.09413100000042,
+      "started_at_ms": 5105.150676001358,
+      "meta": {
+        "topics": "/sift/large_features, /sift/query_features"
+      }
+    }
+  },
+  "events_ms": {
+    "messages_published": 5201.262676000624
+  },
+  "resources": {
+    "peak_rss_mb": 1874.43359375,
+    "user_cpu_s": 9.715972,
+    "system_cpu_s": 1.514919,
+    "voluntary_ctx_switches": 836,
+    "involuntary_ctx_switches": 6915,
+    "page_faults_minor": 728418,
+    "page_faults_major": 12,
+    "proc_vmsize": "1960316 kB",
+    "proc_vmhwm": "1919420 kB",
+    "proc_vmrss": "605924 kB",
+    "proc_threads": "22"
+  }
+}
