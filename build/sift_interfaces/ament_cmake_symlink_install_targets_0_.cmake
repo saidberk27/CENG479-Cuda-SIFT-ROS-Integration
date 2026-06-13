@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/sberk/Desktop/paralel/build/sift_interfaces/rosidl_generator_py/sift_interfaces/sift_interfaces_s__rosidl_typesupport_fastrtps_c.so" "TARGETS" "sift_interfaces_s__rosidl_typesupport_fastrtps_c" "DESTINATION" "lib/python3.12/site-packages/sift_interfaces")

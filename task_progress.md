@@ -1,0 +1,24 @@
+# Task Progress Checklist
+
+- [x] Read and analyze all project files
+- [ ] Fix .gitignore to properly exclude build, log, install
+- [ ] Update all "paralel" references to "parallel" in source code:
+  - [ ] Include directory: include/paralel/ → include/parallel/
+  - [ ] All #include "paralel/..." paths
+  - [ ] All namespace paralel → namespace parallel
+  - [ ] CMakeLists.txt project and target names
+  - [ ] package.xml name
+  - [ ] Launch file package references
+  - [ ] benchmark.py paths and variable names
+  - [ ] documentation.html references
+  - [ ] sequential_baseline_explanation.md references
+  - [ ] sequential Python comments
+- [ ] Write README.md with:
+  - [ ] Introduction and project overview
+  - [ ] Team info (Ceren Akmeşe 22118080701, Said Berk 2111808070)
+  - [ ] Sequential vs Parallel comparison
+  - [ ] Performance analysis
+  - [ ] Architecture overview
+  - [ ] Usage instructions
+- [ ] Update documentation.html with team info
+- [ ] Verify everything is consistent

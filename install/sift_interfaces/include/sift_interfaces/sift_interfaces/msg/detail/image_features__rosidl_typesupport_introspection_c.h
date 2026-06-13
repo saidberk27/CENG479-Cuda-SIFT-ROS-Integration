@@ -1,1 +1,0 @@
-/home/sberk/Desktop/paralel/build/sift_interfaces/rosidl_typesupport_introspection_c/sift_interfaces/msg/detail/image_features__rosidl_typesupport_introspection_c.h

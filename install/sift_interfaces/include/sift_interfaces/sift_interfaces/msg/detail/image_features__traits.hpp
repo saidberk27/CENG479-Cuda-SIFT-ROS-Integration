@@ -1,1 +1,0 @@
-/home/sberk/Desktop/paralel/build/sift_interfaces/rosidl_generator_cpp/sift_interfaces/msg/detail/image_features__traits.hpp

@@ -1,1 +1,0 @@
-  -L"/usr/lib/x86_64-linux-gnu/stubs"  -L"/usr/lib/gcc/x86_64-linux-gnu/12"  libparalel_cuda_kernels.a  "/usr/lib/x86_64-linux-gnu/libculibos.a" -llttng-ust -llttng-ust-common -ldl -latomic -lcudadevrt -lcudart_static -lrt -lpthread 

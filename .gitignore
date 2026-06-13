@@ -1,7 +1,18 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# SIFT-FLANN Pipeline — Comprehensive .gitignore
+# ──────────────────────────────────────────────────────────────────────────────
+
+
 # === Build & Install Artifacts ===
 build/
 install/
 log/
+colcon_*
+*.built_by
+COLCON_IGNORE
+AMENT_IGNORE
+symlink_install_manifest.txt
+install_manifest.txt
 
 # === Python ===
 __pycache__/
@@ -10,6 +21,10 @@ __pycache__/
 *.egg-info/
 dist/
 *.egg
+*.whl
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # === Compiled Binaries & Libraries ===
 *.o
@@ -20,6 +35,8 @@ dist/
 *.dll
 *.dylib
 *.exe
+*.out
+*.class
 
 # === CMake ===
 CMakeCache.txt
@@ -38,12 +55,6 @@ rosidl_adapter__*.json
 rosidl_generator_*__*.json
 rosidl_typesupport_*__*.json
 *__rosidl_*
-*.built_by
-COLCON_IGNORE
-AMENT_IGNORE
-colcon_*
-symlink_install_manifest.txt
-install_manifest.txt
 
 # === Output / Data Files ===
 **/output/*.png
@@ -53,8 +64,9 @@ install_manifest.txt
 *.bag
 *.bag.active
 
-# === Benchmark Results ===
+# === Benchmark & Results ===
 benchmark_results.json
+*.benchmark
 
 # === IDE / Editor ===
 .vscode/
@@ -64,11 +76,27 @@ benchmark_results.json
 *~
 .DS_Store
 Thumbs.db
-
-# === Docker ===
-.docker/
+*.sublime-*
 
 # === Environment / Virtual Env ===
 .env
 venv/
 .venv/
+.envrc
+*.env.local
+
+# === Docker ===
+.docker/
+docker-compose.override.yml
+
+# === Project Specific ===
+# Test images are large; keep only if needed
+# ankara.jpg
+# test.jpg
+
+# === OS Generated ===
+.DS_Store*
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk

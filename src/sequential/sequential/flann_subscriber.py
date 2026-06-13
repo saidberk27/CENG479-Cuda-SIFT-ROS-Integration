@@ -119,14 +119,14 @@ class FlannSubscriber(Node):
         # Save the subscriber-only report (legacy, kept for reference)
         txt, js = self.perf.save_report('subscriber_performance')
         log.info(f'Performance report written to {txt} and {js}')
-        # Save the unified pipeline report (same format as paralel)
+        # Save the unified pipeline report (same format as parallel)
         self._save_unified_report(success)
         log.info('FLANN subscriber shutting down.')
         rclpy.shutdown()
 
     def _save_unified_report(self, success):
         """Merge publisher + subscriber data into a single pipeline_performance.json
-        that matches the format of src/paralel/output/pipeline_performance.json."""
+        that matches the format of src/parallel/output/pipeline_performance.json."""
         import json, platform
         log = self.get_logger()
 

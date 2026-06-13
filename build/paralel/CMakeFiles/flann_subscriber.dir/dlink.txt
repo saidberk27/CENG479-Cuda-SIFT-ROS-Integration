@@ -1,1 +1,0 @@
-/usr/bin/nvcc -forward-unknown-to-host-compiler  "--generate-code=arch=compute_75,code=[compute_75,sm_75]" -Xcompiler=-fPIC -Wno-deprecated-gpu-targets -shared -dlink --options-file CMakeFiles/flann_subscriber.dir/deviceObjects1.rsp -o CMakeFiles/flann_subscriber.dir/cmake_device_link.o --options-file CMakeFiles/flann_subscriber.dir/deviceLinkLibs.rsp

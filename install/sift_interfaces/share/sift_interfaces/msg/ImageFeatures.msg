@@ -1,1 +1,0 @@
-/home/sberk/Desktop/paralel/src/sift_interfaces/msg/ImageFeatures.msg
