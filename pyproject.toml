@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sift-flann-pipeline"
+version = "2.0.0"
+description = "Sequential (Python/ROS2) and Parallel (C++/CUDA) SIFT feature extraction and FLANN-based image matching pipeline"
+readme = "README.md"
+authors = [
+    { name = "Ceren Akmeşe", email = "22118080701@ogrenci.gazi.edu.tr" },
+    { name = "Said Berk", email = "2111808070@ogrenci.gazi.edu.tr" },
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+
+dependencies = [
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+    "pre-commit>=3.0",
+]
+benchmark = [
+    "psutil>=5.9.0",
+]
+
+[project.scripts]
+sift-benchmark = "scripts.benchmark:main"
+
+[tool.setuptools.packages.find]
+where = ["src", "scripts", "tests"]
+include = ["sequential*", "parallel*", "sift_interfaces*", "scripts*"]
+
+[tool.setuptools.package-data]
+"sequential" = ["launch/*.py", "resource/*", "package.xml", "setup.cfg"]
+"parallel" = ["launch/*.py", "package.xml", "CMakeLists.txt"]
+"sift_interfaces" = ["msg/*", "package.xml", "CMakeLists.txt"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+exclude = ["build", "install", "log", "output", "**/__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = false
+exclude = ["build", "install", "log", "output"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["**/test_*", "**/__init__.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "def __repr__",
+]
